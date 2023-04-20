@@ -1,4 +1,5 @@
-import React from 'react'
+import Form from "react-bootstrap/Form";
+
 
 export const InputComponent = ({className, type, name, placeholder, changeFunction, blurFunction, required }) => {
 return (
