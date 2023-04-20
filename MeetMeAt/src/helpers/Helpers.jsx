@@ -37,7 +37,7 @@ export const Helpers = (name, data, required) => {
         case "phonenumber":
             if (data === "" && required === true) {
                 return { message: "Mobile phone is required!", Helpers: false };
-            } else if (!/^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/.test(target.data)){
+            } else if (!/^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/.test(data)){
                 return { message: "Invalid phone format e.g +341234567", Helpers: false };
             }
             return { message: "", Helpers: true };
