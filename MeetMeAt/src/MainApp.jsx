@@ -4,6 +4,9 @@ import { Home } from './layout/home/Home'
 import { Register } from './layout/register/Register'
 import { Login } from './layout/login/Login'
 import { NavBarComponent } from './components/navbar/NavbarComponent'
+import { ProfileUser } from './layout/profile/ProfileUser'
+import { Event } from './layout/eventLayout/Event'
+
 
 
 
@@ -15,6 +18,8 @@ export const MainApp = () => {
       <Route path='/' element={ <Home/> }/>
       <Route path= '/register' element={ <Register/> }/>
       <Route path= '/login' element={ <Login/> }/>
+      <Route path= '/profile' element={ <ProfileUser/> }/>
+      <Route path= '/all/events' element={ <Event/> }/>
     </Routes>
     </div>
   )

@@ -29,8 +29,7 @@ export const NavBarComponent = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
-                        <Nav.Link as={Link} to="/" >All</Nav.Link>
-                        <Nav.Link as={Link} to="/">All</Nav.Link>
+                        <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
                         {!dataCredentialRdx?.credentials?.role ? (
                             <>
                                 <Nav.Link as={Link} to="/login" >Login</Nav.Link>
@@ -40,8 +39,8 @@ export const NavBarComponent = () => {
                             dataCredentialRdx?.credentials?.role === 3 ? (
                                 <>
                                     <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="/">Public</NavDropdown.Item>
-                                        <NavDropdown.Item href="/">Public</NavDropdown.Item>
+                                        <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                                        <NavDropdown.Item href="/">All</NavDropdown.Item>
                                         <NavDropdown.Item href="/">Public</NavDropdown.Item>
                                     </NavDropdown>
                                     <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
