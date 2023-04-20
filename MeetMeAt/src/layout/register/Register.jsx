@@ -109,8 +109,7 @@ setRegisterAct(true);
 const SubmitMe = () => {
     registerMe (credential)
     .then(
-      // ToDo cambiar la ruta por /login
-        navigate('/')
+        navigate('/login')
     )
     .catch(error => console.log(error))
   };
