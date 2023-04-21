@@ -27,8 +27,8 @@ export const Event = () => {
                 <Container className='backGround-treatment'>
                     <h1>Events:</h1>
                     <Row>
-                            {events.map((event)=>(
-                            <Col key= { event.id} lg={5} sm={5}>
+                        {events.map((event)=>(
+                            <Col key={event.id} lg={5} sm={5}>
                                     <Card>
                                         <Card.Body>
                                             <Card.Title>{event.name}</Card.Title>

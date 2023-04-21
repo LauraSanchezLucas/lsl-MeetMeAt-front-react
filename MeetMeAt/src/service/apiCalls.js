@@ -24,4 +24,13 @@ export const getUserProfile = async (token) => {
 export const getAllEvents = async () => {
 
     return await axios.get(`${root}/all/events`);
-  }
+};
+
+export const getAppointment = async (body, token) => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await axios.post(`${root}/create/appointment`, body, config);
+};

@@ -6,6 +6,7 @@ import { Login } from './layout/login/Login'
 import { NavBarComponent } from './components/navbar/NavbarComponent'
 import { ProfileUser } from './layout/profile/ProfileUser'
 import { Event } from './layout/eventLayout/Event'
+import { BookAppointment } from './layout/user/BookAppointment'
 
 
 
@@ -20,6 +21,7 @@ export const MainApp = () => {
       <Route path= '/login' element={ <Login/> }/>
       <Route path= '/profile' element={ <ProfileUser/> }/>
       <Route path= '/all/events' element={ <Event/> }/>
+      <Route path= '/create/appointment' element={ <BookAppointment/> }/>
     </Routes>
     </div>
   )
