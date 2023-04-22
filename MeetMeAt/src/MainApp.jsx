@@ -12,6 +12,7 @@ import { CreateEventByAdmin } from './layout/eventLayout/CreateEventByAdmin'
 import { CreateRole } from './layout/role/CreateRole'
 import { SeeAllRoles } from './layout/role/SeeAllRoles'
 import { Business } from './layout/business/business'
+import { CreateBusiness } from './layout/business/CreateBusiness'
 
 
 
@@ -33,6 +34,7 @@ export const MainApp = () => {
       <Route path= '/newrole' element={ <CreateRole/> }/>
       <Route path= '/role' element={ <SeeAllRoles/> }/>
       <Route path= '/business' element={ <Business/> }/>
+      <Route path= '/newbusiness' element={ <CreateBusiness/> }/>
     </Routes>
     </div>
   )

@@ -32,11 +32,10 @@ export const Business = () => {
                                     <Card>
                                         <Card.Body>
                                             <Card.Title>{business.name}</Card.Title>
-                                            <Card.Text>Business name: {business.name}</Card.Text>
-                                            <Card.Text>Person name: {business.User.name}</Card.Text>
+                                            <Card.Text>Name: {business.User.name}</Card.Text>
                                             <Card.Text>Specialty: {business.Specialty.type}</Card.Text>
-                                            <Card.Text>Email: {business.email}</Card.Text>
-                                            <Card.Text>Phone: {business.phone}</Card.Text>
+                                            <Card.Text>Email: {business.User.email}</Card.Text>
+                                            <Card.Text>Phone: {business.User.phone}</Card.Text>
                                             <Card.Text>Notes: {business.notes}</Card.Text>
                                         </Card.Body>
                                     </Card>
