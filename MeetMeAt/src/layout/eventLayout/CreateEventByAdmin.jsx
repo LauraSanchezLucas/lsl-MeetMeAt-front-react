@@ -17,9 +17,10 @@ export const CreateEventByAdmin = () => {
     description: "", 
     place: "", 
     date:"",
-    hour:""
+    hour:"",
+    business_id:2
   });
-
+  console.log(credential,'siiiii')
   const inputHandler = (e) => {
     setCredential((prevState) => ({
       ...prevState,
@@ -34,7 +35,9 @@ export const CreateEventByAdmin = () => {
     
     createEvents(credential, credentialsRdx.credentials.token)
     .then ( respuesta => { 
+      console.log( 'hollllll')
         setCredential(respuesta.data)
+        
         setTimeout(() => {
           navigate("/all/events");
         }, 500);
@@ -109,6 +112,17 @@ export const CreateEventByAdmin = () => {
                     />
                   </Form.Group>
               </Row>
+              <Form.Group as={Col} controlId="formPasswordZip">
+                  <Form.Label>Business</Form.Label>
+                  <InputComponent
+                    className={"inputlogin"}
+                    type={"text"} 
+                    name={"business_id"} 
+                    placeholder={"Enter business"} 
+                    changeFunction ={(e)=>inputHandler(e)}
+                    blurFunction={(e) => checkError(e)}
+                    />
+                  </Form.Group>
               <div className="buttonRegister">
               <Button onClick={ createEvent } variant="primary">Submit</Button>
               </div>

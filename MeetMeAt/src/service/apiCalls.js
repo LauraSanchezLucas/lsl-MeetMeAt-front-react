@@ -47,6 +47,8 @@ export const seeAppointment = async (token) => {
 
   // CREATE EVENT BY ADMIN
 export const createEvents = async (body, token) => {
+  console.log(body, 'uuuuu')
+  console.log(token, 'iiiii')
     let config = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -89,11 +91,11 @@ export const getAllBusinesses = async () => {
     return await axios.post(`${root}/newbusiness`, body, config);
 };
 // SEE ALL USERS BY ADMIN
-export const getAllUsers = async (token) => {
-  let config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  return await axios.get(`${root}/allusers`, config);
-};
+// export const getAllUsers = async (token) => {
+//   let config = {
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   };
+//   return await axios.get(`${root}/allusers`, config);
+// };
