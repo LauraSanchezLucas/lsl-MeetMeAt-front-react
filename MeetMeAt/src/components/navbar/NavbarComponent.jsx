@@ -29,7 +29,7 @@ export const NavBarComponent = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
-                        <Nav.Link as={Link} to="/" >All</Nav.Link>
+                        <Nav.Link as={Link} to="/" >Home</Nav.Link>
                         {!dataCredentialRdx?.credentials?.role ? (
                             <>
                                 <Nav.Link as={Link} to="/login" >Login</Nav.Link>
@@ -42,29 +42,55 @@ export const NavBarComponent = () => {
                                         <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                                         <NavDropdown.Item href="/create/appointment">New Appointment</NavDropdown.Item>
                                         <NavDropdown.Item href="/appointment">See all appointment to event</NavDropdown.Item>
+                                        <NavDropdown.Item href="/">Update Profile</NavDropdown.Item>
                                     </NavDropdown>
                                     <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                 </>
                             ) :
                                 dataCredentialRdx?.credentials?.role === 2 ? (
                                     <>
-                                        <Nav.Link as={Link} to="/">Profesional</Nav.Link>
-                                        <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
+                                    <NavDropdown title="Menu" id="basic-nav-dropdown">
+                                        <NavDropdown.Item href="/">Create Event</NavDropdown.Item>
+                                        <NavDropdown.Item href="/all/events" >All events</NavDropdown.Item>
+                                        <NavDropdown.Item href="/" >Delete event</NavDropdown.Item>
+                                        <NavDropdown.Item href="/" >Get all user into my events</NavDropdown.Item>
+                                    </NavDropdown>
                                         <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                     </>
                                 ) :
                                     dataCredentialRdx?.credentials?.role === 1 ? (
                                         <>
-                                            <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                            <NavDropdown.Item href="/">Admin</NavDropdown.Item>
-                                            <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
+                                        <NavDropdown title="Event" id="basic-nav-dropdown">
+                                            <NavDropdown.Item href="/all/events" >All events</NavDropdown.Item>
                                             <NavDropdown.Item href="/newevent">Create event</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Delete event</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Update event</NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Roles" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/role">All roles</NavDropdown.Item>
                                             <NavDropdown.Item href="/newrole">Create role</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Update role</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Delete role</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Assing role to user</NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Business" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/business">All business</NavDropdown.Item>
                                             <NavDropdown.Item href="/newbusiness">Create Business</NavDropdown.Item>
-                                                
-                                            </NavDropdown>
+                                            <NavDropdown.Item href="/">Update business</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Delete business</NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="User" id="basic-nav-dropdown">
+                                            <NavDropdown.Item href="/">All user no profesional</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Create user</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Update user</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Delete user</NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Appointment" id="basic-nav-dropdown">
+                                            <NavDropdown.Item href="/">All appointments</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Create appointment</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Update appontment</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Delete appointment</NavDropdown.Item>
+                                        </NavDropdown>
                                             <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                         </>
                                     ) : (<Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>)

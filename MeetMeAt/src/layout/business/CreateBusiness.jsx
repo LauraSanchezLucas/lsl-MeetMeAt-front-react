@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../components/input/InputComponent';
-import { createBusinesses } from '../../service/apiCalls';
+import { createBusinesses, getAllUsers } from '../../service/apiCalls';
 
 export const CreateBusiness = () => {
 
@@ -12,12 +12,11 @@ export const CreateBusiness = () => {
 
     const credentialsRdx = useSelector(userData);
 
+    const [users, setUsers] = useState([]);
+    console.log(users, 'sii')
   const [credential, setCredential] = useState({
     user_id: "",
-    specialty_id: "",
-    name: "", 
-    email: "", 
-    phone: "", 
+    specialty_id: "", 
     notes:"",
   });
 
@@ -27,7 +26,6 @@ export const CreateBusiness = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
   
   const checkError = (e) => {};
 
@@ -43,8 +41,15 @@ export const CreateBusiness = () => {
 }
 
 
+useEffect(() => {
 
-  
+        getAllUsers()
+            .then((result) => { 
+                console.log(users, 'nooo')
+                setUsers(result.data)
+            }).catch((error) => console.log(error));
+    }, [users]);
+
   return (
     <>
     <div >
@@ -52,8 +57,8 @@ export const CreateBusiness = () => {
           <Form>
               <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label variant='white'>User</Form.Label>
-                  <InputComponent
+                  {/* <Form.Label variant='white'>User</Form.Label> */}
+                  {/* <InputComponent
                     className={"inputlogin"}
                     required={true}
                     type={"text"} 
@@ -61,56 +66,45 @@ export const CreateBusiness = () => {
                     placeholder={"Enter name"} 
                     changeFunction ={(e)=>inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
-                    />
+                    /> */}
+                    <Form.Select name={"user_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+                                    <option>Choose your User:</option>
+                                    {users.map((user) => {
+                                        return (
+                                            <option key={user.id} value={user.id}>{user.name}</option>
+                                        )
+                                    })}
+                                </Form.Select>
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label variant='white'>Name</Form.Label>
+              </Row>
+              <Row className="mb-3">
+              <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label variant='white'>Specialty</Form.Label>
                   <InputComponent
                     className={"inputlogin"}
                     required={true}
                     type={"text"} 
-                    name={"name"}
+                    name={"specialty"}
                     placeholder={"Enter name"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridSurname">
-                  <Form.Label>Email</Form.Label>
-                  <InputComponent
-                    className={"inputlogin"}
-                    type={"email"} 
-                    name={"email"} 
-                    placeholder={"Enter description"} 
                     changeFunction ={(e)=>inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
               </Row>
               <Row className="mb-3">
-                  <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>Phone</Form.Label>
+              <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label variant='white'>Notes:</Form.Label>
                   <InputComponent
                     className={"inputlogin"}
+                    required={true}
                     type={"text"} 
-                    name={"phone"} 
-                    placeholder={"Enter place"} 
+                    name={"notes"}
+                    placeholder={"Enter name"} 
                     changeFunction ={(e)=>inputHandler(e)}
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-                  <Form.Group as={Col} controlId="formGridZip">
-                  <Form.Label>notes</Form.Label>
-                  <InputComponent
-                    className={"inputlogin"}
-                    type={"text"} 
-                    name={"notes"} 
-                    placeholder={"Enter date"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
-                  </Row>
+              </Row>
               <div className="buttonRegister">
               <Button onClick={ createBusiness } variant="primary">Submit</Button>
               </div>
