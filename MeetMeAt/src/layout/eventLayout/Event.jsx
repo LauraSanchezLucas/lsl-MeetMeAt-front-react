@@ -31,7 +31,6 @@ export const Event = () => {
                             <Col key={event.id} lg={5} sm={5}>
                                     <Card>
                                         <Card.Body>
-                                        <Card.Title>{event.id}</Card.Title>
                                             <Card.Title>{event.name}</Card.Title>
                                             <Card.Text>Description: {event.description}</Card.Text>
                                             <Card.Text>Place: {event.place} </Card.Text>

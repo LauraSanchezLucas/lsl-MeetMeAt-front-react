@@ -40,7 +40,6 @@ export const NavBarComponent = () => {
                                 <>
                                     <NavDropdown title="Menu" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                                        <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
                                         <NavDropdown.Item href="/create/appointment">New Appointment</NavDropdown.Item>
                                         <NavDropdown.Item href="/appointment">See all appointment to event</NavDropdown.Item>
                                     </NavDropdown>
@@ -50,14 +49,19 @@ export const NavBarComponent = () => {
                                 dataCredentialRdx?.credentials?.role === 2 ? (
                                     <>
                                         <Nav.Link as={Link} to="/">Profesional</Nav.Link>
+                                        <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
                                         <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                     </>
                                 ) :
                                     dataCredentialRdx?.credentials?.role === 1 ? (
                                         <>
                                             <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                                <NavDropdown.Item href="/">Admin</NavDropdown.Item>
-                                                <NavDropdown.Item href="/">Admin</NavDropdown.Item>
+                                            <NavDropdown.Item href="/">Admin</NavDropdown.Item>
+                                            <Nav.Link as={Link} to="/all/events" >All events</Nav.Link>
+                                            <NavDropdown.Item href="/newevent">Create event</NavDropdown.Item>
+                                            <NavDropdown.Item href="/role">All roles</NavDropdown.Item>
+                                            <NavDropdown.Item href="/newrole">Create role</NavDropdown.Item>
+                                            <NavDropdown.Item href="/business">All business</NavDropdown.Item>
                                                 
                                             </NavDropdown>
                                             <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>

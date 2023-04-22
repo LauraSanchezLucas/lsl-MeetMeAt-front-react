@@ -55,7 +55,7 @@ export const BookAppointment = () => {
             event_id: eventId
         })
         setTimeout(() => {
-          navigate("/");
+          navigate("/appointment");
         }, 500);
     }) .catch(error =>{
         console.log(error)

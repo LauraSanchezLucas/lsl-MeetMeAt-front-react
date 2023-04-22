@@ -34,7 +34,6 @@ export const SeeAllAppointment = () => {
                             onClick={()=>selected(appoint)}
                             key={appoint.id}>
                             <ul>
-                            {appoint.id}
                             <strong>Event name:</strong> &nbsp; {appoint.Event.name} &nbsp;
                             <strong>Date:</strong> &nbsp; {appoint.Event.date} &nbsp;
                             <strong>Hour:</strong> &nbsp; {appoint.Event.hour} &nbsp;
