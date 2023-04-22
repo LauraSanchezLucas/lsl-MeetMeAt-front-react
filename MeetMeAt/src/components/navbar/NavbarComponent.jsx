@@ -80,7 +80,7 @@ export const NavBarComponent = () => {
                                             <NavDropdown.Item href="/">Delete business</NavDropdown.Item>
                                         </NavDropdown>
                                         <NavDropdown title="User" id="basic-nav-dropdown">
-                                            <NavDropdown.Item href="/">All user no profesional</NavDropdown.Item>
+                                            <NavDropdown.Item href="/allusers">All user no profesional</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Create user</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update user</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Delete user</NavDropdown.Item>
