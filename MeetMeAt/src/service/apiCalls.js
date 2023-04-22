@@ -99,3 +99,12 @@ export const getAllUsers = async (token) => {
   };
   return await axios.get(`${root}/allusers`, config);
 };
+// SEE ALL APPOINTMENTS BY ADMIN
+export const getAllAppointmentsAdmin = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.get(`${root}/getappointment`, config);
+};

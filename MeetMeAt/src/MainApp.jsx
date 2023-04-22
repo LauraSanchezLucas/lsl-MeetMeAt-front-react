@@ -14,7 +14,7 @@ import { Business } from './layout/business/business'
 import { CreateBusiness } from './layout/business/CreateBusiness'
 import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin'
 import { SeeEventByProfessional } from './layout/eventLayout/SeeEventByProfessional'
-
+import { SeeAllAppointmentByAdmin } from './layout/appointment/SeeAllAppointmentByAdmin'
 
 
 
@@ -37,6 +37,7 @@ export const MainApp = () => {
       <Route path= '/business' element={ <Business/> }/>
       <Route path= '/newbusiness' element={ <CreateBusiness/> }/>
       <Route path= '/allusers' element={ <SeeAllUserByAdmin/> }/>
+      <Route path= '/getappointment' element={ <SeeAllAppointmentByAdmin/> }/>
     </Routes>
     </div>
   )
