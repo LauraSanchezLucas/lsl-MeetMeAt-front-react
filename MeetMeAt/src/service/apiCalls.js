@@ -124,3 +124,14 @@ export const getAllAppointmentsAdmin = async (token) => {
       };
       return await axios.post(`${root}/newevent`, body, config);
   };
+
+  
+  // SEE ALL APPOINTMENTS BY PROFESSIONAL
+export const getAllAppointmentsProfessional = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.get(`${root}/getappointmentbyprofess`, config);
+};
