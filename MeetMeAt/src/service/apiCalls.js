@@ -47,8 +47,6 @@ export const seeAppointment = async (token) => {
 
   // CREATE EVENT BY ADMIN
 export const createEvents = async (body, token) => {
-  console.log(body, 'uuuuu')
-  console.log(token, 'iiiii')
     let config = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -108,3 +106,12 @@ export const getAllAppointmentsAdmin = async (token) => {
   };
   return await axios.get(`${root}/getappointment`, config);
 };
+  // CREATE APPOINTMENT BY ADMIN
+  export const createAppointmentAdmin = async (body, token) => {
+      let config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      return await axios.post(`${root}/newevent`, body, config);
+  };

@@ -87,7 +87,7 @@ export const NavBarComponent = () => {
                                         </NavDropdown>
                                         <NavDropdown title="Appointment" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/getappointment">All appointments</NavDropdown.Item>
-                                            <NavDropdown.Item href="/">Create appointment</NavDropdown.Item>
+                                            <NavDropdown.Item href="/newappointment">Create appointment</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update appontment</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Delete appointment</NavDropdown.Item>
                                         </NavDropdown>

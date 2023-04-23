@@ -18,7 +18,7 @@ export const CreateEventByAdmin = () => {
     place: "", 
     date:"",
     hour:"",
-    business_id:2
+    business_id:""
   });
   console.log(credential,'siiiii')
   const inputHandler = (e) => {
