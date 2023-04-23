@@ -147,7 +147,7 @@ export const registerByAdmin = async (body, token) => {
 
 // DELETE APPOINTMENT BY USER
 
-export const deleteAppointmentUser = async(id,token) =>{
+export const deleteAppointmentUser = async(id, token) =>{
   const config = {
     headers:{
       Authorization: `Bearer ${token}`,
