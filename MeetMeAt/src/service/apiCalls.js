@@ -54,6 +54,15 @@ export const createEvents = async (body, token) => {
     };
     return await axios.post(`${root}/newevent`, body, config);
 };
+  // CREATE EVENT BY PROFESIONAL
+  export const createEventsByProfessional = async (body, token) => {
+    let config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await axios.post(`${root}/neweventprofessional`, body, config);
+};
   // CREATE ROLE BY ADMIN
   export const createRole = async (body, token) => {
     let config = {

@@ -113,16 +113,19 @@ export const CreateAppointmentByAdmin = () => {
 
   const [credential, setCredential] = useState({
     user_id: "", 
-    event_id: ""
+    event_id: "",
    
   });
-  console.log(credential,'siiiii')
+ 
   const inputHandler = (e) => {
     setCredential((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-  };
+  }; 
+  
+  console.log(credential,'siiiii')
+
   const checkError = (e) => {};
 
 
@@ -137,7 +140,8 @@ export const CreateAppointmentByAdmin = () => {
         setTimeout(() => {
           navigate("/");
         }, 500);
-    }) .catch(error => {setCredential(error.message)})
+    }) .catch(error => {
+        setCredential(error.message)})
 }
 
 

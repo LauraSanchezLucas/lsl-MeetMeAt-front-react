@@ -50,7 +50,7 @@ export const NavBarComponent = () => {
                                 dataCredentialRdx?.credentials?.role === 2 ? (
                                     <>
                                     <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="/">Create Event</NavDropdown.Item>
+                                        <NavDropdown.Item href="/neweventprofessional">Create Event</NavDropdown.Item>
                                         <NavDropdown.Item href="/all/events" >All events</NavDropdown.Item>
                                         <NavDropdown.Item href="/" >Delete event</NavDropdown.Item>
                                         <NavDropdown.Item href="/" >Get all user into my events</NavDropdown.Item>
