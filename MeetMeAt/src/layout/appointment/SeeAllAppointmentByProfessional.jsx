@@ -47,20 +47,23 @@ console.log(appointments, 'jjjjjjjj')
     {appointments.length > 0 ? 
 
         (<div>
-            {
-                appointments.map(
-                    appointment => {
-                        return (
-                            <div 
-                                onClick={()=>selected(appointment)} 
-                                key={appointment.id}>
-                                    <ul>
-                                        <div>{appointment.date}</div>
-                                        <div>Client name: {appointment.User.map((user) =>{
+            {appointments.map(appointment => {
+                return (
+                    <div onClick={()=>selected(appointment)} key={appointment.id}>
+                        <ul>
+                            <div>{appointment.date}</div>
+                            <div><strong>{appointment.name}</strong></div>
+                            <div> 
+                                {appointment.Appointments?.map((user) =>{
                                             return(
                                                 <div key= {user.id}>
                                                     <ul>
-                                                        <div>Name:{user.name}</div>
+                                                        <div>{user.name}</div>
+                                                        <div><strong>Name:</strong> {user.User.name} &nbsp;
+                                                        <strong>Surname:</strong> {user.User.surname}&nbsp;
+                                                        <strong>Email:</strong> {user.User.email}&nbsp;
+                                                        <strong>Phone:</strong> {user.User.phone}&nbsp;
+                                                            </div>
                                                     </ul>
                                                     </div>
                                             )
@@ -74,7 +77,7 @@ console.log(appointments, 'jjjjjjjj')
                     }
                 )
             }
-        </div>)
+    </div>)
 
         : 
 
