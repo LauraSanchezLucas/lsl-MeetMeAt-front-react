@@ -68,9 +68,6 @@ console.log(appointments, 'jjjjjjjj')
                                                     </div>
                                             )
                                         })}</div>
-                            {/* <strong>Event:</strong> &nbsp; {appointment.name} &nbsp; */}
-                            {/* <strong>Date:</strong> &nbsp; {appointment.date} &nbsp;
-                            <strong>User name:</strong> &nbsp; {appointment.Appointments.User.name} &nbsp; */}
                             </ul>
                             </div>
                         )

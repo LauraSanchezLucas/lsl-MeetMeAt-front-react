@@ -125,7 +125,7 @@ export const getAllAppointmentsAdmin = async (token) => {
       return await axios.post(`${root}/newevent`, body, config);
   };
 
-  
+
   // SEE ALL APPOINTMENTS BY PROFESSIONAL
 export const getAllAppointmentsProfessional = async (token) => {
   let config = {
@@ -134,4 +134,17 @@ export const getAllAppointmentsProfessional = async (token) => {
     },
   };
   return await axios.get(`${root}/getappointmentbyprofess`, config);
+};
+// REGISTER USER BY ADMIN
+// export const registerByAdmin = async (body) => {
+
+//   return await axios.post(`${root}/newuseradmin`, body);
+// };
+export const registerByAdmin = async (body, token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.post(`${root}/newuseradmin`, body, config);
 };

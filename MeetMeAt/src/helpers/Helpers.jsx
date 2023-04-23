@@ -24,6 +24,7 @@ export const Helpers = (name, data, required) => {
             return { message: "", Helpers: true };
 
         case "password":
+        case "role_id":
             if (data === "" && required === true) {
                 return { message: "Password is required!", Helpers: false };
             } else if (!/[\d()+-]/g.test(data)) {
@@ -41,6 +42,7 @@ export const Helpers = (name, data, required) => {
                 return { message: "Invalid phone format e.g +341234567", Helpers: false };
             }
             return { message: "", Helpers: true };
+        
             
         default:
             console.log("Field not recognized");
