@@ -19,6 +19,7 @@ import { CreateAppointmentByAdmin } from './layout/appointment/CreateAppointment
 import { CreateEventByProfessional } from './layout/eventLayout/CreateEventByProfessional'
 import { SeeAllAppointmentByProfessional } from './layout/appointment/SeeAllAppointmentByProfessional'
 import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin'
+import { UpdateProfile } from './layout/user/UpdateProfile'
 
 
 
@@ -46,6 +47,7 @@ export const MainApp = () => {
       <Route path= '/neweventprofesional' element={ <CreateEventByProfessional/> }/>
       <Route path= '/getappointmentbyprofess' element={ <SeeAllAppointmentByProfessional/> }/>
       <Route path= '/newuseradmin' element={ <CreateUserByAdmin/> }/>
+      <Route path= '/update/profile' element={ <UpdateProfile/> }/>
     </Routes>
     </div>
   )

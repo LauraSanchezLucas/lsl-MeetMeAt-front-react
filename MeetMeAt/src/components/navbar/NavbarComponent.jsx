@@ -42,7 +42,7 @@ export const NavBarComponent = () => {
                                         <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                                         <NavDropdown.Item href="/create/appointment">New Appointment</NavDropdown.Item>
                                         <NavDropdown.Item href="/appointment">See all appointment to event</NavDropdown.Item>
-                                        <NavDropdown.Item href="/">Update Profile</NavDropdown.Item>
+                                        <NavDropdown.Item href="/update/profile">Update Profile</NavDropdown.Item>
                                     </NavDropdown>
                                     <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                 </>

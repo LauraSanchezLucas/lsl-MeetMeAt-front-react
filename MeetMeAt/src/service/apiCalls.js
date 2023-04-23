@@ -10,6 +10,7 @@ export const registerMe = async (body) => {
 export const logMe = async (body) => {
     return await axios.post(`${root}/login`, body);
 };
+
 // SEE PROFILE BY USER
 export const getUserProfile = async (token) => {
     let config = {
@@ -19,7 +20,6 @@ export const getUserProfile = async (token) => {
     };
     return await axios.get(`${root}/profile`, config);
 };
-
 // GET ALL EVENTS ALL
 export const getAllEvents = async () => {
 
@@ -136,10 +136,6 @@ export const getAllAppointmentsProfessional = async (token) => {
   return await axios.get(`${root}/getappointmentbyprofess`, config);
 };
 // REGISTER USER BY ADMIN
-// export const registerByAdmin = async (body) => {
-
-//   return await axios.post(`${root}/newuseradmin`, body);
-// };
 export const registerByAdmin = async (body, token) => {
   let config = {
     headers: {
@@ -147,4 +143,25 @@ export const registerByAdmin = async (body, token) => {
     },
   };
   return await axios.post(`${root}/newuseradmin`, body, config);
+};
+
+// DELETE APPOINTMENT BY USER
+
+export const deleteAppointmentUser = async(id,token) =>{
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.delete(`${root}/cancelappointment/${id}`, config);
+};
+
+// UPDATE PROFILE USER
+export const updateProfileUser = async(body,token) =>{
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.put(`${root}/update/profile`, body, config);
 };
