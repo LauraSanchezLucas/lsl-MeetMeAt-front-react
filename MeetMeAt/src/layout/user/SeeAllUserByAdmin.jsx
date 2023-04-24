@@ -3,20 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
-import { getAllUsers } from "../../service/apiCalls";
-
-
-
-
+import { deleteUserByAdmin, getAllUsers } from "../../service/apiCalls";
+import { Button } from "react-bootstrap";
 
 export const SeeAllUserByAdmin = () => {
     
     const [users, setUsers] = useState([]);
 
     const credentialRdx = useSelector(userData);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+
 
     useEffect(()=>{
         if(users.length === 0){
@@ -34,9 +32,9 @@ export const SeeAllUserByAdmin = () => {
 
     const selected = (user) => {
         //Primero guardo en RDX los datos escogidos...
-
-        dispatch(addChoosen({ choosenObject: user }))
-        console.log(user, 'yuuuuuuuu')
+        // dispatch(addChoosen({ choosenObject: appointment }))
+        deleteUserByAdmin(user.id, credentialRdx.credentials.token)
+        console.log(user.id,'laura')
         setTimeout(()=>{
             navigate("/");
         },500)
@@ -50,15 +48,14 @@ export const SeeAllUserByAdmin = () => {
                 users.map(
                     user => {
                         return (
-                            <div 
-                                onClick={()=>selected(user)} 
-                                key={user.id}>
+                            <div key={user.id}>
                                     <ul>
                             <strong>Name:</strong> &nbsp; {user.name} &nbsp;
                             <strong>Surname:</strong> &nbsp; {user.surname} &nbsp;
                             <strong>Email:</strong> &nbsp; {user.email} &nbsp;
                             <strong>Phone:</strong> &nbsp; {user.phone} &nbsp;
                             <strong>Role:</strong> &nbsp; {user.role_id} &nbsp;
+                            <Button onClick={()=>selected(user)}>Cancel!</Button>
                             </ul>
                             </div>
                         )
