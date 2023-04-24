@@ -2,11 +2,19 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from 'react';
-import { getAllBusinesses } from '../../service/apiCalls';
+import { deleteBusinessById, getAllBusinesses } from '../../service/apiCalls';
 import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { userData } from '../userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Business = () => {
+
+    const navigate = useNavigate();
+
+    const credentialRdx = useSelector(userData);
 
     const [businesses, setBusinesses] = useState([]);
 
@@ -21,6 +29,16 @@ export const Business = () => {
                 }).catch((error) => console.log(error));
         }
     }, [businesses]);
+
+    console.log(credentialRdx, 'yuuuuuuuu')
+    const selected = (business) => {
+        //Primero guardo en RDX los datos escogidos...
+        // dispatch(addChoosen({ choosenObject: appointment }))
+        deleteBusinessById(business.id, credentialRdx.credentials.token)
+        setTimeout(()=>{
+            navigate("/business");
+        },500)
+    }
     return (
         <>
             <div>
@@ -37,6 +55,7 @@ export const Business = () => {
                                             <Card.Text>Email: {business.User.email}</Card.Text>
                                             <Card.Text>Phone: {business.User.phone}</Card.Text>
                                             <Card.Text>Notes: {business.notes}</Card.Text>
+                                            <Button onClick={()=>selected(business)}>Cancel!</Button>
                                         </Card.Body>
                                     </Card>
                             </Col>
