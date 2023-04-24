@@ -2,11 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from 'react';
-import { getAllEvents } from '../../service/apiCalls';
+import { deleteEventByAdmin, getAllEvents } from '../../service/apiCalls';
 import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
+import { userData } from '../userSlice';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 export const SeeEvents = () => {
+
+    const credentialRdx = useSelector(userData);
+    const navigate = useNavigate();
 
     const [events, setEvents] = useState([]);
 
@@ -21,6 +28,16 @@ export const SeeEvents = () => {
                 }).catch((error) => console.log(error));
         }
     }, [events]);
+
+    const selected = (event) => {
+        //Primero guardo en RDX los datos escogidos...
+        // dispatch(addChoosen({ choosenObject: appointment }))
+        deleteEventByAdmin(event.id, credentialRdx.credentials.token)
+        console.log(credentialRdx.credentials.token, 'yuuuuuuuu')
+        setTimeout(()=>{
+            navigate("/");
+        },500)
+    }
     return (
         <>
             <div>
@@ -36,6 +53,7 @@ export const SeeEvents = () => {
                                             <Card.Text>Place: {event.place} </Card.Text>
                                             <Card.Text>Date: {event.date} </Card.Text>
                                             <Card.Text>Hour: {event.hour} </Card.Text>
+                                            <Button onClick={()=>selected(event)}>Cancel!</Button>
                                         </Card.Body>
                                     </Card>
                             </Col>

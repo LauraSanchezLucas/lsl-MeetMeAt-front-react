@@ -46,7 +46,7 @@ export const MainApp = () => {
       <Route path= '/allusers' element={ <SeeAllUserByAdmin/> }/>
       <Route path= '/getappointment' element={ <SeeAllAppointmentByAdmin/> }/>
       <Route path= '/newappointment' element={ <CreateAppointmentByAdmin/> }/>
-      <Route path= '/neweventprofesional' element={ <CreateEventByProfessional/> }/>
+      <Route path= '/neweventprofessional' element={ <CreateEventByProfessional/> }/>
       <Route path= '/getappointmentbyprofess' element={ <SeeAllAppointmentByProfessional/> }/>
       <Route path= '/newuseradmin' element={ <CreateUserByAdmin/> }/>
       <Route path= '/update/profile' element={ <UpdateProfile/> }/>

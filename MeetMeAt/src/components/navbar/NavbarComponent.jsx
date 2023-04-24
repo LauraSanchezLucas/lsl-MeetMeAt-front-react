@@ -52,7 +52,6 @@ export const NavBarComponent = () => {
                                     <NavDropdown title="Menu" id="basic-nav-dropdown">
                                         <NavDropdown.Item href="/neweventprofessional">Create Event</NavDropdown.Item>
                                         <NavDropdown.Item href="/all/events/professional" >All events</NavDropdown.Item>
-                                        <NavDropdown.Item href="/" >Delete event</NavDropdown.Item>
                                         <NavDropdown.Item href="/getappointmentbyprofess" >Get all user into my events</NavDropdown.Item>
                                     </NavDropdown>
                                         <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>

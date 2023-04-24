@@ -39,7 +39,7 @@ export const CreateEventByProfessional = () => {
         setCredential(respuesta.data)
         
         setTimeout(() => {
-          navigate("/");
+          navigate("/all/events/professional");
         }, 500);
     }) .catch(error => {setCredential(error.message)})
 }
