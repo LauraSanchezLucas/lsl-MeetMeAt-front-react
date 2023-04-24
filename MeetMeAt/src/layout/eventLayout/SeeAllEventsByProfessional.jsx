@@ -3,21 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
-import { getAllEventsProfessional } from "../../service/apiCalls";
-
-
-
-
+import { deleteEventByProfessional, getAllEventsProfessional } from "../../service/apiCalls";
+import { Button } from "react-bootstrap";
 
 
 export const SeeAllEventsByProfessional = () => {
-    
-    const [events, setEvents] = useState([]);
 
     const credentialRdx = useSelector(userData);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const [events, setEvents] = useState([]);
 
     useEffect(()=>{
         if(events.length === 0){
@@ -33,27 +30,17 @@ export const SeeAllEventsByProfessional = () => {
         }
         
     }, [events])
-console.log(events, 'jjjjjjjj')
+
+
     const selected = (event) => {
         //Primero guardo en RDX los datos escogidos...
-
-        dispatch(addChoosen({ choosenObject: event }))
-        console.log(event, 'yuuuuuuuu')
+        // dispatch(addChoosen({ choosenObject: appointment }))
+        deleteEventByProfessional(event.id, credentialRdx.credentials.token)
+        console.log(credentialRdx.credentials.token, 'yuuuuuuuu')
         setTimeout(()=>{
             navigate("/");
         },500)
     }
-
-
-    // const selected = (appointment) => {
-    //     //Primero guardo en RDX los datos escogidos...
-    //     // dispatch(addChoosen({ choosenObject: appointment }))
-    //     deleteAppointmentUser(appointment.id, credentialRdx.credentials.token)
-    //     console.log(appointment, 'yuuuuuuuu')
-    //     setTimeout(()=>{
-    //         navigate("/");
-    //     },500)
-    // }
   return (
     <div>
     {events.length > 0 ? 
@@ -61,13 +48,15 @@ console.log(events, 'jjjjjjjj')
         (<div>
             {events.map(event => {
                 return (
-                    <div onClick={()=>selected(event)} key={event.id}>
+                    <div 
+                    key={event.id}>
                         <ul>
                             <div><strong>{event.name}</strong></div>
                             <div>{event.description}</div>
                             <div><strong>Date:</strong>{event.date}</div>
                             <div><strong>Hour:</strong>{event.hour}</div>
                             <div><strong>Place:</strong>{event.place}</div>
+                            <Button onClick={()=>selected(event)}>Cancel!</Button>
                             </ul>
                             </div>
                         )

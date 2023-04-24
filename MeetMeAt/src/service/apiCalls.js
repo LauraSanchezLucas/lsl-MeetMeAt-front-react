@@ -175,3 +175,14 @@ export const getAllEventsProfessional = async (token) => {
   };
   return await axios.get(`${root}/all/events/professional`, config);
 };
+
+// DELETE EVENT BY PROFESSIONAL
+
+export const deleteEventByProfessional = async(id, token) =>{
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.delete(`${root}/deleteeventprofessi/${id}`, config);
+};
