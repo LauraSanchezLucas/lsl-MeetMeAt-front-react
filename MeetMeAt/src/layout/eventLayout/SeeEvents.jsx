@@ -6,7 +6,7 @@ import { getAllEvents } from '../../service/apiCalls';
 import Card from 'react-bootstrap/Card';
 
 
-export const SeeEventByProfessional = () => {
+export const SeeEvents = () => {
 
     const [events, setEvents] = useState([]);
 

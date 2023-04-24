@@ -165,3 +165,13 @@ export const updateProfileUser = async(body,token) =>{
   };
   return await axios.put(`${root}/update/profile`, body, config);
 };
+
+// SEE MY OWN EVENTS BY PROFESSIONAL
+export const getAllEventsProfessional = async (token) => {
+  let config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.get(`${root}/all/events/professional`, config);
+};

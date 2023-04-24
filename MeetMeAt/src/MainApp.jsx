@@ -13,13 +13,13 @@ import { SeeAllRoles } from './layout/role/SeeAllRoles'
 import { Business } from './layout/business/business'
 import { CreateBusiness } from './layout/business/CreateBusiness'
 import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin'
-import { SeeEventByProfessional } from './layout/eventLayout/SeeEventByProfessional'
 import { SeeAllAppointmentByAdmin } from './layout/appointment/SeeAllAppointmentByAdmin'
 import { CreateAppointmentByAdmin } from './layout/appointment/CreateAppointmentByAdmin'
 import { CreateEventByProfessional } from './layout/eventLayout/CreateEventByProfessional'
 import { SeeAllAppointmentByProfessional } from './layout/appointment/SeeAllAppointmentByProfessional'
 import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin'
 import { UpdateProfile } from './layout/user/UpdateProfile'
+import { SeeEvents } from './layout/eventLayout/SeeEvents'
 
 
 
@@ -33,7 +33,7 @@ export const MainApp = () => {
       <Route path= '/login' element={ <Login/> }/>
       <Route path= '/profile' element={ <ProfileUser/> }/>
       {/* eliminar la ruta de todos los eventos porque ya sale al reservar y cambiarle el nombre en el navbar de new appointment a todos los eventos */}
-      <Route path= '/all/events' element={ <SeeEventByProfessional/> }/>
+      <Route path= '/all/events' element={ <SeeEvents/> }/>
       <Route path= '/create/appointment' element={ <BookAppointment/> }/>
       <Route path= '/appointment' element={ <SeeAllAppointment/> }/>
       <Route path= '/newevent' element={ <CreateEventByAdmin/> }/>
@@ -48,6 +48,7 @@ export const MainApp = () => {
       <Route path= '/getappointmentbyprofess' element={ <SeeAllAppointmentByProfessional/> }/>
       <Route path= '/newuseradmin' element={ <CreateUserByAdmin/> }/>
       <Route path= '/update/profile' element={ <UpdateProfile/> }/>
+      {/* <Route path= '/all/events/professional' element={ <SeeEventByProfessional/> }/> */}
     </Routes>
     </div>
   )
