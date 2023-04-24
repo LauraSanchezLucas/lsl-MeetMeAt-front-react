@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
-import { getAllAppointmentsAdmin } from "../../service/apiCalls";
+import { deleteAppointmentById, getAllAppointmentsAdmin } from "../../service/apiCalls";
+import { Button } from "react-bootstrap";
 
 
 
@@ -34,9 +35,9 @@ export const SeeAllAppointmentByAdmin = () => {
 
     const selected = (appointment) => {
         //Primero guardo en RDX los datos escogidos...
-
-        dispatch(addChoosen({ choosenObject: appointment }))
-        console.log(appointment, 'yuuuuuuuu')
+        // dispatch(addChoosen({ choosenObject: appointment }))
+        deleteAppointmentById(appointment.id, credentialRdx.credentials.token)
+        console.log(appointment.id,'laura')
         setTimeout(()=>{
             navigate("/");
         },500)
@@ -50,14 +51,13 @@ export const SeeAllAppointmentByAdmin = () => {
                 appointments.map(
                     appointment => {
                         return (
-                            <div 
-                                onClick={()=>selected(appointment)} 
-                                key={appointment.id}>
+                            <div key={appointment.id}>
                                     <ul>
                             <strong>Name:</strong> &nbsp; {appointment.User.name} &nbsp;
                             <strong>Event:</strong> &nbsp; {appointment.Event.name} &nbsp;
                             <strong>Date:</strong> &nbsp; {appointment.Event.date} &nbsp;
                             <strong>Business:</strong> &nbsp; {appointment.Event.business_id} &nbsp;
+                            <Button onClick={()=>selected(appointment)}>Cancel!</Button>
                             </ul>
                             </div>
                         )

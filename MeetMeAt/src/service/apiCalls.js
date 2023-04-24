@@ -217,3 +217,13 @@ export const deleteUserByAdmin = async(id, token) =>{
   };
   return await axios.delete(`${root}/cancelluser/${id}`, config);
 };
+// DELETE APPOINTMENT BY ADMIN
+
+export const deleteAppointmentById = async(id, token) =>{
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.delete(`${root}/deleteappointment/${id}`, config);
+};
