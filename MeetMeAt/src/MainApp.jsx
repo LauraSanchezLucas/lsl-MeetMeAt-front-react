@@ -20,6 +20,8 @@ import { SeeAllAppointmentByProfessional } from './layout/appointment/SeeAllAppo
 import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin'
 import { UpdateProfile } from './layout/user/UpdateProfile'
 import { SeeEvents } from './layout/eventLayout/SeeEvents'
+import { SeeAllEventsByProfessional } from './layout/eventLayout/SeeAllEventsByProfessional'
+
 
 
 
@@ -48,7 +50,7 @@ export const MainApp = () => {
       <Route path= '/getappointmentbyprofess' element={ <SeeAllAppointmentByProfessional/> }/>
       <Route path= '/newuseradmin' element={ <CreateUserByAdmin/> }/>
       <Route path= '/update/profile' element={ <UpdateProfile/> }/>
-      {/* <Route path= '/all/events/professional' element={ <SeeEventByProfessional/> }/> */}
+      <Route path= '/all/events/professional' element={ <SeeAllEventsByProfessional/> }/>
     </Routes>
     </div>
   )

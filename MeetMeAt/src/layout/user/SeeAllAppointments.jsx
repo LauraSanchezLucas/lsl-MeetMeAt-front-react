@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { deleteAppointmentUser, seeAppointment } from '../../service/apiCalls';
-import { addChoosen } from '../detailSlice';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
