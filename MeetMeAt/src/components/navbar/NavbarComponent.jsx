@@ -62,14 +62,12 @@ export const NavBarComponent = () => {
                                         <NavDropdown title="Event" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/all/events" >All events</NavDropdown.Item>
                                             <NavDropdown.Item href="/newevent">Create event</NavDropdown.Item>
-                                            <NavDropdown.Item href="/">Delete event</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update event</NavDropdown.Item>
                                         </NavDropdown>
                                         <NavDropdown title="Roles" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/role">All roles</NavDropdown.Item>
                                             <NavDropdown.Item href="/newrole">Create role</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update role</NavDropdown.Item>
-                                            <NavDropdown.Item href="/">Assing role to user</NavDropdown.Item>
                                         </NavDropdown>
                                         <NavDropdown title="Business" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/business">All business</NavDropdown.Item>
@@ -80,13 +78,12 @@ export const NavBarComponent = () => {
                                             <NavDropdown.Item href="/allusers">All user no profesional</NavDropdown.Item>
                                             <NavDropdown.Item href="/newuseradmin">Create user</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update user</NavDropdown.Item>
-                                            <NavDropdown.Item href="/">Delete user</NavDropdown.Item>
+
                                         </NavDropdown>
                                         <NavDropdown title="Appointment" id="basic-nav-dropdown">
                                             <NavDropdown.Item href="/getappointment">All appointments</NavDropdown.Item>
                                             <NavDropdown.Item href="/newappointment">Create appointment</NavDropdown.Item>
                                             <NavDropdown.Item href="/">Update appontment</NavDropdown.Item>
-                                            <NavDropdown.Item href="/">Delete appointment</NavDropdown.Item>
                                         </NavDropdown>
                                             <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
                                         </>

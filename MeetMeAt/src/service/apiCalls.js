@@ -227,3 +227,13 @@ export const deleteAppointmentById = async(id, token) =>{
   };
   return await axios.delete(`${root}/deleteappointment/${id}`, config);
 };
+
+// UPDATE ROLE ADMIN
+export const updateRoleByAdmin = async(id,token) =>{
+  const config = {
+    headers:{
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.put(`${root}/updateuserrole/${id}`, id, config);
+};
