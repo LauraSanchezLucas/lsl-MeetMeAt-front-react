@@ -1,4 +1,4 @@
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
@@ -31,15 +31,15 @@ export const SeeAllRoles = () => {
         console.log(roles)
     }, [roles])
 
-    const selected = (rol) => {
-        //Primero guardo en RDX los datos escogidos...
+    // const selected = (rol) => {
+    //     //Primero guardo en RDX los datos escogidos...
 
-        // dispatch(addChoosen({ choosenObject: rol }))
-        console.log(rol, 'yuuuuuuuu')
-        setTimeout(() => {
-            navigate("/");
-        }, 500)
-    }
+    //     // dispatch(addChoosen({ choosenObject: rol }))
+    //     console.log(rol, 'yuuuuuuuu')
+    //     setTimeout(() => {
+    //         navigate("/");
+    //     }, 500)
+    // }
 
    
     return (
@@ -53,7 +53,7 @@ export const SeeAllRoles = () => {
                             rol => {
                                 return (
                                     <div
-                                        onClick={() => selected(rol)}
+                                        // onClick={() => selected(rol)}
                                         key={rol.id}>
                                         {rol.name}
                                         <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
@@ -72,7 +72,8 @@ export const SeeAllRoles = () => {
             }
 <UpdateRoleAdminM show={show} handleClose={handleClose}/>
             </div>
-            </>
+            
+    </>
     )
         }
        
