@@ -2,16 +2,21 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
-import { addChoosen } from '../detailSlice';
 import { deleteUserByAdmin, getAllUsers } from "../../service/apiCalls";
 import { Button } from "react-bootstrap";
+import { UpdateUserAdminM } from "../../components/modal/UpdateUserAdminM";
 
 export const SeeAllUserByAdmin = () => {
     
-    const [users, setUsers] = useState([]);
-
-    const credentialRdx = useSelector(userData);
     const navigate = useNavigate();
+    
+    const credentialRdx = useSelector(userData);
+
+    const [users, setUsers] = useState([]);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const dispatch = useDispatch();
 
@@ -40,6 +45,7 @@ export const SeeAllUserByAdmin = () => {
         },500)
     }
   return (
+    <>
     <div>
     {  users.length > 0 ? 
 
@@ -56,6 +62,7 @@ export const SeeAllUserByAdmin = () => {
                             <strong>Phone:</strong> &nbsp; {user.phone} &nbsp;
                             <strong>Role:</strong> &nbsp; {user.role_id} &nbsp;
                             <Button onClick={()=>selected(user)}>Cancel!</Button>
+                            <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
                             </ul>
                             </div>
                         )
@@ -69,7 +76,8 @@ export const SeeAllUserByAdmin = () => {
         (<div>ESTAN VINIENDO</div>)
 
     }
-
+    <UpdateUserAdminM show={show} handleClose={handleClose}/>
  </div>
+  </>
 )
 }
