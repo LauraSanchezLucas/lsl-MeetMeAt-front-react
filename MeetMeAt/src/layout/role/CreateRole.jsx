@@ -33,7 +33,7 @@ export const CreateRole = () => {
                 setCredential(respuesta.data)
                 setTimeout(() => {
                     // ToDo redireccionar a ver todos los roles
-                    navigate("/");
+                    navigate("/role");
                 }, 500);
             }).catch(error => { setCredential(error.message) })
     }

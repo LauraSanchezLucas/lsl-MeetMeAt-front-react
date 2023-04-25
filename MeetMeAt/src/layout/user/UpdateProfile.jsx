@@ -116,7 +116,6 @@ setRegisterAct(true);
 
 const updateUSer = () => {
     updateProfileUser (credential, credentialsRdx.credentials.token)
-    console.log(credentialsRdx.credentials.token, 'ttttttt')
     .then(
         navigate('/login')
     )

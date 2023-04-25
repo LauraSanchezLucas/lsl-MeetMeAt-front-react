@@ -122,7 +122,7 @@ export const getAllAppointmentsAdmin = async (token) => {
           Authorization: `Bearer ${token}`,
         },
       };
-      return await axios.post(`${root}/newevent`, body, config);
+      return await axios.post(`${root}/newappointment`, body, config);
   };
 
 
