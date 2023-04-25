@@ -8,6 +8,7 @@ import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { useNavigate } from 'react-router-dom';
+import { UpdateBusinessAdminM } from '../../components/modal/UpdateBusinessAdminM';
 
 
 export const Business = () => {
@@ -17,6 +18,10 @@ export const Business = () => {
     const credentialRdx = useSelector(userData);
 
     const [businesses, setBusinesses] = useState([]);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         console.log(businesses, 'si')
@@ -56,6 +61,7 @@ export const Business = () => {
                                             <Card.Text>Phone: {business.User.phone}</Card.Text>
                                             <Card.Text>Notes: {business.notes}</Card.Text>
                                             <Button onClick={()=>selected(business)}>Cancel!</Button>
+                                            <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
                                         </Card.Body>
                                     </Card>
                             </Col>
@@ -63,6 +69,7 @@ export const Business = () => {
                     </Row>
                 </Container>
             </div>
+            <UpdateBusinessAdminM show={show} handleClose={handleClose}/>
         </>
     )
 }
