@@ -113,7 +113,6 @@ export const Register = () => {
               <Form.Label variant='white'>Name</Form.Label>
               <InputComponent
                 className={'inputlogin'}
-                required={true}
                 type={'text'}
                 name={'name'}
                 maxLength={10}
@@ -127,7 +126,6 @@ export const Register = () => {
               <Form.Label>Surname</Form.Label>
               <InputComponent
                 className={'inputlogin'}
-                required={true}
                 type={'text'}
                 name={'surname'}
                 maxLength={20}
@@ -144,7 +142,6 @@ export const Register = () => {
               <Form.Label>Email</Form.Label>
               <InputComponent
                 className={'inputlogin'}
-                required={true}
                 type={'email'}
                 name={'email'}
                 placeholder={'Enter your email'}
@@ -158,7 +155,6 @@ export const Register = () => {
               <Form.Label>Phone</Form.Label>
               <InputComponent
                 className={'inputlogin'}
-                required={true}
                 type={'text'}
                 name={'phone'}
                 placeholder={'Enter your phone'}
@@ -172,7 +168,6 @@ export const Register = () => {
               <Form.Label>Password</Form.Label>
               <InputComponent
                 className={"inputlogin"}
-                required={true}
                 type={"text"}
                 name={"password"}
                 placeholder={"Enter password"}
