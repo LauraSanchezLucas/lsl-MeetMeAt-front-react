@@ -22,6 +22,7 @@ import { UpdateProfile } from './layout/user/UpdateProfile';
 import { SeeEvents } from './layout/eventLayout/SeeEvents';
 import { SeeAllEventsByProfessional } from './layout/eventLayout/SeeAllEventsByProfessional';
 import { UpdateUserByAdmin } from './layout/user/UpdateUserByAdmin';
+import { FooterComponent } from './components/footer/FooterComponent';
 
 
 
@@ -53,6 +54,7 @@ export const MainApp = () => {
         <Route path='/all/events/professional' element={<SeeAllEventsByProfessional />} />
         <Route path='/alvaro' element={<UpdateUserByAdmin />} />
       </Routes>
+      <FooterComponent/>
     </div>
   )
 }
