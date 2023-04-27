@@ -17,7 +17,7 @@ export const Login = () => {
     //Instancio Redux en modo escritura
     const dispatch = useDispatch();
 
-    const [welcome, setWelcome] = useState("");
+    // const [welcome, setWelcome] = useState("");
 
     //HOOK
     const [credential, setCredential] = useState({
@@ -122,7 +122,7 @@ export const Login = () => {
                     }
                     //Este es el momento en el que guardo en REDUX
                     dispatch(login({ credentials: dataBackend }));
-                    setWelcome(`Welcome back ${dataBackend.user.name}`)
+                    // setWelcome(`Welcome back ${dataBackend.user.name}`)
 
 
 
@@ -135,10 +135,6 @@ export const Login = () => {
     };
     return (
         <>
-        <div>
-            {welcome !== "" ? ( 
-                <div>{welcome}</div>
-            ):(
                 <div>
             <Container>
                 <Form>
@@ -175,8 +171,6 @@ export const Login = () => {
                 </Form>
             </Container>
             </div>
-            )}
-        </div>
         </>
                             
     );

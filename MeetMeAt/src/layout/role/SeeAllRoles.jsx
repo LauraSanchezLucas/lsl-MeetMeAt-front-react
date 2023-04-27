@@ -3,19 +3,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { getAllRoles } from "../../service/apiCalls";
-import { UpdateRoleAdminM } from "../../components/modal/UpdateRoleAdminM";
+
 
 export const SeeAllRoles = () => {
 
     const [roles, setRoles] = useState([]);
     const credentialRdx = useSelector(userData);
-    const [show, setShow] = useState(false);
+
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     useEffect(() => {
         if (roles.length === 0) {
@@ -56,7 +54,7 @@ export const SeeAllRoles = () => {
                                         // onClick={() => selected(rol)}
                                         key={rol.id}>
                                         {rol.name}
-                                        <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
+                                        
                                     </div>
                                     
                                 )
@@ -70,7 +68,6 @@ export const SeeAllRoles = () => {
                 (<div>ESTAN VINIENDO</div>)
 
             }
-<UpdateRoleAdminM show={show} handleClose={handleClose}/>
             </div>
             
     </>

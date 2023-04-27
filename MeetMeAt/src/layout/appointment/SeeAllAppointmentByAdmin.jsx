@@ -5,7 +5,7 @@ import { userData } from "../userSlice";
 import { addChoosen } from '../detailSlice';
 import { deleteAppointmentById, getAllAppointmentsAdmin } from "../../service/apiCalls";
 import { Button } from "react-bootstrap";
-import { UpdateAppointmentAdminM } from "../../components/modal/UpdateAppointmentAdminM";
+
 
 
 
@@ -14,15 +14,13 @@ import { UpdateAppointmentAdminM } from "../../components/modal/UpdateAppointmen
 export const SeeAllAppointmentByAdmin = () => {
     
     const [appointments, setAppointments] = useState([]);
-    const [show, setShow] = useState(false);
+  
 
     const credentialRdx = useSelector(userData);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     useEffect(()=>{
         if(appointments.length === 0){
@@ -63,7 +61,6 @@ export const SeeAllAppointmentByAdmin = () => {
                             <strong>Date:</strong> &nbsp; {appointment.Event.date} &nbsp;
                             <strong>Business:</strong> &nbsp; {appointment.Event.business_id} &nbsp;
                             <Button onClick={()=>selected(appointment)}>Cancel!</Button>
-                            <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
                             </ul>
                             </div>
                         )
@@ -77,7 +74,6 @@ export const SeeAllAppointmentByAdmin = () => {
         (<div>ESTAN VINIENDO</div>)
 
     }
-    <UpdateAppointmentAdminM show={show} handleClose={handleClose}/>
  </div>
 )
 }

@@ -57,13 +57,13 @@ export const deleteUserByAdmin = async (id, token) => {
   return await axios.delete(`${root}/cancelluser/${id}`, config);
 };
 // UPDATE USER BY ADMIN
-export const updateUserByAdmin = async (id, token) => {
+export const updateAllUserByAdmin = async (id, body, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  return await axios.put(`${root}/updateuserprofile/${id}`, config);
+  return await axios.put(`${root}/updateuserprofile/${id}`, body, config);
 };
 // ------------------------------------EVENTS--------------------------------------------------
 // GET ALL EVENTS ALL

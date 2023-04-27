@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { deleteUserByAdmin, getAllUsers } from "../../service/apiCalls";
 import { Button } from "react-bootstrap";
-import { UpdateUserAdminM } from "../../components/modal/UpdateUserAdminM";
+import { addChoosen } from "../detailSlice";
+import { UpdateUserAdminM } from '../../components/modal/UpdateUserAdminM'
+
+
 
 export const SeeAllUserByAdmin = () => {
 
@@ -13,10 +16,10 @@ export const SeeAllUserByAdmin = () => {
     const credentialRdx = useSelector(userData);
 
     const [users, setUsers] = useState([]);
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     const dispatch = useDispatch();
 
@@ -37,8 +40,11 @@ export const SeeAllUserByAdmin = () => {
 
     const selected = (user) => {
         deleteUserByAdmin(user.id, credentialRdx.credentials.token)
-        console.log(user.id, 'laura')
         window.location.reload(true);
+    }
+    const unSelected = (user) => {
+        dispatch( addChoosen ({ choosenObject: user }))
+    
     }
 
     return (
@@ -51,15 +57,16 @@ export const SeeAllUserByAdmin = () => {
                             users.map(
                                 user => {
                                     return (
-                                        <div key={user.id}>
+                                        <div onClick={() => unSelected(user)} key={user.id}>
                                             <ul>
-                                                <strong>Name:</strong> &nbsp; {user.name} &nbsp;
-                                                <strong>Surname:</strong> &nbsp; {user.surname} &nbsp;
-                                                <strong>Email:</strong> &nbsp; {user.email} &nbsp;
-                                                <strong>Phone:</strong> &nbsp; {user.phone} &nbsp;
-                                                <strong>Role:</strong> &nbsp; {user.role_id} &nbsp;
+                                                <strong>Name:</strong> &nbsp; {user?.name} &nbsp;
+                                                <strong>Surname:</strong> &nbsp; {user?.surname} &nbsp;
+                                                <strong>Email:</strong> &nbsp; {user?.email} &nbsp;
+                                                <strong>Phone:</strong> &nbsp; {user?.phone} &nbsp;
+                                                <strong>Role:</strong> &nbsp; {user?.role_id} &nbsp;
                                                 <Button onClick={() => selected(user)}>Cancel!</Button>
-                                                <button className='btn btn-outline-success' type='submit' onClick={handleShow}>Update event</button>
+                                                {/* <button className='btn btn-outline-success' type='submit' onClick={UpdateUserAdminM}>Update event</button> */}
+                                                <UpdateUserAdminM />
                                             </ul>
                                         </div>
                                     )
@@ -73,7 +80,7 @@ export const SeeAllUserByAdmin = () => {
                     (<div>ESTAN VINIENDO</div>)
 
                 }
-                <UpdateUserAdminM show={show} handleClose={handleClose} />
+                {/* <UpdateUserAdminM /> */}
             </div>
         </>
     )

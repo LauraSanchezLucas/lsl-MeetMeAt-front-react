@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { userData } from '../userSlice';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { UpdateEventAdminM } from '../../components/modal/UpdateEventAdminM';
+
 
 
 export const SeeEvents = () => {
@@ -17,10 +17,7 @@ export const SeeEvents = () => {
     const navigate = useNavigate();
 
     const [events, setEvents] = useState([]);
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  
 
     useEffect(() => {
         console.log(events, 'si')
@@ -59,7 +56,7 @@ export const SeeEvents = () => {
                                             <Card.Text>Date: {event.date} </Card.Text>
                                             <Card.Text>Hour: {event.hour} </Card.Text>
                                             <Button onClick={()=>selected(event)}>Cancel!</Button>
-                                            <button className='btn btn-outline-success'type='submit' onClick={handleShow}>Update event</button>
+                                     
                                         </Card.Body>
                                     </Card>
                             </Col>
@@ -67,7 +64,7 @@ export const SeeEvents = () => {
                     </Row>
                 </Container>
             </div>
-            <UpdateEventAdminM show={show} handleClose={handleClose}/>
+
         </>
     )
 }
