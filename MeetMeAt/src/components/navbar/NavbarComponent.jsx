@@ -6,9 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../layout/userSlice';
 import { userout } from '../../layout/userSlice';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useState } from 'react';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import './Navbar.css'
 
 export const NavBarComponent = () => {
@@ -91,4 +88,3 @@ export const NavBarComponent = () => {
     </Navbar>
   )
 }
-
