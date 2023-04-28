@@ -25,18 +25,18 @@ export const Home = () => {
           </div>
           {/* </Row>  
         <Row> */}
-          {/* <div className='business-side'>
+          <div className='business-side'>
             <img src={business1} alt="Initech industries" className='business-container' />
             <img src={business2} alt="Empire records" className='business-container' />
             <img src={business3} alt="Oscorp corporation" className='business-container' />
             <img src={business4} alt="Hooli sports" className='business-container' />
             <img src={business6} alt="Thorns group" className='business-container' />
           </div>
-          <div className='about-side' >
-            <div className='paragraph1'>About Us...</div>
-            <div className='paragraph2'><p>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</p></div>
-            <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div>
-          </div> */}
+          {/* <div className='about-side' > */}
+            {/* <div className='paragraph1'>About Us...</div> */}
+            {/* <div className='paragraph2'><p>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</p></div> */}
+            {/* <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div> */}
+          {/* </div> */}
 
           {/* <div className='service-side' >
             <Row>

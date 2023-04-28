@@ -103,14 +103,12 @@ justify-content: center;
         margin-left: 2em;
         margin-top: 17em;
     }
-    /* .business-container{
-        margin: 4%;
-    }  */
-    /* .business-container{
+
+    .business-container{
         margin: 1.5em;
         max-width: 30%;
         max-height: 20%;
-    }  */
+    } 
     /* .about-side{
         height: 40vh;
     } */
@@ -156,15 +154,11 @@ justify-content: center;
         width: 8em;
         margin-top: 15em;
     }
-    /* .business-container{
-        margin: 4%;
-        margin-bottom: 0.5em;
-    }  */
-    /* .business-container{
+    .business-container{
         margin: 1.5em;
-        max-width: 30%;
-        max-height: 20%;
-    }  */
+        max-width: 40%;
+        max-height: 30%;
+    } 
 } 
 
 
