@@ -18,15 +18,23 @@
     right: 60%;
     bottom: 0;
 }
+.logo{
+    position:absolute;
+    z-index: 3;
+    top: 15%;
+    left: -5%;
+}
 @media (max-width:768px) {
     .main-home {
-        background: url('../../assets/Principal.jpg');
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size: cover;
         height: 15em;
         margin-top: 0.02em;
-        /* margin-top: -4em; */
+    }
+    .main-home::before{
+        right: 65%;
+    }
+    .logo img{
+        width: 45%;
+        margin-top: 2em;
     }
 }
 .business-side{

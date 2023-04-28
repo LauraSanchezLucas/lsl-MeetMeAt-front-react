@@ -1,6 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
 import './Home.css';
-
+import logo from '../../assets/logo.png'
 
 export const Home = () => {
   return (
@@ -9,6 +9,9 @@ export const Home = () => {
       <Row>
         <div className='main-home'>
           <div className='overlay'></div>
+          <div className='logo'>
+          <img src={logo} alt="Meet me at"/>
+          </div>
         </div>
       </Row>  
         <Row>
