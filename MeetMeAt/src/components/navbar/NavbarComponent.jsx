@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from 'react';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-
+import './Navbar.css'
 
 export const NavBarComponent = () => {
 
@@ -25,13 +25,13 @@ export const NavBarComponent = () => {
     <Navbar collapseOnSelect expand="sm">
       <Container>
         <Navbar.Toggle/>
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse className="justify-content-start">
           <Nav>
-            <Nav.Link as={Link} to="/" >Home</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
             {!dataCredentialRdx?.credentials?.role ? (
               <>
-                <Nav.Link as={Link} to="/register" >Sign Up!</Nav.Link>
-                <Nav.Link as={Link} to="/login" ><i className="bi bi-person-circle"></i></Nav.Link>
+                <Nav.Link as={Link} to="/register">Sign Up!</Nav.Link>
+                <Nav.Link as={Link} to="/login"><i className="bi bi-person-circle"></i></Nav.Link>
               </>
             ) :
               dataCredentialRdx?.credentials?.role === 3 ? (
@@ -45,7 +45,7 @@ export const NavBarComponent = () => {
                     <NavDropdown.Item href="/update/profile">Update Profile</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link>{dataCredentialRdx.credentials.user.name}</Nav.Link>
-                  <Nav.Link as={Link} to="/" onClick={() => logout()}>Logout</Nav.Link>
+                  <Nav.Link as={Link} to="/" onClick={() => logout()}><i className="bi bi-box-arrow-right"></i></Nav.Link>
                 </>
               ) :
                 dataCredentialRdx?.credentials?.role === 2 ? (
@@ -76,13 +76,10 @@ export const NavBarComponent = () => {
                       <NavDropdown title="User" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/allusers">All user</NavDropdown.Item>
                         <NavDropdown.Item href="/newuseradmin">Create user</NavDropdown.Item>
-                        {/* <NavDropdown.Item href="/">Update user</NavDropdown.Item> */}
-
                       </NavDropdown>
                       <NavDropdown title="Appointments" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/getappointment">All appointments</NavDropdown.Item>
                         <NavDropdown.Item href="/newappointment">Create appointment</NavDropdown.Item>
-                        {/* <NavDropdown.Item href="/alvaro">Update appontment</NavDropdown.Item> */}
                       </NavDropdown>
                       <Nav.Link as={Link} to="/" onClick={() => logout()}><i className="bi bi-box-arrow-right"></i></Nav.Link>
                     </>
