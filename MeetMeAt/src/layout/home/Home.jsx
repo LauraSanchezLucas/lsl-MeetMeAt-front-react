@@ -1,4 +1,4 @@
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import './Home.css';
 import logo from '../../assets/logo.png'
 import business1 from '../../assets/business1.png'
@@ -23,8 +23,6 @@ export const Home = () => {
             <div className='logo'><img src={logo} alt="Meet me at" /></div>
             <div className='slogan'>Let´s make every moment count together!!!</div>
           </div>
-          {/* </Row>  
-        <Row> */}
           <div className='business-side'>
             <img src={business1} alt="Initech industries" className='business-container' />
             <img src={business2} alt="Empire records" className='business-container' />
@@ -32,13 +30,15 @@ export const Home = () => {
             <img src={business4} alt="Hooli sports" className='business-container' />
             <img src={business6} alt="Thorns group" className='business-container' />
           </div>
-          {/* <div className='about-side' > */}
-            {/* <div className='paragraph1'>About Us...</div> */}
-            {/* <div className='paragraph2'><p>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</p></div> */}
-            {/* <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div> */}
-          {/* </div> */}
+          <div className='about-side' >
+            <div className='paragraph1'>About Us...</div>
+            <div className='paragraph2'>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</div>
+            <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div>
+          </div>
+        
 
-          {/* <div className='service-side' >
+          <div className='service-side' >
+            <Container>
             <Row>
             <Card className='card-service col-12 col-md-6'>
               <Card.Body>
@@ -51,7 +51,7 @@ export const Home = () => {
             </Card>
             <Card className='card-service col-12 col-md-6'>
               <Card.Body>
-                <Card.Img variant="top" src={social} />
+                <Card.Img variant="top" src={sport} />
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
@@ -60,7 +60,7 @@ export const Home = () => {
             </Card>
             <Card className='card-service col-12 col-md-6'>
               <Card.Body>
-                <Card.Img variant="top" src={social} />
+                <Card.Img variant="top" src={musical} />
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
@@ -69,7 +69,7 @@ export const Home = () => {
             </Card>
             <Card className='card-service col-12 col-md-6'>
               <Card.Body>
-                <Card.Img variant="top" src={social} />
+                <Card.Img variant="top" src={corporate} />
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
@@ -78,7 +78,7 @@ export const Home = () => {
             </Card>
             <Card className='card-service col-12 col-md-6'>
               <Card.Body>
-                <Card.Img variant="top" src={social} />
+                <Card.Img variant="top" src={cultural} className='picture' />
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
@@ -86,9 +86,14 @@ export const Home = () => {
               </Card.Body>
             </Card>
             </Row>
-          </div> */}
+            </Container>
+          </div>
+          <div className='collage-side' >
 
-          {/* <div className='collage-side' ></div> */}
+            
+          </div>
+
+
           {/* <div className='contact-side' ></div> */}
         </Row>
       </Container>

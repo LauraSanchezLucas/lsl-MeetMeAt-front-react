@@ -50,7 +50,7 @@ justify-content: center;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 30em;
+    height: 35em;
     z-index: -2;
     color: rgb(38, 38, 37);
 }
@@ -62,10 +62,12 @@ justify-content: center;
 .paragraph2{
     width: 30em;
     margin-left: 29em;
+    margin-top: 2em;
 }
 .paragraph3{
     width: 20em;
     margin-left: 29em;
+    margin-top: 2.5em;
 }
 
 .service-side{
@@ -83,6 +85,10 @@ justify-content: center;
     border: none;
     color: white;
 }
+.collage-side{
+    height: 40em;
+    }
+
 
 @media (max-width:575px) {
     .main-home {
@@ -109,34 +115,33 @@ justify-content: center;
         max-width: 30%;
         max-height: 20%;
     } 
-    /* .about-side{
+    .about-side{
         height: 40vh;
-    } */
-    /* .paragraph1{
+    }
+    .paragraph1{
         font-size: 1em;
         margin-left: 10em;
         margin-top: 0.5em;
-    } */
-    /* .paragraph2{
+    }
+    .paragraph2{
         font-size: 0.5em;
         margin-left: 15em;
         margin-top: 0.5em;
         width: 25em;
-    } */
-    /* .paragraph3{
+    }
+    .paragraph3{
         font-size: 0.5em;
         margin-left: 15em;
         margin-top: 0.5em;
         width: 17em;
-    } */
-    /* .service-side{
-        height: 60em;
-        justify-content: center;
-        align-items: center;
-    } */
-    /* .card-service {
+    }
+    .service-side{
+        height: 100em;
+    }
+    .card-service {
         width: 10rem;
-    } */
+        margin-left: 5em;
+    }
     
 } 
 
@@ -159,6 +164,30 @@ justify-content: center;
         max-width: 40%;
         max-height: 30%;
     } 
+    .about-side{
+        height: 70vh;
+    }
+    .paragraph1{
+        margin-left: 20em;
+    }
+    .paragraph2{
+        font-size: 0.8em;
+        margin-left: 24em;
+        margin-top: 2em;
+        width: 25em;
+    }
+    .paragraph3{
+        font-size: 0.8em;
+        margin-left: 22em;
+        margin-top: 2.3em;
+        width: 17em;
+    }
+    .service-side{
+        height: 38em;
+    }
+    .card-service {
+        width: 8rem;
+    }
 } 
 
 
@@ -171,10 +200,8 @@ justify-content: center;
 
 
 
-/* .collage-side{
-height: 40em;
-}
-.contact-side{
+
+/* .contact-side{
 height: 20em;
 }  */
 
