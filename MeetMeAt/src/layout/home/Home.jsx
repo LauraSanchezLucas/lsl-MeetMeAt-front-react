@@ -16,6 +16,7 @@ export const Home = () => {
           <div className='overlay'></div>
           <div className='logo'>
           <img src={logo} alt="Meet me at"/>
+          <div className='slogan'>Let´s make every moment count together!!!</div>
           </div>
         </div>
       {/* </Row>  
@@ -27,7 +28,11 @@ export const Home = () => {
           <img src={business4} alt="Hooli sports" className='business-container' />
           <img src={business6} alt="Thorns group" className='business-container' />
         </div>
-        <div className='about-side' ></div>
+        <div className='about-side' >
+          <div className='slogan-about-us'>About Us...</div>
+           <div className='about-us-sub'><p>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</p></div>
+          <div className='about-us-inf'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div>
+        </div>
         <div className='service-side' ></div>
         <div className='collage-side' ></div>
         <div className='contact-side' ></div>

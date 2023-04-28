@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 30em;    
+    height: 40em;    
     margin-top: -4em;
     position: relative;
     z-index: -1;
@@ -22,7 +22,13 @@
     position:absolute;
     z-index: 3;
     top: 15%;
-    left: -5%;
+    left: -1%;
+}
+.slogan{
+    font-size: 2em;
+    width: 14em;
+    margin-top: 9em;
+    margin-left: 2em;
 }
 .business-side{
 background-color: rgb(50, 50, 50);
@@ -47,7 +53,7 @@ justify-content: center;
     .logo img{
         width: 40%;
         margin-top: 4em;
-        margin-left: 0.5em;
+        /* margin-left: 0.5em; */
         position: fixed;
     }
     .business-container{
@@ -80,8 +86,39 @@ justify-content: center;
     }  */
 } 
 .about-side{
-height: 20em;
+    background-image: url('../../assets/noria.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 30em;
+    z-index: -2;
+    color: rgb(38, 38, 37);
 }
+
+.about-us-sub{
+    /* color: rgb(38, 38, 37); */
+    margin-left: 25em;
+    width: 405px;
+    margin-top: 2em;
+    
+}
+.about-us-inf{
+    /* color: rgb(38, 38, 37); */
+    margin-left: 25em;
+    width: 320px;
+    
+}
+.slogan-about-us{
+    font-size: 2em;
+    margin-left: 15em;
+    margin-top: 1em;
+    
+}
+
+
+
+
+
 .service-side{
     background-color: rgb(50, 50, 50);
     height: 30em;
@@ -92,8 +129,4 @@ height: 40em;
 .contact-side{
 height: 20em;
 } 
-p{
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5em;
-} 
+
