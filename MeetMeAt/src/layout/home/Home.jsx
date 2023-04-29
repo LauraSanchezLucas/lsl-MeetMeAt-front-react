@@ -26,6 +26,7 @@ export const Home = () => {
   return (
     <>
       <Container fluid className='all-code'>
+        {/* LOGO*/}
         <Row className='all-code'>
           {/* MAIN PART*/}
           <Col lg={12} sm={12} xs={12} className='all-code'>
@@ -34,29 +35,29 @@ export const Home = () => {
               <div className='slogan'>Let´s make every moment count together!!!</div>
             </div>
           </Col>
-          </Row>
-          {/* BUSINESS PART */}
-          <div className='business-side'>
+        </Row>
+        {/* BUSINESS PART */}
+        <div className='business-side'>
           <Col lg={2} sm={6} xs={6} className='d-flex flex-column flex-lg-row'>
-            <img src={business1} alt="Initech industries" className='business-container'/>
-            <img src={business2} alt="Empire records" className='business-container'/>
-            <img src={business3} alt="Oscorp corporation" className='business-container'/>
-            <img src={business4} alt="Hooli sports" className='business-container'/>
-            <img src={business6} alt="Thorns group" className='business-container'/>
+            <img src={business1} alt="Initech industries" className='business-container' />
+            <img src={business2} alt="Empire records" className='business-container' />
+            <img src={business3} alt="Oscorp corporation" className='business-container' />
+            <img src={business4} alt="Hooli sports" className='business-container' />
+            <img src={business6} alt="Thorns group" className='business-container' />
           </Col>
-          </div>
-          {/* ABOUT US PART */}
-          <div className='about-side' >
+        </div>
+        {/* ABOUT US PART */}
+        <div className='about-side' >
           <Col className='d-flex flex-column flex-md-col'>
             <div className='paragraph1'>About Us...</div>
             <div className='paragraph2'>Our goal is to help people connect and enjoy memorable moments through personalized and unique events. Join Meet Me At and discover how you can reconnect with your local community and enjoy life to the fullest!</div>
             <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div>
-            </Col>
-          </div>
+          </Col>
+        </div>
 
-          {/* TYPE OF SERVICES */}
-          <div className='service-side'>
-            <Col  className='d-flex flex-column flex-md-row'>
+        {/* TYPE OF SERVICES */}
+        <div className='service-side'>
+          <Col className='d-flex flex-column flex-md-row'>
             <Card className='card-service' >
               <Card.Body>
                 <Card.Img variant="top" src={social} />
@@ -102,42 +103,35 @@ export const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            </Col>
-          </div>
+          </Col>
+        </div>
         {/* COLLAGE  */}
-
-          <div className='collage-side' >
-          {/* <Col> */}
+        <div className='collage-side' >
           <div className='item-1'>
-              <img src={item1} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div>
-            <img src={item2} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='item-3'>
-            <img src={item3} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='movil-item-1'>
-            <img src={item4} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='item-5'>
-            <img src={item5} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='movil-item-2'>
-            <img src={item6} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='item-7'>
-            <img src={item6} alt="Initech industries" className='image-coll'/>
-            </div>
-            <div className='item-8'>
-            <img src={item7} alt="Initech industries" className='image-coll'/>
-            </div>
-          {/* </Col> */}
+            <img src={item1} alt="Initech industries" className='image-coll' />
           </div>
-
-
-          {/* <div className='contact-side' ></div> */}
-        {/* </Row> */}
+          <div>
+            <img src={item2} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='item-3'>
+            <img src={item3} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='movil-item-1'>
+            <img src={item4} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='item-5'>
+            <img src={item5} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='movil-item-2'>
+            <img src={item6} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='item-7'>
+            <img src={item6} alt="Initech industries" className='image-coll' />
+          </div>
+          <div className='item-8'>
+            <img src={item7} alt="Initech industries" className='image-coll' />
+          </div>
+        </div>
       </Container>
     </>
   )
