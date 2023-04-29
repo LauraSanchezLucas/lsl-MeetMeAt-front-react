@@ -1,9 +1,13 @@
+.all-code{
+    margin: 0;
+    padding: 0;
+}
 .main-home{
     background-image: url('../../assets/principal.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    height: 40em;    
+    background-size:cover;
+    height: 60vh;    
     margin-top: -4em;
     position: relative;
     z-index: -1;
@@ -21,174 +25,403 @@
 .logo{
     position:fixed;
     z-index: 1;
-    top: 15%;
-    left: -1%;
+    width: 40vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top: 25%;
+}
+.logo img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 .slogan{
-    font-size: 2em;
-    width: 14em;
-    margin-top: 11em;
-    margin-left: 2em;
-    z-index: 4;
-    color: rgb(50, 50, 50);
-    position: relative;
+    position:absolute;
+    z-index: 1;
+    width: 28vw;
+    margin: 5%;
+    top: 60%;
 }
 .business-side{
-background-color: rgb(50, 50, 50);
-height: 20em;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+    background-color: rgb(50, 50, 50);
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    /* display: flex;
+   justify-content: center; */
+    /* height: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    /* padding-left: 15%;
+    padding-top: 2%; */
 }
 .business-container{
-    max-width: 30%;
-    max-height: 30%;
-    margin: 1.5em 5em 2em 8em;
+    max-width: 60%;
+    max-height: 60%;
+    margin: 5vw;
 }  
 .about-side{
     background-image: url('../../assets/noria.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 35em;
+    height: 70vw;
     z-index: -2;
     color: rgb(38, 38, 37);
 }
 .paragraph1{
-    font-size: 1.5em;
-    margin-left: 25em;
-    margin-top: 1.5em;
+    display: flex;
+    justify-content:center;
+    margin-top: 2vw;
+    font-size: 3vw;
+    margin-bottom: 1vw;
 }
 .paragraph2{
-    width: 30em;
-    margin-left: 29em;
-    margin-top: 2em;
+    font-size: 2.5vw;
+    width: 40vw;
+    margin-left: 33vw;
 }
 .paragraph3{
-    width: 20em;
-    margin-left: 29em;
-    margin-top: 2.5em;
+    font-size: 2.5vw;
+    width: 23vw;
+    margin-left: 33vw;
 }
-
 .service-side{
     background-color: rgb(50, 50, 50);
-    display: flex;
-    height: 30em;
+    display:flex;
     justify-content: center;
-    align-items: center;
 }
 .card-service {
-    width: 12rem;
+    width: 40vw;
     height:fit-content;
-    margin: 1em;
     background-color: rgb(50, 50, 50);
     border: none;
     color: white;
+    width: fit-content;
+    height:fit-content;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 2vw;
 }
-.collage-side{
+/* .collage-side{
     height: 40em;
-    }
-
-
-@media (max-width:575px) {
-    .main-home {
-        height: 60vh;
-        margin-top: 0.02em;
-    }
-    .main-home::before{
-        right: 58%;
-    }
-    .logo img{
-        width: 45%;
-        margin-top: 4em;
-        position: fixed;
-    }
-    .slogan{
-        font-size: 0.8em;
-        width: 8em;
-        margin-left: 2em;
-        margin-top: 17em;
-    }
-
-    .business-container{
-        margin: 1.5em;
-        max-width: 30%;
-        max-height: 20%;
-    } 
-    .about-side{
-        height: 40vh;
-    }
-    .paragraph1{
-        font-size: 1em;
-        margin-left: 10em;
-        margin-top: 0.5em;
-    }
-    .paragraph2{
-        font-size: 0.5em;
-        margin-left: 15em;
-        margin-top: 0.5em;
-        width: 25em;
-    }
-    .paragraph3{
-        font-size: 0.5em;
-        margin-left: 15em;
-        margin-top: 0.5em;
-        width: 17em;
-    }
-    .service-side{
-        height: 100em;
-    }
-    .card-service {
-        width: 10rem;
-        margin-left: 5em;
-    }
-    
+    width: 60%;
+    padding: 0;
+} */
+.collage-side{
+    /* height: 23em; */
+    display: flex;
+    justify-content: end;
+    margin-top: 25%;
+    margin-bottom: 1%;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 90px 90px 90px;
+    grid-gap: 0.5%;
 } 
+.image-coll{
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.item-1{
+    grid-row: 1/3;
+}
+.item-3{
+    grid-column: 3/5;
+}
+.item-5{
+    grid-row: 2/4;
+}
+.item-7{
+    grid-column: 1/1;
+}
+.item-8{
+    grid-column: 3/5;
+}  
+/* .collage-side{
+    height: 65em;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px 150px 150px;
+} */
+/* .item-3{
+    grid-row: 4/5;
+    grid-column: 1 /3;
+}
+.movil-item-1{
+    grid-row: 5/6;
+    grid-column: 1 /1;
+}
+.movil-item-2{
+    grid-row: 5/6;
+    grid-column: 2 /2;
+}
+.item-8{
+    grid-row: 6/7;
+    grid-column: 1 /3;
+} */
+@media (min-width:575px){
+    .main-home{
+        height: 90vh;
+    }
+    .collage-side{
+        margin: 5%;
+        grid-template-columns: 170px 170px 170px 170px;
+        grid-template-rows: 150px 150px 150px;
+        grid-gap: 0.5%;
+    } 
+}
+                /* .main-home{
+                    background-image: url('../../assets/principal.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 40em;    
+                    margin-top: -4em;
+                    position: relative;
+                    z-index: -1;
+                } */
+                /* .main-home::before{
+                    content: '';
+                    position:absolute;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    z-index: 0;
+                    top: 0;
+                    left: 0;
+                    right: 60%;
+                    bottom: 0;
+                } */
+                /* .logo{
+                    position:fixed;
+                    z-index: 1;
+                    top: 15%;
+                    left: -1%;
+                } */
+                /* .slogan{
+                    font-size: 2em;
+                    width: 14em;
+                    margin-top: 11em;
+                    margin-left: 2em;
+                    z-index: 4;
+                    color: rgb(50, 50, 50);
+                    position: relative;
+                } */
+                /* .business-side{
+                background-color: rgb(50, 50, 50);
+                height: 20em;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                } */
+                /* .business-container{
+                    max-width: 30%;
+                    max-height: 30%;
+                    margin: 1.5em 5em 2em 8em;
+                }   */
+                /* .about-side{
+                    background-image: url('../../assets/noria.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 35em;
+                    z-index: -2;
+                    color: rgb(38, 38, 37);
+                } */
+                /* .paragraph1{
+                    font-size: 1.5em;
+                    margin-left: 25em;
+                    margin-top: 1.5em;
+                } */
+                /* .paragraph2{
+                    width: 30em;
+                    margin-left: 29em;
+                    margin-top: 2em;
+                } */
+                /* .paragraph3{
+                    width: 20em;
+                    margin-left: 29em;
+                    margin-top: 2.5em;
+                }
 
-@media (min-width:576px) and (max-width:1195px){
+                .service-side{
+                    background-color: rgb(50, 50, 50);
+                    display: flex;
+                    height: 30em;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .card-service {
+                    width: 12rem;
+                    height:fit-content;
+                    margin: 1em;
+                    background-color: rgb(50, 50, 50);
+                    border: none;
+                    color: white;
+                }
+                .empty-collage{
+                    height: 40em;
+                    } */
+/* .collage-side{
+    height: 40em;
+    width: 60%;
+    padding: 0;
+} */
+            /* .collage-side{
+                height: 35em;
+                display: flex;
+                justify-content: end;
+                margin-top: 5em;
+                display: grid;
+                grid-template-columns: 150px 150px 150px 150px;
+                grid-template-rows: 150px 150px 150px;
+                grid-gap: 1rem;
+            }
+            .image-coll{
+                object-fit:cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+            .item-1{
+                grid-row: 1/3;
+            }
+            .item-3{
+                grid-column: 3/5;
+            }
+            .item-5{
+                grid-row: 2/4;
+            }
+            .item-7{
+                grid-column: 1/1;
+            }
+            .item-8{
+                grid-column: 3/5;
+            } */
+
+
+
+        /* @media (max-width:575px) {
+            .main-home {
+                height: 60vh;
+                margin-top: 0.02em;
+            }
+            .main-home::before{
+                right: 58%;
+            }
+            .logo img{
+                width: 45%;
+                margin-top: 4em;
+                position: fixed;
+            }
+            .slogan{
+                font-size: 0.8em;
+                width: 8em;
+                margin-left: 2em;
+                margin-top: 17em;
+            }
+
+            .business-container{
+                margin: 1.5em;
+                max-width: 30%;
+                max-height: 20%;
+            } 
+            .about-side{
+                height: 40vh;
+            }
+            .paragraph1{
+                font-size: 1em;
+                margin-left: 10em;
+                margin-top: 0.5em;
+            }
+            .paragraph2{
+                font-size: 0.5em;
+                margin-left: 17em;
+                margin-top: 0.5em;
+                width: 25em;
+            }
+            .paragraph3{
+                font-size: 0.5em;
+                margin-left: 16em;
+                margin-top: 0.5em;
+                width: 17em;
+            }
+            .service-side{
+                height: 100em;
+            }
+            .card-service {
+                width: 10rem;
+                margin-left: 5em;
+            }
+            .collage-side{
+                height: 65em;
+                grid-template-columns: 150px 150px;
+                grid-template-rows: 150px 150px 150px 150px 150px 150px;
+            }
+            .item-3{
+                grid-row: 4/5;
+                grid-column: 1 /3;
+            }
+            .movil-item-1{
+                grid-row: 5/6;
+                grid-column: 1 /1;
+            }
+            .movil-item-2{
+                grid-row: 5/6;
+                grid-column: 2 /2;
+            }
+            .item-8{
+                grid-row: 6/7;
+                grid-column: 1 /3;
+            }
+        }  */
+
+/* @media (min-width:576px) and (max-width:1195px){ */
     /* .main-home::before{
         right: 65%;
     } */
-    .logo img{
-        width:48%;
-        margin-top: 4em;
-        position: fixed;
-    }
-    .slogan{
-        font-size: 1.5em;
-        width: 8em;
-        margin-top: 15em;
-    }
-    .business-container{
-        margin: 1.5em;
-        max-width: 40%;
-        max-height: 30%;
-    } 
-    .about-side{
-        height: 70vh;
-    }
-    .paragraph1{
-        margin-left: 20em;
-    }
-    .paragraph2{
-        font-size: 0.8em;
-        margin-left: 24em;
-        margin-top: 2em;
-        width: 25em;
-    }
-    .paragraph3{
-        font-size: 0.8em;
-        margin-left: 22em;
-        margin-top: 2.3em;
-        width: 17em;
-    }
-    .service-side{
-        height: 38em;
-    }
-    .card-service {
-        width: 8rem;
-    }
-} 
+            /* .logo img{
+                width:48%;
+                margin-top: 4em;
+                position: fixed;
+            }
+            .slogan{
+                font-size: 1.5em;
+                width: 8em;
+                margin-top: 15em;
+            }
+            .business-container{
+                margin: 1.5em;
+                max-width: 40%;
+                max-height: 30%;
+            } 
+            .about-side{
+                height: 70vh;
+            }
+            .paragraph1{
+                margin-left: 20em;
+            }
+            .paragraph2{
+                font-size: 0.8em;
+                margin-left: 24em;
+                margin-top: 2em;
+                width: 25em;
+            }
+            .paragraph3{
+                font-size: 0.8em;
+                margin-left: 22em;
+                margin-top: 2.3em;
+                width: 17em;
+            }
+            .service-side{
+                height: 38em;
+            }
+            .card-service {
+                width: 6.2em;
+            }
+        }  */
 
 
 
