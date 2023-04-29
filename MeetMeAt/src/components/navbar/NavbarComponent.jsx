@@ -40,7 +40,6 @@ export const NavBarComponent = () => {
                 <Nav.Link as={Link} to="/create/appointment" >Events</Nav.Link>
                 <Nav.Link as={Link} to="/appointment" >My events</Nav.Link>
                   <NavDropdown title="Menu" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/create/appointment">Events</NavDropdown.Item>
                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/update/profile">Update Profile</NavDropdown.Item>
                   </NavDropdown>
