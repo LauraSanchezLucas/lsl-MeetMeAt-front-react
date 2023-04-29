@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import "./Register.css";
 
 
+
 export const Register = () => {
 
   const navigate = useNavigate();
@@ -50,6 +51,9 @@ export const Register = () => {
 
   const [registerAct, setRegisterAct] = useState(false);
 
+  const [registerSuccess, setRegisterSuccess] = useState(false);
+ 
+
   //USEEFFECT
   useEffect(() => {
     for (let error in credentialError) {
@@ -72,7 +76,7 @@ export const Register = () => {
     };
     
     setRegisterAct(true);
-  });
+  },[credentialError, credential, validationCredential]);
 
   //FUNCIONES
   const checkError = (e) => {
@@ -96,17 +100,25 @@ export const Register = () => {
     }));
   };
 
+
   const SubmitMe = () => {
     registerMe(credential)
-      .then(
-        navigate('/login')
-      )
+      .then(()=>{
+        setRegisterSuccess(true);
+        setTimeout(()=>{
+          navigate('/');
+          window.location.reload();
+        }, 2000);
+      })
       .catch(error => console.log(error))
   };
 
   return (
     <div>
       <Container>
+        {registerSuccess && (
+          <div className="successMessage">Registration Successful!</div>
+        )}
         <Form className='formularioRegistro'>
           <Row className='mb-3'>
             <Form.Group as={Col} controlId='formGridEmail'>

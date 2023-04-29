@@ -6,13 +6,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../layout/userSlice';
 import { userout } from '../../layout/userSlice';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import './Navbar.css'
+import './Navbar.css';
+import { LoginModal } from '../modal/LoginModal';
+import { SingUpModal } from '../modal/SingUpModal';
 
 export const NavBarComponent = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const dataCredentialRdx = useSelector(userData);
+
  
   const logout = () => {
     dispatch(userout({ credentials: {}, token: '' }));
@@ -27,8 +30,8 @@ export const NavBarComponent = () => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             {!dataCredentialRdx?.credentials?.role ? (
               <>
-                <Nav.Link as={Link} to="/register">Sign Up!</Nav.Link>
-                <Nav.Link as={Link} to="/login"><i className="bi bi-person-circle"></i></Nav.Link>
+                <SingUpModal/>
+                <LoginModal/>
               </>
             ) :
               dataCredentialRdx?.credentials?.role === 3 ? (

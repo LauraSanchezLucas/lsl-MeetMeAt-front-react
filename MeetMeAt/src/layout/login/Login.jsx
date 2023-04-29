@@ -9,6 +9,7 @@ import { decodeToken } from 'react-jwt';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../userSlice';
+import './Login.css'
 
 export const Login = () => {
 
@@ -149,9 +150,8 @@ export const Login = () => {
                             changeFunction={(e) => inputHandler(e)}
                             blurFunction={(e) => checkError(e)}
                         />
-                        <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                        <div className='errorMessage'>{credentialError.emailError}</div>
                     </Form.Group>
-                    <div>{credentialError.emailError}</div>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <InputComponent
@@ -162,9 +162,8 @@ export const Login = () => {
                             changeFunction={(e) => inputHandler(e)}
                             blurFunction={(e) => checkError(e)}
                         />
-                        <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                        <div className='errorMessage'>{credentialError.passwordError}</div>
                     </Form.Group>
-                    <div>{credentialError.passwordError}</div>
                     <Button
                         onClick={loginAct ? () => { logmee(); } : () => { }} variant="primary" >
                         Login</Button>

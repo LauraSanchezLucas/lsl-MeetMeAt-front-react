@@ -121,5 +121,5 @@ export const UpdateUserByAdmin = () => {
                 </Form>
             </Container>
         </div>
-     );
+    );
 }
