@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import { Register } from '../../layout/register/Register';
 import Nav from 'react-bootstrap/Nav';
 
-
 export const SingUpModal = () =>{
   const [show, setShow] = useState(false);
 

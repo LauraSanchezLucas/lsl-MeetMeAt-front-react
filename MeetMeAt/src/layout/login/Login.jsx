@@ -164,9 +164,9 @@ export const Login = () => {
                         />
                         <div className='errorMessage'>{credentialError.passwordError}</div>
                     </Form.Group>
-                    <Button
-                        onClick={loginAct ? () => { logmee(); } : () => { }} variant="primary" >
-                        Login</Button>
+                    <div className='loginOk'>
+                    <Button onClick={loginAct ? () => { logmee(); } : () => { }} variant="primary" className='login-button' >Login</Button>
+                    </div>
                 </Form>
             </Container>
             </div>

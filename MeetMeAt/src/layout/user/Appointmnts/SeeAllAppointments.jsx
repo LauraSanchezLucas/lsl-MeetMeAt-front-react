@@ -34,7 +34,7 @@ export const SeeAllAppointment = () => {
     }
 
     return (
-        <Row className='appointment-background'>
+        <Row className='appointmentUserBackground'>
         <div className='appointments-container'>
             {appointments.length > 0 ?
                 (<div>
@@ -58,7 +58,7 @@ export const SeeAllAppointment = () => {
 
                 :
 
-                (<div className='loading-message'>They`re coming.....</div>)
+                (<div className='loading-message'>The fun is on its way-stay tuned!!!</div>)
 
             }
 

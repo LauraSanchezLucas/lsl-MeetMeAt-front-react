@@ -8,4 +8,12 @@ color: red;
     display: flex;
     justify-content: center;
 }
+.register-button{
+    background-color: rgb(95, 94, 94);
+    border: none;
+}
+.registerOk{
+    display: flex;
+    justify-content: center;
+}
 

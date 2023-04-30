@@ -116,6 +116,7 @@ export const Register = () => {
   return (
     <div>
       <Container>
+        <h1>Sing Up!</h1>
         {registerSuccess && (
           <div className="successMessage">Registration Successful!</div>
         )}
@@ -190,8 +191,8 @@ export const Register = () => {
               <div className='errorMessage'>{credentialError.passwordError}</div>
             </Form.Group>
           </Row>
-          <div className="buttonRegister">
-            <Button onClick={SubmitMe} variant="primary">Submit</Button>
+         <div className="registerOk">
+            <Button onClick={SubmitMe} variant="primary" className="register-button">Sing Up!</Button>
           </div>
         </Form>
       </Container>

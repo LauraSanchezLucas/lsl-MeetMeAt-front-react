@@ -4,6 +4,9 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
 import { getUserProfile } from '../../service/apiCalls';
 import { userData } from '../userSlice';
+import './ProfileUser.css'
+import { Button, Row } from 'react-bootstrap';
+
 
 
 
@@ -40,16 +43,17 @@ export const ProfileUser = () => {
     }, []);
     return (
         <>
-            <Container>
-                <Card>
+            <div className='profile-background'>
+                <Card className='profile-container'>
                     <Card.Body>
-                        <Card.Title><strong>Name:</strong> &nbsp;{user.name}</Card.Title>
+                        <Card.Title><strong>PROFILE:</strong></Card.Title>
+                        <Card.Text><strong>Name:</strong> &nbsp;{user.name}</Card.Text>
                         <Card.Text><strong>Surname:</strong> &nbsp;{user.surname}  </Card.Text>
                         <Card.Text><strong>Email:</strong> &nbsp;{user.email} </Card.Text>
                         <Card.Text><strong>Phone:</strong> &nbsp; {user.phone}</Card.Text>
                     </Card.Body>
                 </Card>
-            </Container>
+            </div>
         </>
     )
 }

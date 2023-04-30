@@ -1,5 +1,5 @@
-.appointment-background{
-    background-image: url('../../../assets/A5.jpg');
+.appointmentUserBackground{
+    background-image: url('../../../assets/A6.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -24,7 +24,10 @@
     background-color: rgba(225, 230, 238, 0.819);
 }
 .loading-message{
-    margin-top: 20px;
+    width: 8em;
+    font-size: 5em;
+    color: rgb(202, 239, 248);
+    text-shadow: 0  4px black;
 }
 
 .buttonOk{

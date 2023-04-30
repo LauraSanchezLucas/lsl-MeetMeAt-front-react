@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux'
 import { userData } from '../userSlice'
 import { getUserProfile, updateProfileUser } from '../../service/apiCalls'
 
-
 export const UpdateProfile = () => {
 
     const credentialsRdx = useSelector(userData);
@@ -55,6 +54,7 @@ const [credentialError, setCredentialError] = useState({
 });
 
 const [registerAct, setRegisterAct] = useState(false);
+const [registerSuccess, setRegisterSuccess] = useState(false);
 
 //USEEFFECT
 
@@ -116,15 +116,22 @@ setRegisterAct(true);
 
 const updateUSer = () => {
     updateProfileUser (credential, credentialsRdx.credentials.token)
-    .then(
-        navigate('/login')
-    )
+    .then(()=>{
+      setRegisterSuccess(true);
+      setTimeout(()=>{
+        navigate('/profile');
+        window.location.reload();
+      }, 2000);
+    })
     .catch(error => console.log(error))
-  };
+};
 
   return (
     <div className='main_register'>
       <Container>
+      {registerSuccess && (
+          <div className="successMessage">Update Profile Successful!</div>
+        )}
           <Form className='formularioRegistro'>
               <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridEmail">
