@@ -133,8 +133,8 @@ const updateUSer = () => {
       {registerSuccess && (
           <div className="successMessage">Update Profile Successful!</div>
         )}
-        <h1>Update Profile</h1>
           <Form className='update-form'>
+          <h1>Update Profile</h1>
               <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label variant='white'>Name</Form.Label>
