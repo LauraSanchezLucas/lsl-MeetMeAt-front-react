@@ -34,15 +34,14 @@ export const SeeAllAppointment = () => {
     }
 
     return (
-        <Row className='appointmentUserBackground'>
-        <div className='appointments-container'>
+        <div className='appointments-background'>
+        <Row>
             {appointments.length > 0 ?
-                (<div>
+                (<div className='card-center'>
                     {
                         appointments.map(appoint => {
                                 return (
-                                    <div
-                                        key={appoint.id} className='appointment-box'>
+                                    <div key={appoint.id} className='appointment-box'>
                                         <ul>
                                             <strong>Event name:</strong> &nbsp; {appoint.Event.name} &nbsp;
                                             <strong>Date:</strong> &nbsp; {appoint.Event.date} &nbsp;
@@ -61,9 +60,8 @@ export const SeeAllAppointment = () => {
                 (<div className='loading-message'>The fun is on its way-stay tuned!!!</div>)
 
             }
-
-        </div>
         </Row>
+        </div>
     )
 }
 
