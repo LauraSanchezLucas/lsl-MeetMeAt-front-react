@@ -1,9 +1,9 @@
 .appointment-background{
-    /* background-image: url('../../../assets/A6.jpg');
+    background-image: url('../../../assets/A6.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 0; */
+    margin: 0;
 }
 .appointments-container{
     display: flex;
