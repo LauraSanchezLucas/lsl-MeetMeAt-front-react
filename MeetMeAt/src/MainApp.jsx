@@ -7,7 +7,7 @@ import { NavBarComponent } from './components/navbar/NavbarComponent';
 import { ProfileUser } from './layout/profile/ProfileUser';
 import { SeeAllAppointment } from './layout/appointment/byUser/SeeAllAppointments';
 import { SeeEventsUser } from './layout/eventLayout/byUser/SeeEventsUser';
-import { CreateEventByAdmin } from './layout/eventLayout/CreateEventByAdmin';
+import { CreateEventByAdmin } from './layout/eventLayout/byAdmin/CreateEventByAdmin';
 import { CreateRole } from './layout/role/CreateRole';
 import { SeeAllRoles } from './layout/role/SeeAllRoles';
 import { Business } from './layout/business/business';
@@ -18,7 +18,7 @@ import { CreateAppointmentByAdmin } from './layout/appointment/byAdmin/CreateApp
 import { CreateEventByProfessional } from './layout/eventLayout/byProfessional/createEvent/CreateEventByProfessional';
 import { SeeAllAppointmentByProfessional } from './layout/appointment/byProfessional/SeeAllAppointmentByProfessional';
 import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin';
-import { SeeEvents } from './layout/eventLayout/SeeEvents';
+import { SeeEvents } from './layout/eventLayout/byAdmin/SeeEvents';
 import { SeeAllEventsByProfessional } from './layout/eventLayout/byProfessional/seeAllEvents/SeeAllEventsByProfessional';
 // import { UpdateUserByAdmin } from './layout/user/UpdateUserByAdmin';
 import { FooterComponent } from './components/footer/FooterComponent';
