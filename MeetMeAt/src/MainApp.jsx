@@ -9,7 +9,7 @@ import { SeeAllAppointment } from './layout/appointment/byUser/SeeAllAppointment
 import { SeeEventsUser } from './layout/eventLayout/byUser/SeeEventsUser';
 import { CreateEventByAdmin } from './layout/eventLayout/byAdmin/CreateEventByAdmin';
 import { CreateRole } from './layout/role/CreateRole';
-import { SeeAllRoles } from './layout/role/SeeAllRoles';
+import { SeeAllRoles } from './layout/role/SeeRole/SeeAllRoles';
 import { Business } from './layout/business/business';
 import { CreateBusiness } from './layout/business/CreateBusiness';
 import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin';
@@ -23,7 +23,6 @@ import { SeeAllEventsByProfessional } from './layout/eventLayout/byProfessional/
 // import { UpdateUserByAdmin } from './layout/user/UpdateUserByAdmin';
 import { FooterComponent } from './components/footer/FooterComponent';
 import { UpdateProfile } from './layout/profile/UpdateProfileUser/UpdateProfile';
-
 
 
 

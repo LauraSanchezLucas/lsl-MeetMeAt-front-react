@@ -1,0 +1,10 @@
+.event-background{
+    background-image: url('../../../assets/A6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+}

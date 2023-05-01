@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userData } from "../userSlice";
-import { getAllRoles } from "../../service/apiCalls";
-
+import { userData } from "../../userSlice";
+import { getAllRoles } from "../../../service/apiCalls";
+import { Card, Col, Row } from "react-bootstrap";
+import './Role.css'
 
 export const SeeAllRoles = () => {
 
@@ -39,38 +40,20 @@ export const SeeAllRoles = () => {
     //     }, 500)
     // }
 
-   
     return (
-        <>
-        <div>
-            {roles.length > 0 ?
-
-                (<div>
-                    {
-                        roles.map(
-                            rol => {
-                                return (
-                                    <div
-                                        // onClick={() => selected(rol)}
-                                        key={rol.id}>
-                                        {rol.name}
-                                        
-                                    </div>
-                                    
-                                )
-                            }
-                        )
-                    }
-                </div>)
-
-                :
-
-                (<div>ESTAN VINIENDO</div>)
-
-            }
-            </div>
-            
-    </>
-    )
-        }
-       
+        <div className='event-background'>
+            <Row className='card-main'>
+                {roles.map((rol) => (
+                    <Col key={rol.id} lg={1} sm={1}>
+                        <Card className='card-event'>
+                            <Card.Body>
+                                <Card.Title>{rol.name}</Card.Title>
+                                
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+        </div>
+    );
+    }
