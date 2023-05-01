@@ -1,5 +1,5 @@
 .event-user-background {
-    background-image: url('../../../assets/A6.jpg');
+    background-image: url('../../../assets/A3.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -12,6 +12,7 @@
     width: 70vw;
     display: flex;
     justify-content: center;
+    margin-top: 5vw;
 
 }
 

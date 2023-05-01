@@ -5,7 +5,7 @@ import { Register } from './layout/register/Register';
 import { Login } from './layout/login/Login';
 import { NavBarComponent } from './components/navbar/NavbarComponent';
 import { ProfileUser } from './layout/profile/ProfileUser';
-import { SeeAllAppointment } from './layout/user/Appointmnts/SeeAllAppointments';
+import { SeeAllAppointment } from './layout/appointment/byUser/SeeAllAppointments';
 import { SeeEventsUser } from './layout/eventLayout/byUser/SeeEventsUser';
 import { CreateEventByAdmin } from './layout/eventLayout/CreateEventByAdmin';
 import { CreateRole } from './layout/role/CreateRole';

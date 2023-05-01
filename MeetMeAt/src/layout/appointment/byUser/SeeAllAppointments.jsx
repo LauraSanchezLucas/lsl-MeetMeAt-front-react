@@ -43,9 +43,9 @@ export const SeeAllAppointment = () => {
                                 return (
                                     <div key={appoint.id} className='appointment-box'>
                                         <ul>
-                                            <strong>Event name:</strong> &nbsp; {appoint.Event.name} &nbsp;
-                                            <strong>Date:</strong> &nbsp; {appoint.Event.date} &nbsp;
-                                            <strong>Hour:</strong> &nbsp; {appoint.Event.hour} &nbsp;
+                                            <strong>Event name:</strong> &nbsp; {appoint.Event.name} &nbsp;<br/>
+                                            <strong>Date:</strong> &nbsp; {appoint.Event.date} &nbsp;<br/>
+                                            <strong>Hour:</strong> &nbsp; {appoint.Event.hour} &nbsp;<br/>
                                         </ul>
                                             <Button className='buttonOk' onClick={() => selected(appoint)}>Cancel!</Button>
                                     </div>
