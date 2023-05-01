@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../components/input/InputComponent';
-import { createEvents } from '../../../service/apiCalls';
+import { createEvents, getAllBusinesses } from '../../../service/apiCalls';
 
 export const CreateEventByAdmin = () => {
 
     const navigate = useNavigate();
 
     const credentialsRdx = useSelector(userData);
+    const [businesses, setBusinesses] = useState([]);
 
   const [credential, setCredential] = useState({
     name: "", 
@@ -27,6 +28,19 @@ export const CreateEventByAdmin = () => {
       [e.target.name]: e.target.value,
     }));
   };
+   
+
+    useEffect(() => {
+        console.log(businesses, 'si')
+
+        if (businesses.length === 0) {
+            getAllBusinesses()
+                .then((result) => {
+                    console.log(result.data.business, 'yuhiu')
+                    setBusinesses(result.data.business)
+                }).catch((error) => console.log(error));
+        }
+    }, [businesses]);
 
   
   const checkError = (e) => {};
@@ -121,17 +135,15 @@ export const CreateEventByAdmin = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-              <Form.Group as={Col} controlId="formPasswordZip">
-                  <Form.Label>Business</Form.Label>
-                  <InputComponent
-                    className={"inputevent"}
-                    type={"text"} 
-                    name={"business_id"} 
-                    placeholder={"Enter business"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
+                  <Form.Label>Business:</Form.Label>
+      <Form.Select name={"business_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+                                    <option>Choose business:</option>
+                                    {businesses.map((business) => {
+                                        return (
+                                            <option key={business.User.name} value={business.id}>{business.User.name}</option>
+                                        )
+                                    })}
+                                </Form.Select>
                <div className='buton-position-event'>
               <Button onClick={ createEvent } variant="primary"  className='buttonOk'>Create!</Button>
               </div>
