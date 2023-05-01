@@ -16,7 +16,7 @@ import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin';
 import { SeeAllAppointmentByAdmin } from './layout/appointment/SeeAllAppointmentByAdmin';
 import { CreateAppointmentByAdmin } from './layout/appointment/CreateAppointmentByAdmin';
 import { CreateEventByProfessional } from './layout/eventLayout/CreateEventByProfessional';
-import { SeeAllAppointmentByProfessional } from './layout/appointment/AppointmentsByProfessional/SeeAllAppointmentByProfessional';
+import { SeeAllAppointmentByProfessional } from './layout/appointment/byProfessional/SeeAllAppointmentByProfessional';
 import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin';
 import { SeeEvents } from './layout/eventLayout/SeeEvents';
 import { SeeAllEventsByProfessional } from './layout/eventLayout/SeeAllEventsByProfessional';

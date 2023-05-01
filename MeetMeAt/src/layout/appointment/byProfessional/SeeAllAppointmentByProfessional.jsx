@@ -44,11 +44,11 @@ console.log(appointments, 'jjjjjjjj')
         },500)
     }
   return (
-    <Row className='appointment-background'>
-    <div className='appointments-container'>
+    
+    <div className='appointment-background'>
     {appointments.length > 0 ? 
 
-        (<div>
+        (<div className="appointments-container">
             {appointments.map(appointment => {
                 return (
                     <div onClick={()=>selected(appointment)} key={appointment.id} className='appointment-box'>
@@ -81,11 +81,9 @@ console.log(appointments, 'jjjjjjjj')
 
         : 
 
-        (<div>ESTAN VINIENDO</div>)
-
+        (<div className='loading-message'>The fun is on its way-stay tuned!!!</div>)
     }
 
 </div>
-</Row>
 )
 }
