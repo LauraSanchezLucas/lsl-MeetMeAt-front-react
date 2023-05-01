@@ -49,14 +49,26 @@ export const CreateEventByAdmin = () => {
   
   return (
     <>
-    <div className='main_register'>
-      <Container>
-          <Form className='formularioRegistro'>
+    <div className='main-create-event'>
+          <Form>
               <Row className="mb-3">
+              <div className='create-event-card'>
+              <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label variant='white'>Url Image</Form.Label>
+                  <InputComponent
+                    className={"inputevent"}
+                    required={true}
+                    type={"text"} 
+                    name={"image"}
+                    placeholder={"Enter URL image"} 
+                    changeFunction ={(e)=>inputHandler(e)}
+                    blurFunction={(e) => checkError(e)}
+                    />
+                    </Form.Group>
                   <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label variant='white'>Name</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     required={true}
                     type={"text"} 
                     name={"name"}
@@ -68,7 +80,7 @@ export const CreateEventByAdmin = () => {
                   <Form.Group as={Col} controlId="formGridSurname">
                   <Form.Label>Description</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"description"} 
                     placeholder={"Enter description"} 
@@ -76,12 +88,10 @@ export const CreateEventByAdmin = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-              </Row>
-              <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridCity">
                   <Form.Label>Place</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"place"} 
                     placeholder={"Enter place"} 
@@ -92,7 +102,7 @@ export const CreateEventByAdmin = () => {
                   <Form.Group as={Col} controlId="formGridZip">
                   <Form.Label>Date</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"date"} 
                     placeholder={"Enter date"} 
@@ -103,7 +113,7 @@ export const CreateEventByAdmin = () => {
                   <Form.Group as={Col} controlId="formPasswordZip">
                   <Form.Label>Hour</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"hour"} 
                     placeholder={"Enter hour"} 
@@ -111,11 +121,10 @@ export const CreateEventByAdmin = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-              </Row>
               <Form.Group as={Col} controlId="formPasswordZip">
                   <Form.Label>Business</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"business_id"} 
                     placeholder={"Enter business"} 
@@ -123,11 +132,12 @@ export const CreateEventByAdmin = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-              <div className="buttonRegister">
-              <Button onClick={ createEvent } variant="primary">Submit</Button>
+               <div className='buton-position-event'>
+              <Button onClick={ createEvent } variant="primary"  className='buttonOk'>Create!</Button>
               </div>
+              </div>
+              </Row>
           </Form>
-      </Container>
       </div>
       </>
   );

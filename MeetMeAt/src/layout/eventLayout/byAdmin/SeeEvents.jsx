@@ -38,7 +38,8 @@ export const SeeEvents = () => {
         deleteEventByAdmin(event.id, credentialRdx.credentials.token)
         console.log(credentialRdx.credentials.token, 'yuuuuuuuu')
         setTimeout(()=>{
-            navigate("/");
+            navigate("/all/events");
+            window.location.reload();
         },500)
     }
 return (
