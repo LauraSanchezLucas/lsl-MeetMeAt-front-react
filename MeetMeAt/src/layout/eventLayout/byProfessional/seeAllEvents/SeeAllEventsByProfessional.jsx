@@ -5,6 +5,7 @@ import { userData } from "../../../userSlice";
 import { addChoosen } from '../../../detailSlice';
 import { deleteEventByProfessional, getAllEventsProfessional } from "../../../../service/apiCalls";
 import { Button } from "react-bootstrap";
+import './SeeAllEventsByProfessional.css'
 
 
 export const SeeAllEventsByProfessional = () => {
@@ -42,21 +43,21 @@ export const SeeAllEventsByProfessional = () => {
         },500)
     }
   return (
-    <div>
+    <div className='event-see-background'>
     {events.length > 0 ? 
 
-        (<div>
+        (<div className="event-see-container">
             {events.map(event => {
                 return (
                     <div 
-                    key={event.id}>
+                    key={event.id} className='event-see-box'>
                         <ul>
                             <div><strong>{event.name}</strong></div>
                             <div>{event.description}</div>
-                            <div><strong>Date:</strong>{event.date}</div>
-                            <div><strong>Hour:</strong>{event.hour}</div>
-                            <div><strong>Place:</strong>{event.place}</div>
-                            <Button onClick={()=>selected(event)}>Cancel!</Button>
+                            <div><strong>Date:&nbsp;&nbsp;</strong>{event.date}</div>
+                            <div><strong>Hour:&nbsp;&nbsp;</strong>{event.hour}</div>
+                            <div><strong>Place:&nbsp;&nbsp;</strong>{event.place}</div>
+                            <Button className="buttonOk" onClick={()=>selected(event)}>Cancel!</Button>
                             </ul>
                             </div>
                         )
@@ -67,10 +68,11 @@ export const SeeAllEventsByProfessional = () => {
 
         : 
 
-        (<div>ESTAN VINIENDO</div>)
+        (<div className='iscoming'><p className='loading-message'>The fun is on its way-stay tuned!!!</p></div>)
 
     }
 
  </div>
 )
 }
+

@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userData } from "../userSlice";
-import { addChoosen } from '../detailSlice';
-import { deleteAppointmentById, getAllAppointmentsAdmin } from "../../service/apiCalls";
+import { userData } from "../../userSlice";
+import { addChoosen } from '../../detailSlice';
+import { deleteAppointmentById, getAllAppointmentsAdmin } from "../../../service/apiCalls";
 import { Button } from "react-bootstrap";
 
 

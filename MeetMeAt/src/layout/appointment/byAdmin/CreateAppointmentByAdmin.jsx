@@ -100,10 +100,10 @@
 import React, {useState, useEffect} from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
+import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
-import { InputComponent } from '../../components/input/InputComponent';
-import { createAppointmentAdmin } from '../../service/apiCalls';
+import { InputComponent } from '../../../components/input/InputComponent';
+import { createAppointmentAdmin } from '../../../service/apiCalls';
 
 export const CreateAppointmentByAdmin = () => {
 
