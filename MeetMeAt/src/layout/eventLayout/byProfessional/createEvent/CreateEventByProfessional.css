@@ -1,0 +1,34 @@
+.main-create-event{
+    background-image: url('../../../../assets/A5.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vw;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.create-event-card{
+    width: 50vw;
+}
+.create-event-card .inputevent{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* .create-event-card .inputevent:focus{
+    outline: none;
+    box-shadow: 0 0 5 rgba(30, 144, 255, 0.5);
+} */
+
+.buttonOk{
+    text-align: center;
+    margin-top: 20px;
+}
+.buton-position-event{
+    display: flex;
+    justify-content: center;
+}
+

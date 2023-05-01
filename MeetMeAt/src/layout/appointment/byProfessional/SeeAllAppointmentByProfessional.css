@@ -22,6 +22,10 @@
     transition: all 0.25s;
     background-color: rgba(225, 230, 238, 0.819);
 }
+.iscoming{
+    display: flex;
+    justify-content: center;
+}
 .loading-message{
     margin-top: 20px;
 }

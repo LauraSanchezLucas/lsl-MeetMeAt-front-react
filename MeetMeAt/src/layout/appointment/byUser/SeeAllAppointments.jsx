@@ -57,7 +57,7 @@ export const SeeAllAppointment = () => {
 
                 :
 
-                (<div className='loading-message'>The fun is on its way-stay tuned!!!</div>)
+                (<div className='iscoming'><p className='loading-message'>The fun is on its way-stay tuned!!!</p></div>)
 
             }
         </Row>

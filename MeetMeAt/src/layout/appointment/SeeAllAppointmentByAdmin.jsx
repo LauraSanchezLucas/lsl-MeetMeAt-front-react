@@ -71,7 +71,7 @@ export const SeeAllAppointmentByAdmin = () => {
 
         : 
 
-        (<div>ESTAN VINIENDO</div>)
+        (<div className='iscoming'><p className='loading-message'>The fun is on its way-stay tuned!!!</p></div>)
 
     }
  </div>
