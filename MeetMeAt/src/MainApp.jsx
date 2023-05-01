@@ -6,7 +6,7 @@ import { Login } from './layout/login/Login';
 import { NavBarComponent } from './components/navbar/NavbarComponent';
 import { ProfileUser } from './layout/profile/ProfileUser';
 import { SeeAllAppointment } from './layout/user/Appointmnts/SeeAllAppointments';
-import { BookAppointment } from './layout/user/BookAppointment';
+import { SeeEventsUser } from './layout/eventLayout/byUser/SeeEventsUser';
 import { CreateEventByAdmin } from './layout/eventLayout/CreateEventByAdmin';
 import { CreateRole } from './layout/role/CreateRole';
 import { SeeAllRoles } from './layout/role/SeeAllRoles';
@@ -37,7 +37,7 @@ export const MainApp = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<ProfileUser />} />
         <Route path='/all/events' element={<SeeEvents />} />
-        <Route path='/create/appointment' element={<BookAppointment />} />
+        <Route path='/create/appointment' element={<SeeEventsUser />} />
         <Route path='/appointment' element={<SeeAllAppointment />} />
         <Route path='/newevent' element={<CreateEventByAdmin />} />
         <Route path='/newrole' element={<CreateRole />} />

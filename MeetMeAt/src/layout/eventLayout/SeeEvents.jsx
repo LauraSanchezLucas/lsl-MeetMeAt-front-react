@@ -30,6 +30,7 @@ export const SeeEvents = () => {
                 }).catch((error) => console.log(error));
         }
     }, [events]);
+    console.log(events, 'tytyty')
 
     const selected = (event) => {
         //Primero guardo en RDX los datos escogidos...
@@ -49,6 +50,7 @@ export const SeeEvents = () => {
                         {events.map((event)=>(
                             <Col key={event.id} lg={5} sm={5}>
                                     <Card>
+                                            <Card.Img variant='top' src={event.image}></Card.Img>
                                         <Card.Body>
                                             <Card.Title>{event.name}</Card.Title>
                                             <Card.Text>Description: {event.description}</Card.Text>
