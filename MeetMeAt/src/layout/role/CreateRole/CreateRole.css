@@ -1,21 +1,32 @@
-.create-role{
-    background-image: url('../../../assets/A6.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    min-height: 150vw;
+.admin-create-role{
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 70vh;
 }
-.centre-role{
-color: white;
+.role-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.admin-create-role-card{
+    background-color: rgba(52, 50, 50, 0.162);
+    padding: 2vw;
+    border-radius: 1em;
+    width: 80vw;
+    box-shadow: inset 5px 5px 5px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+}
+.admin-create-role-card .inputrole{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.role-h5{
+    margin-top: 5vh;
 }
 
-@media (min-width: 575px) {
-    .create-role{
-        min-height: 50vw;
-    }
-    .centre-role{
-      width: 40em;
-        }
-}

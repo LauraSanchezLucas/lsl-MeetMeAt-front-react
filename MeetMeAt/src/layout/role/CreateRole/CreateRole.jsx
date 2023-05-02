@@ -40,14 +40,14 @@ export const CreateRole = () => {
     }
     return (
         <>
-            <div className='create-role'>
-                <Container>
+        <h5 className='role-h5'>Create Role!</h5>
+            <div className='admin-create-role'>
                     <Form>
-                        <Row className="mb-3 centre-role">
+                        <Row className="mb-3 admin-create-role-card">
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label variant='white'>Name</Form.Label>
                                 <InputComponent
-                                    className={"inputlogin"}
+                                    className={"inputrole"}
                                     required={true}
                                     type={"text"}
                                     name={"name"}
@@ -57,11 +57,10 @@ export const CreateRole = () => {
                                 />
                             </Form.Group>
                         </Row>
-                        <div>
-                            <Button onClick={createRoles} variant="primary">Submit</Button>
+                        <div className='buton-position-event'>
+                            <Button className='buttonOk' onClick={createRoles} variant="primary">Submit</Button>
                         </div>
                     </Form>
-                </Container>
             </div>
         </>
     );
