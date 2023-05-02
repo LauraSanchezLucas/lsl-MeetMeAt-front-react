@@ -198,6 +198,15 @@ export const getAllRoles = async (token) => {
   };
   return await axios.get(`${root}/role`, config);
 };
+// SEE ALL ROLES WITHOUT ADMIN BY ADMIN 
+export const getAllRolesNotAdmin = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.get(`${root}/roles`, config);
+};
 // UPDATE ROLES ADMIN
 export const updateRoleByAdmin = async (id, token) => {
   const config = {

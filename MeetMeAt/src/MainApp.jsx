@@ -17,10 +17,9 @@ import { SeeAllAppointmentByAdmin } from './layout/appointment/byAdmin/SeeAllApp
 import { CreateAppointmentByAdmin } from './layout/appointment/byAdmin/CreateAppointmentByAdmin';
 import { CreateEventByProfessional } from './layout/eventLayout/byProfessional/createEvent/CreateEventByProfessional';
 import { SeeAllAppointmentByProfessional } from './layout/appointment/byProfessional/SeeAllAppointmentByProfessional';
-import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin';
+import { CreateUserByAdmin } from './layout/user/CreateUserByAdmin/CreateUserByAdmin';
 import { SeeEvents } from './layout/eventLayout/byAdmin/SeeEvents/SeeEvents';
 import { SeeAllEventsByProfessional } from './layout/eventLayout/byProfessional/seeAllEvents/SeeAllEventsByProfessional';
-// import { UpdateUserByAdmin } from './layout/user/UpdateUserByAdmin';
 import { FooterComponent } from './components/footer/FooterComponent';
 import { UpdateProfile } from './layout/profile/UpdateProfileUser/UpdateProfile';
 
@@ -51,8 +50,6 @@ export const MainApp = () => {
         <Route path='/newuseradmin' element={<CreateUserByAdmin />} />
         <Route path='/update/profile' element={<UpdateProfile/>} />
         <Route path='/all/events/professional' element={<SeeAllEventsByProfessional />} />
-        {/* <Route path='/alvaro' element={<UpdateUserByAdmin />} /> */}
-        {/* <Route path='/specialty' element={<SeeAllEventsByProfessional />} /> */}
       </Routes>
       <FooterComponent/>
     </div>

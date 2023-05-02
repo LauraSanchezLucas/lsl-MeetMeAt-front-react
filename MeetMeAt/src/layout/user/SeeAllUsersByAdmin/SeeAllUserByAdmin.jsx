@@ -6,7 +6,7 @@ import { deleteUserByAdmin, getAllUsers } from "../../../service/apiCalls";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { addChoosen } from "../../detailSlice";
 import { UpdateUserAdminM } from '../../../components/modal/UpdateUserAdminM';
-import './SeeAllUsersByAdmin.css';
+// import './SeeAllUsersByAdmin.css';
 
 
 
@@ -99,6 +99,7 @@ return (
                             <Card.Text><strong>Phone:</strong> &nbsp; {user?.phone} &nbsp;</Card.Text>
                             <Card.Text><strong>Role:</strong> &nbsp; {user?.Role.name} &nbsp;</Card.Text>
                             <Button className="buttonOk" onClick={() => selected(user)}>Cancel!</Button>
+                            <UpdateUserAdminM />
                         </Card.Body>
                     </Card>
                 </Col>
