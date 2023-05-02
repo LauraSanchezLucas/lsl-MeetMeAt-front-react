@@ -94,7 +94,7 @@ return (
                     <Card className='admin-card-event'>
                         <Card.Body>
                             <Card.Title>{user.name}</Card.Title>
-                            <Card.Text><strong>Surname:</strong> &nbsp; {user?.surname} &nbsp;</Card.Text>
+                            {/* <Card.Text><strong>Surname:</strong> &nbsp; {user?.surname} &nbsp;</Card.Text> */}
                             <Card.Text><strong>Email:</strong> &nbsp; {user?.email} &nbsp;</Card.Text>
                             <Card.Text><strong>Phone:</strong> &nbsp; {user?.phone} &nbsp;</Card.Text>
                             <Card.Text><strong>Role:</strong> &nbsp; {user?.Role.name} &nbsp;</Card.Text>
