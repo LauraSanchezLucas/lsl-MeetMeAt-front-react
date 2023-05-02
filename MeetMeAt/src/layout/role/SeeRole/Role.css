@@ -1,8 +1,5 @@
 .event-background{
-    background-image: url('../../../assets/A6.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: rgba(231, 230, 229, 0.323);
     min-height: 100vh;
     margin: 0;
     display:flex;
