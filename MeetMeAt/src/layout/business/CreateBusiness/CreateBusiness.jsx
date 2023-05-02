@@ -91,7 +91,7 @@ export const CreateBusiness = () => {
                 />
               </Form.Group>
               <Form.Label>User:</Form.Label>
-              <Form.Select name={"user_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+              <Form.Select className='inputevent' name={"user_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
                 <option>Choose user:</option>
                 {users.map((user) => {
                   return (
@@ -100,7 +100,7 @@ export const CreateBusiness = () => {
                 })}
               </Form.Select>
               <Form.Label>Specialty:</Form.Label>
-              <Form.Select name={"specialty_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+              <Form.Select className='inputevent' name={"specialty_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
                 <option>Choose specialty:</option>
                 {specialties.map((specialty) => {
                   return (
