@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { userData } from '../../userSlice';
+import { userData } from '../../../userSlice';
 import { useNavigate } from 'react-router-dom';
-import { InputComponent } from '../../../components/input/InputComponent';
-import { createEvents, getAllBusinesses } from '../../../service/apiCalls';
+import { InputComponent } from '../../../../components/input/InputComponent';
+import { createEvents, getAllBusinesses } from '../../../../service/apiCalls';
+import './CreateEventByAdmin.css'
 
 export const CreateEventByAdmin = () => {
 
@@ -63,10 +64,10 @@ export const CreateEventByAdmin = () => {
   
   return (
     <>
-    <div className='main-create-event'>
+    <div className='admin-main-create-event'>
           <Form>
               <Row className="mb-3">
-              <div className='create-event-card'>
+              <div className='admin-create-event-card'>
               <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label variant='white'>Url Image</Form.Label>
                   <InputComponent
