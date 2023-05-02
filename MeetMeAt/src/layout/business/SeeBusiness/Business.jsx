@@ -2,12 +2,13 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from 'react';
-import { deleteBusinessById, getAllBusinesses } from '../../service/apiCalls';
+import { deleteBusinessById, getAllBusinesses } from '../../../service/apiCalls';
 import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
+import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
+import './Business.css'
 
 export const Business = () => {
 
@@ -41,13 +42,12 @@ export const Business = () => {
     }
     return (
         <>
-            <div>
-                <Container>
-                    <h1>Business:</h1>
-                    <Row>
+            <h5 className='role-h5'>Business:</h5>
+            <div className='admin-background'>
+                    <Row className='admin-card-main'>
                         {businesses.map((business)=>(
                             <Col key={business.id} lg={5} sm={5}>
-                                    <Card>
+                                    <Card className='admin-card-event'>
                                         <Card.Body>
                                             <Card.Title>{business.name}</Card.Title>
                                             <Card.Text>Name: {business.User.name}</Card.Text>
@@ -62,7 +62,6 @@ export const Business = () => {
                             </Col>
                             ))}           
                     </Row>
-                </Container>
             </div>
         </>
     )
