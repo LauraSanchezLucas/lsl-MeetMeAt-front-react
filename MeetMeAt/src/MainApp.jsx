@@ -12,7 +12,7 @@ import { CreateRole } from './layout/role/CreateRole/CreateRole';
 import { SeeAllRoles } from './layout/role/SeeRole/SeeAllRoles';
 import { Business } from './layout/business/SeeBusiness/Business';
 import { CreateBusiness } from './layout/business/CreateBusiness/CreateBusiness';
-import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin';
+import { SeeAllUserByAdmin } from './layout/user/SeeAllUsersByAdmin/SeeAllUserByAdmin';
 import { SeeAllAppointmentByAdmin } from './layout/appointment/byAdmin/SeeAllAppointmentByAdmin';
 import { CreateAppointmentByAdmin } from './layout/appointment/byAdmin/CreateAppointmentByAdmin';
 import { CreateEventByProfessional } from './layout/eventLayout/byProfessional/createEvent/CreateEventByProfessional';
