@@ -1,24 +1,28 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../components/input/InputComponent';
-import { createBusinesses } from '../../../service/apiCalls';
+import { createBusinesses, findAllSpecialty, getAllUsers } from '../../../service/apiCalls';
 import './CreateBusiness.css'
 
 
 export const CreateBusiness = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const credentialRdx = useSelector(userData);
 
-    const credentialsRdx = useSelector(userData);
+  const [users, setUsers] = useState([]);
+  const [specialties, setSpecialties] = useState([]);
+
 
   const [credential, setCredential] = useState({
     notes: "",
-    user_id: "", 
+    user_id: "",
     specialty_id: ""
   });
+  console.log(credential,'ffffff')
 
   const inputHandler = (e) => {
     setCredential((prevState) => ({
@@ -27,73 +31,90 @@ export const CreateBusiness = () => {
     }));
   };
 
-  
-  const checkError = (e) => {};
+  useEffect(() => {
+    if (users.length === 0) {
+      getAllUsers(credentialRdx.credentials.token)
+        .then(
+          result => {
+            console.log(result.data.user, 'tttttttt')
+            setUsers(result.data.user)
+          }
+        )
+        .catch(error => console.log(error));
+    }
+    console.log(users, 'uuuu')
+  }, [users])
+
+  useEffect(() => {
+    if (specialties.length === 0) {
+      findAllSpecialty(credentialRdx.credentials.token)
+        .then((result) => {
+          console.log(result, 'yuhiu')
+          setSpecialties(result.data.specialty)
+        }).catch((error) => console.log(error));
+    } console.log(specialties, 'aaaa')
+  }, [specialties]);
+
+
+  const checkError = (e) => { };
 
   const createBusiness = () => {
-    
-    createBusinesses(credential, credentialsRdx.credentials.token)
-    .then ( respuesta => { 
+
+    createBusinesses(credential, credentialRdx.credentials.token)
+      .then(respuesta => {
         setCredential(respuesta.data)
         setTimeout(() => {
           navigate("/");
         }, 500);
-    }) .catch(error => {setCredential(error.message)})
-}
+      }).catch(error => { setCredential(error.message) })
+  }
 
 
 
-  
+
   return (
     <>
-    <h5 className='role-h5'>Create Business!</h5>
-    <div className='admin-main-create-business'>
-          <Form> 
-            <Row className="mb-3">
+      <h5 className='role-h5'>Create Business!</h5>
+      <div className='admin-main-create-business'>
+        <Form>
+          <Row className="mb-3">
             <div className='admin-create-business-card'>
-                  <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>Notes</Form.Label>
-                  <InputComponent
-                    className={"inputevent"}
-                    type={"text"} 
-                    name={"notes"} 
-                    placeholder={"Enter place"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
-
-                  <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label variant='white'>User</Form.Label>
-                  <InputComponent
-                    className={"inputevent"}
-                    required={true}
-                    type={"text"} 
-                    name={"user_id"}
-                    placeholder={"Enter user"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridSurname">
-                  <Form.Label>Specialty</Form.Label>
-                  <InputComponent
-                    className={"inputevent"}
-                    type={"text"} 
-                    name={"specialty_id"} 
-                    placeholder={"Enter description"} 
-                    changeFunction ={(e)=>inputHandler(e)}
-                    blurFunction={(e) => checkError(e)}
-                    />
-                  </Form.Group>
-                  </div>
-              </Row>
-             
-              <div className='buton-position-event'>
-              <Button className='buttonOk' onClick={ createBusiness } variant="primary">Submit</Button>
-              </div>
-          </Form>
+              <Form.Group as={Col} controlId="formGridCity">
+                <Form.Label>Notes</Form.Label>
+                <InputComponent
+                  className={"inputevent"}
+                  type={"text"}
+                  name={"notes"}
+                  placeholder={"Enter place"}
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+              </Form.Group>
+              <Form.Label>User:</Form.Label>
+              <Form.Select name={"user_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+                <option>Choose user:</option>
+                {users.map((user) => {
+                  return (
+                    <option key={user.name} value={user.id}>{user.name}</option>
+                  )
+                })}
+              </Form.Select>
+              <Form.Label>Specialty:</Form.Label>
+              <Form.Select name={"specialty_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+                <option>Choose specialty:</option>
+                {specialties.map((specialty) => {
+                  return (
+                    <option key={specialty.type} value={specialty.id}>{specialty.type}</option>
+                  )
+                })}
+              </Form.Select>
+            </div>
+          </Row>
+          <div className='buton-position-event'>
+            <Button className='buttonOk' onClick={createBusiness} variant="primary">Submit</Button>
+          </div>
+        </Form>
       </div>
-      </>
+    </>
   );
 }

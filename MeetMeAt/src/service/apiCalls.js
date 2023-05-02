@@ -230,3 +230,13 @@ export const deleteBusinessById = async (id, token) => {
   };
   return await axios.delete(`${root}/deletebusiness/${id}`, config);
 };
+// ---------------------------------SPECIALTY-------------------------------------------------
+// SEE ALL BUSINESSES BY ADMIN
+export const findAllSpecialty = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.get(`${root}/specialty`, config);
+};

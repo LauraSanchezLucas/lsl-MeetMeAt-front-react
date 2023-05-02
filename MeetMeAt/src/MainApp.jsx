@@ -52,6 +52,7 @@ export const MainApp = () => {
         <Route path='/update/profile' element={<UpdateProfile/>} />
         <Route path='/all/events/professional' element={<SeeAllEventsByProfessional />} />
         {/* <Route path='/alvaro' element={<UpdateUserByAdmin />} /> */}
+        {/* <Route path='/specialty' element={<SeeAllEventsByProfessional />} /> */}
       </Routes>
       <FooterComponent/>
     </div>

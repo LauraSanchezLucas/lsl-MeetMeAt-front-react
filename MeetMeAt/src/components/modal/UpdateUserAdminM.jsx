@@ -12,8 +12,8 @@ export const UpdateUserAdminM = () =>{
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+      <Button className='buttonOk' variant="primary" onClick={handleShow}>
+        Update User!
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -23,14 +23,6 @@ export const UpdateUserAdminM = () =>{
         <Modal.Body>
           <UpdateUserByAdmin/>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
