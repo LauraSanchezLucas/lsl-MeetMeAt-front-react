@@ -1,4 +1,4 @@
-.appointment-background{
+.appointment-background {
     background-image: url('../../../assets/A6.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -6,12 +6,14 @@
     min-height: 35vw;
     margin: 0;
 }
-.appointments-container{
+
+.appointments-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.appointment-box{
+
+.appointment-box {
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
@@ -22,15 +24,17 @@
     transition: all 0.25s;
     background-color: rgba(225, 230, 238, 0.819);
 }
-.iscoming{
+
+.iscoming {
     display: flex;
     justify-content: center;
 }
-.loading-message{
+
+.loading-message {
     margin-top: 20px;
 }
 
-.buttonOk{
+.buttonOk {
     background-color: rgb(95, 94, 94);
     border: none;
 }

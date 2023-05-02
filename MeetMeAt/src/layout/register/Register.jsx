@@ -10,12 +10,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Register.css";
 
-
-
 export const Register = () => {
 
   const navigate = useNavigate();
-  //HOOK
+
   const [credential, setCredential] = useState({
     name: "",
     surname: "",
@@ -24,7 +22,6 @@ export const Register = () => {
     password: ""
   });
 
-  // HANDLERS
   const inputHandler = (e) => {
     setCredential((prevState) => ({
       ...prevState,
@@ -32,15 +29,14 @@ export const Register = () => {
 
     }));
   };
-  // HOOK VALIDATION
+
   const [validationCredential, setValidationCredential] = useState({
     nameValidation: false,
     surnameValidation: false,
     emailValidation: false,
     phoneValidation: false,
     passwordValidation: false,
-  })
-  // HOOK ERROR
+  });
   const [credentialError, setCredentialError] = useState({
     nameError: "",
     surnameError: "",
@@ -52,35 +48,31 @@ export const Register = () => {
   const [registerAct, setRegisterAct] = useState(false);
 
   const [registerSuccess, setRegisterSuccess] = useState(false);
- 
 
-  //USEEFFECT
   useEffect(() => {
     for (let error in credentialError) {
       if (credentialError[error] !== '') {
         setRegisterAct(false);
         return;
-      }
-    };
+      }};
     for (let empty in credential) {
       if (credential[empty] === '') {
         setRegisterAct(false);
         return;
-      }
-    };
+      }};
     for (let Helpers in validationCredential) {
       if (validationCredential[Helpers] === false) {
         setRegisterAct(false);
         return;
-      }
-    };
-    
-    setRegisterAct(true);
-  },[credentialError, credential, validationCredential]);
+      }};
 
-  //FUNCIONES
+    setRegisterAct(true);
+  }, [credentialError, credential, validationCredential]);
+
   const checkError = (e) => {
+
     let error = '';
+
     let checked = Helpers(
       e.target.name,
       e.target.value,
@@ -100,12 +92,11 @@ export const Register = () => {
     }));
   };
 
-
   const SubmitMe = () => {
     registerMe(credential)
-      .then(()=>{
+      .then(() => {
         setRegisterSuccess(true);
-        setTimeout(()=>{
+        setTimeout(() => {
           navigate('/');
           window.location.reload();
         }, 2000);
@@ -191,7 +182,7 @@ export const Register = () => {
               <div className='errorMessage'>{credentialError.passwordError}</div>
             </Form.Group>
           </Row>
-         <div className="registerOk">
+          <div className="registerOk">
             <Button onClick={SubmitMe} variant="primary" className="register-button">Sing Up!</Button>
           </div>
         </Form>

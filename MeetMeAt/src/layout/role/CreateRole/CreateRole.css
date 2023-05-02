@@ -1,15 +1,17 @@
-.admin-create-role{
+.admin-create-role {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 70vh;
 }
-.role-center{
+
+.role-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.admin-create-role-card{
+
+.admin-create-role-card {
     background-color: rgba(52, 50, 50, 0.162);
     padding: 2vw;
     border-radius: 1em;
@@ -19,14 +21,15 @@
     text-align: center;
     transition: all 0.25s;
 }
-.admin-create-role-card .inputrole{
+
+.admin-create-role-card .inputrole {
     border-radius: 5px;
     border: none;
     padding: 10px;
     margin-top: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-.role-h5{
+
+.role-h5 {
     margin-top: 5vh;
 }
-

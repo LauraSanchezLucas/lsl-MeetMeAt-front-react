@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
@@ -16,13 +16,11 @@ export const CreateBusiness = () => {
   const [users, setUsers] = useState([]);
   const [specialties, setSpecialties] = useState([]);
 
-
   const [credential, setCredential] = useState({
     notes: "",
     user_id: "",
     specialty_id: ""
   });
-  console.log(credential,'ffffff')
 
   const inputHandler = (e) => {
     setCredential((prevState) => ({
@@ -36,25 +34,21 @@ export const CreateBusiness = () => {
       getAllUsers(credentialRdx.credentials.token)
         .then(
           result => {
-            console.log(result.data.user, 'tttttttt')
             setUsers(result.data.user)
           }
         )
         .catch(error => console.log(error));
     }
-    console.log(users, 'uuuu')
   }, [users])
 
   useEffect(() => {
     if (specialties.length === 0) {
       findAllSpecialty(credentialRdx.credentials.token)
         .then((result) => {
-          console.log(result, 'yuhiu')
           setSpecialties(result.data.specialty)
         }).catch((error) => console.log(error));
-    } console.log(specialties, 'aaaa')
+    }
   }, [specialties]);
-
 
   const checkError = (e) => { };
 
@@ -67,11 +61,8 @@ export const CreateBusiness = () => {
           navigate("/");
         }, 500);
       }).catch(error => { setCredential(error.message) })
-  }
-
-
-
-
+  };
+  
   return (
     <>
       <h5 className='role-h5'>Create Business!</h5>

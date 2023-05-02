@@ -1,16 +1,17 @@
-.updateProfile-background{
+.updateProfile-background {
     background-image: url('../../../assets/updateProfile.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
-.centerUpdate{
+
+.centerUpdate {
     display: flex;
     justify-content: center;
 }
 
-.update-form{
+.update-form {
     border-radius: 5px;
     margin-bottom: 10px;
     margin-top: 5vw;
@@ -21,5 +22,5 @@
     text-align: center;
     background-color: rgba(152, 152, 153, 0.819);
     width: 50vw;
-    
+
 }

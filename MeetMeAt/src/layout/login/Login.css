@@ -1,11 +1,13 @@
-.errorMessage{
+.errorMessage {
     color: red;
-    }
-    .login-button{
-        background-color: rgb(95, 94, 94);
-        border: none;
-    }
-    .loginOk{
-        display: flex;
-        justify-content: center;
-    }
+}
+
+.login-button {
+    background-color: rgb(95, 94, 94);
+    border: none;
+}
+
+.loginOk {
+    display: flex;
+    justify-content: center;
+}

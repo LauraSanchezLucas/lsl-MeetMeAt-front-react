@@ -11,7 +11,6 @@ import './SeeEventsUser.css';
 export const SeeEventsUser = () => {
 
     const navigate = useNavigate();
-
     const credentialsRdx = useSelector(userData);
 
     const [events, setEvents] = useState([]);
@@ -19,7 +18,6 @@ export const SeeEventsUser = () => {
     const [credential, setCredential] = useState({
         user_id: credentialsRdx.credentials.user,
         event_id: "",
-
     });
 
     useEffect(() => {
@@ -32,25 +30,24 @@ export const SeeEventsUser = () => {
     }, [events]);
 
     const bookAppoint = (eventId) => {
-
         const appointmentData = {
             user_id: credentialsRdx.credentials.user,
             event_id: eventId,
-        }
-
+        };
         getAppointment(appointmentData, credentialsRdx.credentials.token)
             .then(respuesta => {
                 setCredential({
                     ...credential,
                     event_id: eventId
-                })
+                });
                 setTimeout(() => {
                     navigate("/appointment");
                 }, 500);
             }).catch(error => {
                 console.log(error)
             })
-    }
+    };
+
     return (
         <div className='event-user-background'>
             <Row className='card-main'>
@@ -65,7 +62,7 @@ export const SeeEventsUser = () => {
                                 <Card.Text><strong>Date:</strong><br /> {event.date} </Card.Text>
                                 <Card.Text><strong>Hour:</strong><br /> {event.hour} </Card.Text>
                                 <Button
-                                    onClick={() => { console.log(event.id, 'siiii'); bookAppoint(event.id) }} variant="primary" className='buttonOk'>
+                                    onClick={() => { bookAppoint(event.id) }} variant="primary" className='buttonOk'>
                                     Book!
                                 </Button>
                             </Card.Body>

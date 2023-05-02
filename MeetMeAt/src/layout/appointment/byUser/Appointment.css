@@ -1,18 +1,19 @@
-.appointments-background{
+.appointments-background {
     background-image: url('../../../assets/A6.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: auto;
     margin: 0;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
-.card-center{
+
+.card-center {
     width: 30em;
 }
 
-.appointment-box{
+.appointment-box {
     border-radius: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -24,14 +25,15 @@
     transition: all 0.25s;
     background-color: rgba(225, 230, 238, 0.819);
 }
-.loading-message{
+
+.loading-message {
     width: 8em;
     font-size: 5em;
     color: rgb(202, 239, 248);
-    text-shadow: 0  4px black;
+    text-shadow: 0 4px black;
 }
 
-.buttonOk{
+.buttonOk {
     background-color: rgb(95, 94, 94);
     border: none;
 }

@@ -1,4 +1,4 @@
-.profile-background{
+.profile-background {
     background-image: url('../../assets/profileUser.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.profile-container{
+.profile-container {
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 10px;
@@ -19,7 +19,5 @@
     text-align: center;
     background-color: rgba(152, 152, 153, 0.819);
     width: 50vw;
-    
+
 }
-
-

@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/esm/Container';
 import { getUserProfile } from '../../service/apiCalls';
 import { userData } from '../userSlice';
 import './ProfileUser.css'
-import { Button, Row } from 'react-bootstrap';
-
-
-
-
 
 
 export const ProfileUser = () => {
 
     const credentialRdx = useSelector(userData);
-    console.log(credentialRdx.credentials, 'hola')
-    console.log(credentialRdx, 'adios')
+
     const [user, setUser] = useState({
         name: "",
         surname: "",
@@ -24,13 +17,10 @@ export const ProfileUser = () => {
         phone: ""
     });
 
-
-    // Este tipo de useEffect siempre se ejecuta cuando se actualice cualquier hook.....
     useEffect(() => {
         if (user.name === "") {
             getUserProfile(credentialRdx?.credentials?.token)
                 .then((result) => {
-                    console.log(result.data, 'si')
                     setUser({
                         name: result.data.user.name,
                         surname: result.data.user.surname,
@@ -41,6 +31,7 @@ export const ProfileUser = () => {
                 .catch((error) => console.log(error));
         }
     }, []);
+    
     return (
         <>
             <div className='profile-background'>

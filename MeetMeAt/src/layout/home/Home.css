@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 .main-home {
     background-image: url("../../assets/principal.jpg");
     background-repeat: no-repeat;
@@ -12,6 +13,7 @@
     position: relative;
     z-index: -1;
 }
+
 .main-home::before {
     content: "";
     position: absolute;
@@ -22,6 +24,7 @@
     right: 60%;
     bottom: 0;
 }
+
 .logo {
     position: fixed;
     z-index: 1;
@@ -31,11 +34,13 @@
     align-items: center;
     top: 25%;
 }
+
 .logo img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
+
 .slogan {
     position: absolute;
     z-index: 1;
@@ -43,14 +48,17 @@
     margin: 5%;
     top: 60%;
 }
+
 .business-side {
     background-color: rgb(50, 50, 50);
 }
+
 .business-container {
     max-width: 60%;
     max-height: 60%;
     margin: 5vw;
 }
+
 .about-side {
     background-image: url("../../assets/noria.jpg");
     background-repeat: no-repeat;
@@ -60,6 +68,7 @@
     color: rgb(38, 38, 37);
     z-index: -2;
 }
+
 .paragraph1 {
     display: flex;
     justify-content: center;
@@ -67,21 +76,25 @@
     font-size: 3vw;
     margin-bottom: 1vw;
 }
+
 .paragraph2 {
     font-size: 2.5vw;
     width: 40vw;
     margin-left: 33vw;
 }
+
 .paragraph3 {
     font-size: 2.5vw;
     width: 23vw;
     margin-left: 33vw;
 }
+
 .service-side {
     background-color: rgb(50, 50, 50);
     display: flex;
     justify-content: center;
 }
+
 .card-service {
     width: 40vw;
     height: fit-content;
@@ -94,6 +107,7 @@
     max-height: 50%;
     margin: 2vw;
 }
+
 .collage-side {
     display: flex;
     justify-content: end;
@@ -104,49 +118,61 @@
     grid-template-rows: 90px 90px 90px;
     grid-gap: 0.5%;
 }
+
 .image-coll {
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
+
 .item-1 {
     grid-row: 1/3;
 }
+
 .item-3 {
     grid-column: 3/5;
 }
+
 .item-5 {
     grid-row: 2/4;
 }
+
 .item-7 {
     grid-column: 1/1;
 }
+
 .item-8 {
     grid-column: 3/5;
 }
+
 @media (min-width: 575px) {
     .main-home {
         height: 90vh;
         margin-top: -8vw;
     }
+
     .collage-side {
         margin: 5%;
         grid-template-columns: 170px 170px 170px 170px;
         grid-template-rows: 150px 150px 150px;
         grid-gap: 0.5%;
     }
+
     .about-side {
         height: 30vw;
     }
+
     .paragraph1 {
         margin-top: 0.2vw;
     }
+
     .paragraph2 {
         font-size: 1.5vw;
         margin-left: 31.5vw;
         margin-top: -1em;
     }
+
     .paragraph3 {
         font-size: 1.5vw;
         margin-left: 31.5vw;

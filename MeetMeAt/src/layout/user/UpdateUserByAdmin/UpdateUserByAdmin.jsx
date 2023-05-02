@@ -6,23 +6,22 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Form from 'react-bootstrap/esm/Form'
-import { userData } from '../userSlice';
-import { InputComponent } from '../../components/input/InputComponent';
-import { updateAllUserByAdmin } from '../../service/apiCalls';
-import { detailData } from '../detailSlice';
+import { userData } from '../../userSlice';
+import { InputComponent } from '../../../components/input/InputComponent';
+import { updateAllUserByAdmin } from '../../../service/apiCalls';
+import { detailData } from '../../detailSlice';
 
 
 export const UpdateUserByAdmin = () => {
 
     const credentialsRdx = useSelector(userData);
     const credentRdx = useSelector(detailData);
-
     const navigate = useNavigate();
 
     let params = credentRdx.choosenObject.id;
-    console.log(credentRdx, 'turururuurur');
 
     const [credential, setCredential] = useState({
+        id: params,
         name: "",
         surname: "",
         email: "",
@@ -38,8 +37,8 @@ export const UpdateUserByAdmin = () => {
             )
             .catch(error => console.log(error))
     };
+
     return (
-        
         <div className='main_register'>
             <Container>
                 <Form className='formularioRegistro'>
@@ -51,7 +50,7 @@ export const UpdateUserByAdmin = () => {
                                 required={true}
                                 type={"text"}
                                 name={"name"}
-                                placeholder={credentialsRdx?.credentials?.user?.name}
+                                placeholder={credentRdx.choosenObject.name}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
@@ -62,12 +61,11 @@ export const UpdateUserByAdmin = () => {
                                 className={"inputlogin"}
                                 type={"text"}
                                 name={"surname"}
-                                placeholder={credentialsRdx?.credentials?.user?.surname}
+                                placeholder={credentRdx.choosenObject.surname}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
                         </Form.Group>
-
                     </Row>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridCity">
@@ -76,7 +74,7 @@ export const UpdateUserByAdmin = () => {
                                 className={"inputlogin"}
                                 type={"email"}
                                 name={"email"}
-                                placeholder={credentialsRdx.credentials.user.email}
+                                placeholder={credentRdx.choosenObject.email}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
@@ -87,7 +85,7 @@ export const UpdateUserByAdmin = () => {
                                 className={"inputlogin"}
                                 type={"text"}
                                 name={"phone"}
-                                placeholder={credentialsRdx.credentials.user.phone}
+                                placeholder={credentRdx.choosenObject.phone}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
@@ -109,7 +107,7 @@ export const UpdateUserByAdmin = () => {
                                 className={"inputlogin"}
                                 type={"text"}
                                 name={"role_id"}
-                                placeholder={"enter new role"}
+                                placeholder={credentRdx.choosenObject.Role.name}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
