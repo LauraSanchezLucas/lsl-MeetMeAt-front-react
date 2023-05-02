@@ -11,7 +11,7 @@ import { CreateEventByAdmin } from './layout/eventLayout/byAdmin/CreateEvents/Cr
 import { CreateRole } from './layout/role/CreateRole/CreateRole';
 import { SeeAllRoles } from './layout/role/SeeRole/SeeAllRoles';
 import { Business } from './layout/business/SeeBusiness/Business';
-import { CreateBusiness } from './layout/business/CreateBusiness';
+import { CreateBusiness } from './layout/business/CreateBusiness/CreateBusiness';
 import { SeeAllUserByAdmin } from './layout/user/SeeAllUserByAdmin';
 import { SeeAllAppointmentByAdmin } from './layout/appointment/byAdmin/SeeAllAppointmentByAdmin';
 import { CreateAppointmentByAdmin } from './layout/appointment/byAdmin/CreateAppointmentByAdmin';

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
+import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
-import { InputComponent } from '../../components/input/InputComponent';
-import { createBusinesses } from '../../service/apiCalls';
+import { InputComponent } from '../../../components/input/InputComponent';
+import { createBusinesses } from '../../../service/apiCalls';
+import './CreateBusiness.css'
 
 
 export const CreateBusiness = () => {
@@ -45,14 +46,15 @@ export const CreateBusiness = () => {
   
   return (
     <>
-    <div>
-      <Container>
+    <h5 className='role-h5'>Create Business!</h5>
+    <div className='admin-main-create-business'>
           <Form> 
             <Row className="mb-3">
+            <div className='admin-create-business-card'>
                   <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>notes</Form.Label>
+                  <Form.Label>Notes</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"notes"} 
                     placeholder={"Enter place"} 
@@ -60,12 +62,11 @@ export const CreateBusiness = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
-              </Row>
-              <Row className="mb-3">
+
                   <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label variant='white'>User</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     required={true}
                     type={"text"} 
                     name={"user_id"}
@@ -77,7 +78,7 @@ export const CreateBusiness = () => {
                   <Form.Group as={Col} controlId="formGridSurname">
                   <Form.Label>Specialty</Form.Label>
                   <InputComponent
-                    className={"inputlogin"}
+                    className={"inputevent"}
                     type={"text"} 
                     name={"specialty_id"} 
                     placeholder={"Enter description"} 
@@ -85,13 +86,13 @@ export const CreateBusiness = () => {
                     blurFunction={(e) => checkError(e)}
                     />
                   </Form.Group>
+                  </div>
               </Row>
              
-              <div className="buttonRegister">
-              <Button onClick={ createBusiness } variant="primary">Submit</Button>
+              <div className='buton-position-event'>
+              <Button className='buttonOk' onClick={ createBusiness } variant="primary">Submit</Button>
               </div>
           </Form>
-      </Container>
       </div>
       </>
   );

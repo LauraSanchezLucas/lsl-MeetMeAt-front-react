@@ -1,4 +1,3 @@
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from 'react';
@@ -8,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
-import './Business.css'
+
 
 export const Business = () => {
 
