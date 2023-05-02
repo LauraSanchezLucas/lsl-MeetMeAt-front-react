@@ -1,0 +1,21 @@
+.create-role{
+    background-image: url('../../../assets/A6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 150vw;
+    display: flex;
+    justify-content: center;
+}
+.centre-role{
+color: white;
+}
+
+@media (min-width: 575px) {
+    .create-role{
+        min-height: 50vw;
+    }
+    .centre-role{
+      width: 40em;
+        }
+}
