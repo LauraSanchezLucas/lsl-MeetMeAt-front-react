@@ -6,7 +6,7 @@ import { deleteUserByAdmin, getAllUsers } from "../../../service/apiCalls";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { addChoosen } from "../../detailSlice";
 import { UpdateUserAdminM } from '../../../components/modal/UpdateUserAdminM';
-
+import './SeeAllUserByAdmin.css'
 
 export const SeeAllUserByAdmin = () => {
 
@@ -38,20 +38,21 @@ export const SeeAllUserByAdmin = () => {
     };
 
     return (
-        <div className='admin-background'>
-            <Row className='admin-card-main'>
+        <div className='main-background'>
+            <Row className='card-main'>
                 {users.map((user) => (
                     <Col key={user.id} lg={4} sm={4}>
                         <div onClick={() => unSelected(user)} key={user.id}>
-                            <Card className='admin-card-event'>
+                            <Card className='card-style'>
                                 <Card.Body>
                                     <Card.Title>{user.name}</Card.Title>
                                     <Card.Text><strong>Email:</strong> &nbsp; {user?.email} &nbsp;</Card.Text>
                                     <Card.Text><strong>Phone:</strong> &nbsp; {user?.phone} &nbsp;</Card.Text>
                                     <Card.Text><strong>Role:</strong> &nbsp; {user?.Role.name} &nbsp;</Card.Text>
-                                    <Button className="buttonOk" onClick={() => selected(user)}>Cancel!</Button>
+                                    <Button className="buttonOk button-active-admin" onClick={() => selected(user)}>Cancel!</Button>
                                     <UpdateUserAdminM />
                                 </Card.Body>
+                                
                             </Card>
                         </div>
                     </Col>

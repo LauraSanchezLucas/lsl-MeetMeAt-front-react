@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { deleteAppointmentUser, seeAppointment } from '../../../service/apiCalls';
 import { Button, Row } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import './Appointment.css'
 
 export const SeeAllAppointment = () => {
@@ -51,7 +50,7 @@ export const SeeAllAppointment = () => {
                         }
                     </div>)
                     :
-                    (<div className='iscoming'><p className='loading-message'>The fun is on its way-stay tuned!!!</p></div>)
+                    (<div className='loading-message'><p>The fun is on its way-stay tuned!!!</p></div>)
                 }
             </Row>
         </div>

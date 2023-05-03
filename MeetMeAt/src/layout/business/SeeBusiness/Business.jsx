@@ -36,12 +36,12 @@ export const Business = () => {
     
     return (
         <>
-            <h5 className='role-h5'>Business:</h5>
-            <div className='admin-background'>
-                <Row className='admin-card-main'>
+            <h5>Business</h5>
+            <div className='main-background'>
+                <Row className='card-main'>
                     {businesses.map((business) => (
                         <Col key={business.id} lg={5} sm={5}>
-                            <Card className='admin-card-event'>
+                            <Card className='card-style'>
                                 <Card.Body>
                                     <Card.Title>{business.name}</Card.Title>
                                     <Card.Text>Name: {business.User.name}</Card.Text>
@@ -49,7 +49,7 @@ export const Business = () => {
                                     <Card.Text>Email: {business.User.email}</Card.Text>
                                     <Card.Text>Phone: {business.User.phone}</Card.Text>
                                     <Card.Text>Notes: {business.notes}</Card.Text>
-                                    <Button onClick={() => selected(business)}>Cancel!</Button>
+                                    <Button className='buttonOk' onClick={() => selected(business)}>Delete!</Button>
 
                                 </Card.Body>
                             </Card>

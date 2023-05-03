@@ -44,18 +44,18 @@ export const CreateEventByProfessional = () => {
 
   return (
     <>
-      <div className='main-create-event'>
+      <div className='create-event-background'>
         <Form>
           <Row className="mb-3">
             <div className='create-event-card'>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label variant='white'>Url Image</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   required={true}
                   type={"text"}
                   name={"image"}
-                  placeholder={"Enter URL image"}
+                  placeholder={"Enter URL image..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -63,11 +63,11 @@ export const CreateEventByProfessional = () => {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label variant='white'>Name</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   required={true}
                   type={"text"}
                   name={"name"}
-                  placeholder={"Enter name"}
+                  placeholder={"Enter event name..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -75,10 +75,10 @@ export const CreateEventByProfessional = () => {
               <Form.Group as={Col} controlId="formGridSurname">
                 <Form.Label>Description</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   type={"text"}
                   name={"description"}
-                  placeholder={"Enter description"}
+                  placeholder={"Enter event description..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -86,10 +86,10 @@ export const CreateEventByProfessional = () => {
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>Place</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   type={"text"}
                   name={"place"}
-                  placeholder={"Enter place"}
+                  placeholder={"Enter event place..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -97,10 +97,10 @@ export const CreateEventByProfessional = () => {
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Date</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   type={"text"}
                   name={"date"}
-                  placeholder={"Enter date"}
+                  placeholder={"Enter event date..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -108,15 +108,15 @@ export const CreateEventByProfessional = () => {
               <Form.Group as={Col} controlId="formPasswordZip">
                 <Form.Label>Hour</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   type={"text"}
                   name={"hour"}
-                  placeholder={"Enter hour"}
+                  placeholder={"Enter event hour..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
               </Form.Group>
-              <div className='buton-position-event'>
+              <div className='button-action button-action-eventPro'>
                 <Button onClick={createEvent} variant="primary" className='buttonOk'>Create!</Button>
               </div>
             </div>

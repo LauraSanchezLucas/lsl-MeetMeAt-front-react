@@ -1,31 +1,16 @@
-.main-create-event {
+.create-event-background {
     background-image: url('../../../../assets/A5.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 50vw;
+    height: auto;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     margin: 0;
 }
-
 .create-event-card {
     width: 50vw;
 }
-
-.create-event-card .inputevent {
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    margin-top: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.buttonOk {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.buton-position-event {
-    display: flex;
-    justify-content: center;
+.button-action-eventPro{
+    margin-top: 1em;
 }

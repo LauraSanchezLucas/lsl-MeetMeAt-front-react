@@ -9,6 +9,7 @@ export const BusinessModal= () =>{
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <>
       <Nav.Link onClick={handleShow}>Open</Nav.Link>

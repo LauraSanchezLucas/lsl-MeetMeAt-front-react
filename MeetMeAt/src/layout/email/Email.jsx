@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Email.css';
 
@@ -16,16 +16,16 @@ export const Email = () => {
       });
     };
     return (
-        <form ref={form} onSubmit={sendEmail} className='field'>
-          <label>Name</label>
-          <input type="text" name="user_name" className='input-style' />
-          <label>Email</label>
-          <input type="email" name="user_email" className='input-style' />
-          <label>Enter your business CIF</label>
-          <textarea name="message" className='input-style'/>
-          <input type="submit" value="Send" />
-        </form>
-      );
-    };
+      <form ref={form} onSubmit={sendEmail} className='field'>
+        <label>Name</label>
+        <input type="text" name="user_name" className='input-style' />
+        <label>Email</label>
+        <input type="email" name="user_email" className='input-style' />
+        <label>Enter your business CIF</label>
+        <textarea name="message" className='input-style'/>
+        <input type="submit" value="Send" />
+      </form>
+    )
+};
 
     

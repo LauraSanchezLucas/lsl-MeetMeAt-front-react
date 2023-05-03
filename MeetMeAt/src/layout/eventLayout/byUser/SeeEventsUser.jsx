@@ -49,11 +49,11 @@ export const SeeEventsUser = () => {
     };
 
     return (
-        <div className='event-user-background'>
+        <div className='main-background'>
             <Row className='card-main'>
                 {events.map((event) => (
                     <Col key={event.id} lg={4} sm={4}>
-                        <Card className='card-event'>
+                        <Card className='card-style'>
                             <Card.Img className='event-image' variant='top' src={event.image} />
                             <Card.Body>
                                 <Card.Title>{event.name}</Card.Title>

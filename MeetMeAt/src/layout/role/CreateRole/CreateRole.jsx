@@ -37,24 +37,26 @@ export const CreateRole = () => {
     
     return (
         <>
-            <h5 className='role-h5'>Create Role!</h5>
-            <div className='admin-create-role'>
+            <h5>Create Role!</h5>
+            <div className='create-background main-background'>
                 <Form>
-                    <Row className="mb-3 admin-create-role-card">
+                    <Row className="card-main" >
+                    <div className="card-style card-shadow card-role-shadow">
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label variant='white'>Name</Form.Label>
                             <InputComponent
-                                className={"inputrole"}
+                                className={"input-style"}
                                 required={true}
                                 type={"text"}
                                 name={"name"}
-                                placeholder={"Enter name"}
+                                placeholder={"Enter role name..."}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
                         </Form.Group>
+                        </div>
                     </Row>
-                    <div className='buton-position-event'>
+                    <div className='button-action'>
                         <Button className='buttonOk' onClick={createRoles} variant="primary">Submit</Button>
                     </div>
                 </Form>

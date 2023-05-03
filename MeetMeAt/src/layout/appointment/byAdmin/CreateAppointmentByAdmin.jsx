@@ -66,24 +66,23 @@ export const CreateAppointmentByAdmin = () => {
 
   return (
     <>
-      <h5 className='role-h5'>Create Appointment!</h5>
-      <div className='admin-main-create-business'>
+      <h5>Create Appointment!</h5>
+      <div className='main-background create-background'>
         <Form>
-          <Row className="mb-3">
-            <div className='admin-create-business-card'>
-              <Form.Label>User:</Form.Label>
+          <Row className="card-main">
+          <div className="card-style card-shadow card-role-shadow">
+              <Form.Label>User</Form.Label>
               <Form.Select className='inputevent' name={"user_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
-                <option>Choose user:</option>
+                <option>Choose user</option>
                 {users.map((user) => {
                   return (
                     <option key={user.name} value={user.id}>{user.name}</option>
                   )
                 })}
               </Form.Select>
-
-              <Form.Label>Event:</Form.Label>
+              <Form.Label>Event</Form.Label>
               <Form.Select className='inputevent' name={"event_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
-                <option>Choose event:</option>
+                <option>Choose event</option>
                 {events.map((event) => {
                   return (
                     <option key={event.name} value={event.id}>{event.name}</option>
@@ -92,7 +91,7 @@ export const CreateAppointmentByAdmin = () => {
               </Form.Select>
             </div>
           </Row>
-          <div className='buton-position-event'>
+          <div className='button-action'>
             <Button className='buttonOk' onClick={createAppoint} variant="primary">Submit</Button>
           </div>
         </Form>

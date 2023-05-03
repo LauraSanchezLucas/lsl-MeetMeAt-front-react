@@ -34,9 +34,9 @@ export const SeeAllAppointmentByProfessional = () => {
     };
 
     return (
-        <div className="appointment-background">
+        <div className="appointments-background">
             {appointments.length > 0 ? (
-                <div className="appointments-container">
+                <div className="card-center-appointProfessional">
                     {appointments.map((appointment) => {
                         return (
                             <div onClick={() => selected(appointment)}
@@ -71,9 +71,7 @@ export const SeeAllAppointmentByProfessional = () => {
                     })}
                 </div>
             ) : (
-                <div className="iscoming">
-                    <p className="loading-message">The fun is on its way-stay tuned!!!</p>
-                </div>
+                (<div className='loading-message'><p>The fun is on its way-stay tuned!!!</p></div>)
             )}
         </div>
     );

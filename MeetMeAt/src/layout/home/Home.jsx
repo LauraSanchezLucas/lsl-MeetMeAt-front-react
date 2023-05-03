@@ -19,7 +19,7 @@ import item4 from '../../assets/item4.jpg';
 import item5 from '../../assets/item5.jpg';
 import item6 from '../../assets/item6.jpg';
 import item7 from '../../assets/item7.jpg';
-
+import A2 from '../../assets/A2.jpg';
 
 
 export const Home = () => {
@@ -30,7 +30,7 @@ export const Home = () => {
         <Row className='all-code'>
           {/* MAIN PART*/}
           <Col lg={12} sm={12} xs={12} className='all-code'>
-            <div className='main-home'>
+            <div className='main-home '>
               <div className='logo'><img src={logo} alt="Meet me at" /></div>
               <div className='slogan'>Let´s make every moment count together!!!</div>
             </div>
@@ -62,8 +62,7 @@ export const Home = () => {
               <Card.Body>
                 <Card.Img variant="top" src={social} />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                We create the perfect ambiance for your social gathering, complete with delectable cuisine and elegant décor.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -71,8 +70,7 @@ export const Home = () => {
               <Card.Body>
                 <Card.Img variant="top" src={sport} />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                Our comprehensive sports event ensure seamless organization of tournaments, competitions, and matches, leaving you free to focus on the activity.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -80,8 +78,7 @@ export const Home = () => {
               <Card.Body>
                 <Card.Img variant="top" src={musical} />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                From small, intimate concerts to large-scale festivals, our music event services cater to every need, with expert sound and lighting, top-notch artists, and flawless event management.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -89,8 +86,7 @@ export const Home = () => {
               <Card.Body>
                 <Card.Img variant="top" src={corporate} />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                Elevate your corporate event with our innovative events, which include strategic venue selection, customized branding, and expert logistics management.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -98,8 +94,7 @@ export const Home = () => {
               <Card.Body>
                 <Card.Img variant="top" src={cultural} className='picture' />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                Immerse yourself in the rich cultural heritage of our events, featuring vibrant art, performances, and indulge in delectable local cuisine.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -108,28 +103,28 @@ export const Home = () => {
         {/* COLLAGE  */}
         <div className='collage-side' >
           <div className='item-1'>
-            <img src={item1} alt="Initech industries" className='image-coll' />
+            <img src={item1} className='image-collage' />
           </div>
           <div>
-            <img src={item2} alt="Initech industries" className='image-coll' />
+            <img src={item2} className='image-collage' />
           </div>
           <div className='item-3'>
-            <img src={item3} alt="Initech industries" className='image-coll' />
+            <img src={item3} className='image-collage' />
           </div>
           <div className='movil-item-1'>
-            <img src={item4} alt="Initech industries" className='image-coll' />
+            <img src={item4} className='image-collage' />
           </div>
           <div className='item-5'>
-            <img src={item5} alt="Initech industries" className='image-coll' />
+            <img src={item5} className='image-collage' />
           </div>
           <div className='movil-item-2'>
-            <img src={item6} alt="Initech industries" className='image-coll' />
+            <img src={item6} className='image-collage' />
           </div>
           <div className='item-7'>
-            <img src={item6} alt="Initech industries" className='image-coll' />
+            <img src={A2} className='image-collage' />
           </div>
           <div className='item-8'>
-            <img src={item7} alt="Initech industries" className='image-coll' />
+            <img src={item7} className='image-collage' />
           </div>
         </div>
       </Container>

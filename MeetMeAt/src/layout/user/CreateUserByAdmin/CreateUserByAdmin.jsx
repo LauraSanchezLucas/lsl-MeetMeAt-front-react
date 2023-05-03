@@ -119,78 +119,73 @@ export const CreateUserByAdmin = () => {
 
   return (
     <>
-      <h5 className='role-h5'>Create User!</h5>
-      <div className='admin-create-role'>
+      <h5>Create User!</h5>
+      <div className='main-background create-background'>
         <Form>
-          <div className="mb-3 admin-create-role-card">
-            <Row>
+            <Row className="card-main">
+            <div className="card-style card-shadow card-role-shadow">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label variant='white'>Name</Form.Label>
                 <InputComponent
-                  className={"inputrole"}
+                  className={"input-style"}
                   required={true}
                   type={"text"}
                   name={"name"}
-                  placeholder={"Enter name"}
+                  placeholder={"Enter name..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-                <div className='red'>{credentialError.nameError}</div>
+                <div className='error-message'>{credentialError.nameError}</div>
               </Form.Group>
               <Form.Group as={Col} controlId="formGridSurname">
                 <Form.Label>Surname</Form.Label>
                 <InputComponent
-                  className={"inputrole"}
+                  className={"input-style"}
                   type={"text"}
                   name={"surname"}
-                  placeholder={"Enter surname"}
+                  placeholder={"Enter surname..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-                <div className='red'>{credentialError.surnameError}</div>
+                <div className='error-message'>{credentialError.surnameError}</div>
               </Form.Group>
-            </Row>
-            <Row>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>Email</Form.Label>
                 <InputComponent
-                  className={"inputrole"}
+                  className={"input-style"}
                   type={"email"}
                   name={"email"}
-                  placeholder={"Enter emil"}
+                  placeholder={"Enter emil..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-                <div className='red'>{credentialError.emailError}</div>
+                <div className='error-message'>{credentialError.emailError}</div>
               </Form.Group>
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Phone</Form.Label>
                 <InputComponent
-                  className={"inputrole"}
+                  className={"input-style"}
                   type={"text"}
                   name={"phone"}
-                  placeholder={"Enter phone"}
+                  placeholder={"Enter phone..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-                <div className='red'>{credentialError.phoneError}</div>
+                <div className='error-message'>{credentialError.phoneError}</div>
               </Form.Group>
-            </Row>
-            <Row>
               <Form.Group as={Col} controlId="formPasswordZip">
                 <Form.Label>Password</Form.Label>
                 <InputComponent
-                  className={"inputrole"}
+                  className={"input-style"}
                   type={"text"}
                   name={"password"}
-                  placeholder={"Enter password"}
+                  placeholder={"Enter password..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
-                <div className='red'>{credentialError.passwordError}</div>
+                <div className='error-message'>{credentialError.passwordError}</div>
               </Form.Group>
               <Form.Group as={Col} controlId="formGripZip">
-
                 <Form.Label>Role:</Form.Label>
                 <Form.Select className='inputrole' name={"role_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
                   <option>Choose role:</option>
@@ -201,10 +196,10 @@ export const CreateUserByAdmin = () => {
                   })}
                 </Form.Select>
               </Form.Group>
+              </div>
             </Row>
-          </div>
-          <div className='buton-position-event'>
-            <Button className='buttonOk' onClick={SubmitMe} variant="primary">Submit</Button>
+          <div className='button-action button-active-admin'>
+            <Button className='buttonOk' onClick={SubmitMe} variant="primary">Register now!</Button>
           </div>
         </Form>
       </div>

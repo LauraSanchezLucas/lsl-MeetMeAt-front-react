@@ -24,7 +24,6 @@ export const SingUpModal = () =>{
           <Register/>
         </Modal.Body>
       <Modal.Footer>
-      {/* <Nav.Link onClick={handleShow}><BusinessModal/></Nav.Link> */}
       <Nav.Link onClick={handleShowBusinessModal}>Please press here if you are business!!!</Nav.Link>
       </Modal.Footer>
       </Modal>

@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { userData } from '../../../userSlice';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import './SeeEvents.css'
+
 
 
 export const SeeEvents = () => {
@@ -36,11 +36,11 @@ export const SeeEvents = () => {
     };
     
     return (
-        <div className="admin-background">
-            <Row className="admin-card-main">
+        <div className="main-background">
+            <Row className="card-main">
                 {events.map((event) => (
                     <Col key={event.id} lg={4} sm={4}>
-                        <Card className="admin-card-event">
+                        <Card className="card-style">
                             <Card.Img variant="top" src={event.image} />
                             <Card.Body>
                                 <Card.Title>{event.name}</Card.Title>

@@ -34,13 +34,13 @@ export const SeeAllAppointmentByAdmin = () => {
     };
 
     return (
-        <div className='admin-background'>
+        <div className='main-background'>
             {appointments.length > 0 ?
-                (<Row className='admin-card-main'>
+                (<Row className='card-center-appointProfessional'>
                     {
                         appointments.map(appointment => {
                             return (
-                                <div key={appointment.id} className='admin-card-event'>
+                                <div key={appointment.id} className='appointment-box'>
                                     <ul>
                                         <div>{appointment.date}</div>
                                         <div><strong>{appointment.name}</strong></div>
@@ -68,7 +68,7 @@ export const SeeAllAppointmentByAdmin = () => {
                     }
                 </Row>)
                 :
-                (<div className='iscoming'><p className='loading-message'>The fun is on its way-stay tuned!!!</p></div>)
+                (<div className='loading-message'><p>The fun is on its way-stay tuned!!!</p></div>)
             }
         </div>
     )

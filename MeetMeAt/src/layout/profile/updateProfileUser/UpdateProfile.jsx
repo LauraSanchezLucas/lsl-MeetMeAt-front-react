@@ -109,9 +109,9 @@ export const UpdateProfile = () => {
 
   return (
     <div className='updateProfile-background'>
-      <Container className='centerUpdate'>
+      <Container className='button-action'>
         {registerSuccess && (
-          <div className="successMessage">Update Profile Successful!</div>
+          <div className="success-message">Update Profile Successful!</div>
         )}
         <Form className='update-form'>
           <h1>Update Profile</h1>
@@ -119,7 +119,7 @@ export const UpdateProfile = () => {
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label variant='white'>Name</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 required={true}
                 type={"text"}
                 name={"name"}
@@ -127,19 +127,19 @@ export const UpdateProfile = () => {
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='red'>{credentialError.nameError}</div>
+              <div className='error-message'>{credentialError.nameError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridSurname">
               <Form.Label>Surname</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 type={"text"}
                 name={"surname"}
                 placeholder={credentialsRdx.credentials.user.surname}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='red'>{credentialError.surnameError}</div>
+              <div className='error-message'>{credentialError.surnameError}</div>
             </Form.Group>
 
           </Row>
@@ -147,42 +147,42 @@ export const UpdateProfile = () => {
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>Email</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 type={"email"}
                 name={"email"}
                 placeholder={credentialsRdx.credentials.user.email}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='red'>{credentialError.emailError}</div>
+              <div className='error-message'>{credentialError.emailError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridZip">
               <Form.Label>Phone</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 type={"text"}
                 name={"phone"}
                 placeholder={credentialsRdx.credentials.user.phone}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='red'>{credentialError.phoneError}</div>
+              <div className='error-message'>{credentialError.phoneError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formPasswordZip">
               <Form.Label>Password</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 type={"text"}
                 name={"password"}
                 placeholder={"enter new password"}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='red'>{credentialError.passwordError}</div>
+              <div className='error-message'>{credentialError.passwordError}</div>
             </Form.Group>
           </Row>
-          <div className="buttonRegister">
-            <Button onClick={updateUSer} variant="primary">Submit</Button>
+          <div className="button-action">
+            <Button onClick={updateUSer} variant="primary" className='buttonOk' >Update Now!</Button>
           </div>
         </Form>
       </Container>

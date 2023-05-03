@@ -5,7 +5,6 @@ import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../components/input/InputComponent';
 import { createBusinesses, findAllSpecialty, getAllUsers } from '../../../service/apiCalls';
-import './CreateBusiness.css'
 
 
 export const CreateBusiness = () => {
@@ -65,18 +64,18 @@ export const CreateBusiness = () => {
   
   return (
     <>
-      <h5 className='role-h5'>Create Business!</h5>
-      <div className='admin-main-create-business'>
+      <h5>Add Notes to Business!</h5>
+      <div className='main-background create-background'>
         <Form>
-          <Row className="mb-3">
-            <div className='admin-create-business-card'>
+          <Row className='card-main'>
+            <div className='card-style card-shadow card-role-shadow'>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>Notes</Form.Label>
                 <InputComponent
-                  className={"inputevent"}
+                  className={"input-style"}
                   type={"text"}
                   name={"notes"}
-                  placeholder={"Enter place"}
+                  placeholder={"Add notes..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
                 />
@@ -101,7 +100,7 @@ export const CreateBusiness = () => {
               </Form.Select>
             </div>
           </Row>
-          <div className='buton-position-event'>
+          <div className='button-action'>
             <Button className='buttonOk' onClick={createBusiness} variant="primary">Submit</Button>
           </div>
         </Form>

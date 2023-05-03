@@ -25,11 +25,11 @@ export const SeeAllRoles = () => {
     }, [roles])
 
     return (
-        <div className='event-background'>
-            <Row>
+        <div className="main-background background-role">
+            <Row className="card-main">
                 {roles.map((rol) => (
-                    <Col key={rol.id} lg={12} sm={1}>
-                        <Card className='card-event'>
+                    <Col key={rol.id} lg={12} sm={12}>
+                        <Card className='card-style'>
                             <Card.Body>
                                 <Card.Title>{rol.name}</Card.Title>
                             </Card.Body>

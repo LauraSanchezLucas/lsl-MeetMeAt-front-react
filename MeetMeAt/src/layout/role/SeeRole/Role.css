@@ -1,7 +1,3 @@
-.event-background {
-    background-color: rgba(231, 230, 229, 0.323);
+.background-role {
     min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
