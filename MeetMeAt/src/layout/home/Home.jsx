@@ -26,12 +26,11 @@ export const Home = () => {
   return (
     <>
       <Container fluid className='all-code'>
-        {/* LOGO*/}
+              <div className='logo'><img src={logo} alt="Meet me at" /></div>
         <Row className='all-code'>
           {/* MAIN PART*/}
           <Col lg={12} sm={12} xs={12} className='all-code'>
             <div className='main-home '>
-              <div className='logo'><img src={logo} alt="Meet me at" /></div>
               <div className='slogan'>Let´s make every moment count together!!!</div>
             </div>
           </Col>
@@ -47,6 +46,7 @@ export const Home = () => {
           </Col>
         </div>
         {/* ABOUT US PART */}
+        <Row className='all-code'>
         <div className='about-side' >
           <Col className='d-flex flex-column flex-md-col'>
             <div className='paragraph1'>About Us...</div>
@@ -54,7 +54,7 @@ export const Home = () => {
             <div className='paragraph3'><p>We are dedicated to creating a unique experience for our customers, offering them a wide variety of events so they can choose the one that best suits their needs.</p></div>
           </Col>
         </div>
-
+        </Row>
         {/* TYPE OF SERVICES */}
         <div className='service-side'>
           <Col className='d-flex flex-column flex-md-row'>

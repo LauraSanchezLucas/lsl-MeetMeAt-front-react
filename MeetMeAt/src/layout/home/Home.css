@@ -10,13 +10,13 @@
     height: 60vh;
     margin-top: -2vw;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 .main-home::before {
     content: "";
     position: absolute;
     background-color: rgba(255, 255, 255, 0.7);
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 0;
     right: 60%;
@@ -24,7 +24,7 @@
 }
 .logo {
     position:fixed;
-    z-index: 0;
+    z-index: 5;
     width: 40vw;
     display: flex;
     justify-content: center;
@@ -39,18 +39,20 @@
 .slogan {
     font-family: 'BioRhyme', serif;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     width: 28vw;
     margin: 5%;
     top: 50%;
 }
 .business-side {
     background-color: rgb(50, 50, 50);
+    z-index: -5;
 }
 .business-container {
     max-width: 60%;
     max-height: 60%;
     margin: 5vw;
+    z-index: 3;
 }
 
 .about-side {
@@ -60,7 +62,6 @@
     background-size: cover;
     height: 70vw;
     color: rgb(38, 38, 37);
-    z-index: -1;
 }
 
 .paragraph1 {
@@ -87,6 +88,7 @@
     background-color: rgb(50, 50, 50);
     display: flex;
     justify-content: center;
+    z-index: 3 !important;
 }
 
 .card-service {
@@ -143,7 +145,7 @@
 @media (min-width: 575px) {
     .main-home {
         height: 90vh;
-        margin-top: -8vw;
+        margin-top: -5vw;
     }
 
     .collage-side {
@@ -151,6 +153,9 @@
         grid-template-columns: 170px 170px 170px 170px;
         grid-template-rows: 150px 150px 150px;
         grid-gap: 0.5%;
+    }
+    .logo{
+        margin-top: -2em;
     }
     .slogan{
         font-size: 5vh;

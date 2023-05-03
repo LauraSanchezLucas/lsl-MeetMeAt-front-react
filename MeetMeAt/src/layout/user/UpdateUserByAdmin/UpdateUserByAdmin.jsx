@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -10,6 +10,7 @@ import { userData } from '../../userSlice';
 import { InputComponent } from '../../../components/input/InputComponent';
 import { updateAllUserByAdmin } from '../../../service/apiCalls';
 import { detailData } from '../../detailSlice';
+import { Helpers } from "../../../helpers/Helpers";
 
 
 export const UpdateUserByAdmin = () => {
@@ -29,15 +30,90 @@ export const UpdateUserByAdmin = () => {
         password: "",
         role_id: ""
     });
+    const inputHandler = (e) => {
+        setCredential((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+
+        }));
+    };
+
+    const [validationCredential, setValidationCredential] = useState({
+        nameValidation: false,
+        surnameValidation: false,
+        emailValidation: false,
+        phoneValidation: false,
+        passwordValidation: false,
+    });
+    const [credentialError, setCredentialError] = useState({
+        nameError: "",
+        surnameError: "",
+        emailError: "",
+        phoneError: "",
+        passwordError: "",
+    });
+
+    const [registerAct, setRegisterAct] = useState(false);
+
+    const [registerSuccess, setRegisterSuccess] = useState(false);
+
+    useEffect(() => {
+        for (let error in credentialError) {
+            if (credentialError[error] !== '') {
+                setRegisterAct(false);
+                return;
+            }
+        };
+        for (let empty in credential) {
+            if (credential[empty] === '') {
+                setRegisterAct(false);
+                return;
+            }
+        };
+        for (let Helpers in validationCredential) {
+            if (validationCredential[Helpers] === false) {
+                setRegisterAct(false);
+                return;
+            }
+        };
+
+        setRegisterAct(true);
+    }, [credentialError, credential, validationCredential]);
+
+    const checkError = (e) => {
+
+        let error = '';
+
+        let checked = Helpers(
+            e.target.name,
+            e.target.value,
+            e.target.required
+        );
+
+        error = checked.message;
+
+        setValidationCredential((prevState) => ({
+            ...prevState,
+            [e.target.name + "Validation"]: checked.Helpers,
+        }));
+
+        setCredentialError((prevState) => ({
+            ...prevState,
+            [e.target.name + 'Error']: error,
+        }));
+    };
 
     const updateUSerAdmin = () => {
         updateAllUserByAdmin(params, credential, credentialsRdx.credentials.token)
-            .then(
-                navigate('/login')
-            )
+            .then(() => {
+                setRegisterSuccess(true);
+                setTimeout(() => {
+                    navigate('/allusers');
+                    window.location.reload();
+                }, 2000);
+            })
             .catch(error => console.log(error))
     };
-
     return (
         <div className='main_register'>
             <Container>
@@ -54,6 +130,7 @@ export const UpdateUserByAdmin = () => {
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
+                            <div className='error-message'>{credentialError.nameError}</div>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridSurname">
                             <Form.Label>Surname</Form.Label>
@@ -78,6 +155,7 @@ export const UpdateUserByAdmin = () => {
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
+                            <div className='error-message'>{credentialError.nameError}</div>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridZip">
                             <Form.Label>Phone</Form.Label>
@@ -89,6 +167,7 @@ export const UpdateUserByAdmin = () => {
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
+                            <div className='error-message'>{credentialError.nameError}</div>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formPasswordZip">
                             <Form.Label>Password</Form.Label>
@@ -100,6 +179,7 @@ export const UpdateUserByAdmin = () => {
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />
+                            <div className='error-message'>{credentialError.nameError}</div>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formPasswordZip">
                             <Form.Label>Role_id:</Form.Label>

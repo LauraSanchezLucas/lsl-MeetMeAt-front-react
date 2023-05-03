@@ -13,3 +13,6 @@
     height: 5vw;
     width: 15vw;
 }
+.navbar-style{
+    z-index: 4;
+}

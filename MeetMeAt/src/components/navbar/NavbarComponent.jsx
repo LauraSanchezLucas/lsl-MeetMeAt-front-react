@@ -23,7 +23,7 @@ export const NavBarComponent = () => {
     return navigate('/');
   };
   return (
-    <Navbar collapseOnSelect expand="sm">
+    <Navbar collapseOnSelect expand="sm" className='navbar-style'>
       <Container>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-start">
