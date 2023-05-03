@@ -3,6 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import { Register } from '../../layout/register/Register';
 import Nav from 'react-bootstrap/Nav';
 
+
+
 export const SingUpModal = () =>{
   const [show, setShow] = useState(false);
 
@@ -11,8 +13,7 @@ export const SingUpModal = () =>{
   return (
     <>
       <Nav.Link onClick={handleShow}>Sing Up!</Nav.Link>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Header closeButton/>
         <Modal.Body>
           <Register/>

@@ -14,7 +14,6 @@ export const LoginModal = () =>{
       <Nav.Link onClick={handleShow}>
       <i className="bi bi-person-circle"></i>
       </Nav.Link>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton/>
         <Modal.Body>

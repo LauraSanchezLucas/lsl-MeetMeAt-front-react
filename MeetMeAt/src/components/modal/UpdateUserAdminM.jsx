@@ -15,8 +15,7 @@ export const UpdateUserAdminM = () =>{
       <Button className='buttonOk' variant="primary" onClick={handleShow}>
         Update User!
       </Button>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
