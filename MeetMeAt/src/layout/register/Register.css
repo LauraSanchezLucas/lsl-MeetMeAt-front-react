@@ -1,21 +1,7 @@
-.errorMessage {
-    color: red;
-}
-
-.successMessage {
-    color: rgb(30, 29, 30);
+.success-message {
+    color: rgb(93, 95, 93);
     font-size: larger;
     font-weight: bolder;
-    display: flex;
-    justify-content: center;
-}
-
-.register-button {
-    background-color: rgb(95, 94, 94);
-    border: none;
-}
-
-.registerOk {
     display: flex;
     justify-content: center;
 }

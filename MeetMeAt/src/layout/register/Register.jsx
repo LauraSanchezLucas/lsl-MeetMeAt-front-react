@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { registerMe } from "../../service/apiCalls";
 import { Helpers } from "../../helpers/Helpers";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/esm/Container";
 import { InputComponent } from "../../components/input/InputComponent";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Register.css";
+
+
 
 export const Register = () => {
 
@@ -103,41 +104,40 @@ export const Register = () => {
       })
       .catch(error => console.log(error))
   };
-
+  
   return (
     <div>
-      <Container>
         <h1>Sing Up!</h1>
         {registerSuccess && (
-          <div className="successMessage">Registration Successful!</div>
+          <div className="success-message">Registration Successful!</div>
         )}
-        <Form className='formularioRegistro'>
+        <Form>
           <Row className='mb-3'>
             <Form.Group as={Col} controlId='formGridEmail'>
               <Form.Label variant='white'>Name</Form.Label>
               <InputComponent
-                className={'inputlogin'}
+                className={'input-style'}
                 type={'text'}
                 name={'name'}
                 maxLength={10}
-                placeholder={'Enter name'}
+                placeholder={'Enter your name...'}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='errorMessage'>{credentialError.nameError}</div>
+              <div className='error-message'>{credentialError.nameError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId='formGridSurname'>
               <Form.Label>Surname</Form.Label>
               <InputComponent
-                className={'inputlogin'}
+                className={'input-style'}
                 type={'text'}
                 name={'surname'}
                 maxLength={20}
-                placeholder={'Enter surname'}
+                placeholder={'Enter your surname...'}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='errorMessage'>{credentialError.surnameError}</div>
+              <div className='error-message'>{credentialError.surnameError}</div>
             </Form.Group>
 
           </Row>
@@ -145,48 +145,47 @@ export const Register = () => {
             <Form.Group as={Col} controlId='formGridCity'>
               <Form.Label>Email</Form.Label>
               <InputComponent
-                className={'inputlogin'}
+                className={'input-style'}
                 type={'email'}
                 name={'email'}
-                placeholder={'Enter your email'}
+                placeholder={'Enter your email...'}
                 maxLength={30}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='errorMessage'>{credentialError.emailError}</div>
+              <div className='error-message'>{credentialError.emailError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId='formGridZip'>
               <Form.Label>Phone</Form.Label>
               <InputComponent
-                className={'inputlogin'}
+                className={'input-style'}
                 type={'text'}
                 name={'phone'}
-                placeholder={'Enter your phone'}
+                placeholder={'Enter your phone...'}
                 maxLength={10}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='errorMessage'>{credentialError.phoneError}</div>
+              <div className='error-message'>{credentialError.phoneError}</div>
             </Form.Group>
             <Form.Group as={Col} controlId="formPasswordZip">
               <Form.Label>Password</Form.Label>
               <InputComponent
-                className={"inputlogin"}
+                className={"input-style"}
                 type={"text"}
                 name={"password"}
-                placeholder={"Enter password"}
+                placeholder={"Enter password..."}
                 maxLength={10}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
-              <div className='errorMessage'>{credentialError.passwordError}</div>
+              <div className='error-message'>{credentialError.passwordError}</div>
             </Form.Group>
           </Row>
-          <div className="registerOk">
-            <Button onClick={SubmitMe} variant="primary" className="register-button">Sing Up!</Button>
+          <div className="button-action">
+            <Button onClick={SubmitMe} variant="primary" className="buttonOk">Sing Up!</Button>
           </div>
         </Form>
-      </Container>
     </div>
   );
 }
