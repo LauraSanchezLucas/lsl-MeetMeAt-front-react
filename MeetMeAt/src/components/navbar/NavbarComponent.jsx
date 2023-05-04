@@ -74,8 +74,8 @@ export const NavBarComponent = () => {
                         <NavDropdown.Item href="/newrole">Create role</NavDropdown.Item>
                       </NavDropdown>
                       <NavDropdown title="Business" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/business">All business</NavDropdown.Item>
-                        <NavDropdown.Item href="/newbusiness">Create Business</NavDropdown.Item>
+                        <NavDropdown.Item href="/business">All business`s notes</NavDropdown.Item>
+                        <NavDropdown.Item href="/newbusiness">Create Business`s notes</NavDropdown.Item>
                       </NavDropdown>
                       <NavDropdown title="User" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/allusers">All user</NavDropdown.Item>

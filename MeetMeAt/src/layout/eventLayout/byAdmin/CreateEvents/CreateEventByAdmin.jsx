@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { userData } from "../../../userSlice";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ export const CreateEventByAdmin = () => {
   const credentialsRdx = useSelector(userData);
 
   const [businesses, setBusinesses] = useState([]);
+  const [welcome, setWelcome] = useState("");
 
   const [credential, setCredential] = useState({
     name: "",
@@ -46,17 +47,27 @@ export const CreateEventByAdmin = () => {
     createEvents(credential, credentialsRdx.credentials.token)
       .then((respuesta) => {
         setCredential(respuesta.data);
+        setWelcome('event created')
         setTimeout(() => {
           navigate("/all/events");
         }, 500);
+      }).catch(error => {
+        setCredential(error.message),
+          setWelcome('event already exist');
+        setTimeout(() => {
+          window.location.reload(true)
+        }, 2000)
       })
-      .catch((error) => {
-        setCredential(error.message);
-      });
   };
 
   return (
     <>
+    {welcome !== "" ? (
+            <Card>
+                <Card.Header>{welcome}</Card.Header>
+            </Card>
+        ) : (
+            <>
       <h5>Create event!</h5>
       <div className="main-background">
         <Form>
@@ -157,6 +168,8 @@ export const CreateEventByAdmin = () => {
           </Row>
         </Form>
       </div>
-    </>
-  );
-};
+      </>
+        )}
+        </>
+    );
+}

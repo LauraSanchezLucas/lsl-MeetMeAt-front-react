@@ -37,7 +37,7 @@ export const Business = () => {
     
     return (
         <>
-            <h5>Business</h5>
+            <h5>All Business with notes...</h5>
             <div className='main-background'>
                 <Row className='card-main'>
                     {businesses.map((business) => (

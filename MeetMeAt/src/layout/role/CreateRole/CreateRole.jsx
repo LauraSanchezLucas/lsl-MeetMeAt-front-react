@@ -35,7 +35,7 @@ export const CreateRole = () => {
                 }, 500);
             }).catch(error => { 
                 setCredential(error.message),
-                setWelcome('role already created');
+                setWelcome('role already exist');
                 setTimeout(()=>{
                 window.location.reload(true)
                 }, 1000)
