@@ -19,12 +19,12 @@ export const UpdateProfile = () => {
   const navigate = useNavigate();
 
   const [credential, setCredential] = useState({
-    id: credentialsRdx.credentials.user.userId,
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-    password: ""
+    id: credentialsRdx?.credentials?.user?.userId,
+    name: credentialsRdx?.credentials?.user?.name,
+    surname:credentialsRdx?.credentials?.user?.surname,
+    email:credentialsRdx?.credentials?.user?.email,
+    phone: credentialsRdx?.credentials?.user?.phone,
+    password: credentialsRdx?.credentials?.user?.password
   });
 
   const inputHandler = (e) => {
@@ -148,6 +148,7 @@ export const UpdateProfile = () => {
               <Form.Label>Email</Form.Label>
               <InputComponent
                 className={"input-style"}
+                required={true}
                 type={"email"}
                 name={"email"}
                 placeholder={credentialsRdx.credentials.user.email}
@@ -160,6 +161,7 @@ export const UpdateProfile = () => {
               <Form.Label>Phone</Form.Label>
               <InputComponent
                 className={"input-style"}
+                required={true}
                 type={"text"}
                 name={"phone"}
                 placeholder={credentialsRdx.credentials.user.phone}
@@ -172,6 +174,7 @@ export const UpdateProfile = () => {
               <Form.Label>Password</Form.Label>
               <InputComponent
                 className={"input-style"}
+                required={true}
                 type={"text"}
                 name={"password"}
                 placeholder={"enter new password"}

@@ -123,7 +123,7 @@ export const UpdateUserByAdmin = () => {
                             <Form.Label variant='white'>Name</Form.Label>
                             <InputComponent
                                 className={"inputlogin"}
-                                required={true}
+                    
                                 type={"text"}
                                 name={"name"}
                                 placeholder={credentRdx.choosenObject.name}

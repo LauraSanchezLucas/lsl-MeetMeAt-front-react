@@ -13,13 +13,13 @@ export const CreateAppointmentByAdmin = () => {
   const [users, setUsers] = useState([]);
   const [events, setEvents] = useState([]);
 
-  const [credential, setCredential] = useState({
+  const [appointment, setappointment] = useState({
     user_id: "",
     event_id: "",
   });
 
   const inputHandler = (e) => {
-    setCredential((prevState) => ({
+    setappointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
@@ -52,15 +52,15 @@ export const CreateAppointmentByAdmin = () => {
 
   const createAppoint = () => {
 
-    createAppointmentAdmin(credential, credentialsRdx.credentials.token)
+    createAppointmentAdmin(appointment, credentialsRdx.credentials.token)
 
       .then(respuesta => {
-        setCredential(respuesta.data)
+        setappointment(respuesta.data)
         setTimeout(() => {
           navigate("/getappointment");
         }, 500);
       }).catch(error => {
-        setCredential(error.message)
+        setappointment(error.message)
       })
   };
 

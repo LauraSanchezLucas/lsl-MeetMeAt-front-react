@@ -6,7 +6,7 @@ return (
     <>
     <Form.Control
     className={className} 
-    required={true}
+    required={required}
     type={type}
     name={name}
     maxLength={maxLength}

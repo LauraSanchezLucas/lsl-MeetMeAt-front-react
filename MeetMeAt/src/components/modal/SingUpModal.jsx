@@ -47,7 +47,7 @@ export const SingUpModal = () =>{
         <input type="email" name="user_email" className='input-style' />
         <label>Enter your business CIF</label>
         <textarea name="message" className='input-style'/>
-        <input type="submit" value="Send" onClick={handleCloseBusinessModal}/>
+        <input type="submit" value="Send" onClick={handleCloseBusinessModal} className='buttonOK'/>
       </form>
         </Modal.Body>
       </Modal>
