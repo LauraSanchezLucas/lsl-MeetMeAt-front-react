@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ export const CreateRole = () => {
     const [credential, setCredential] = useState({
         name: ""
     });
-
+    const [welcome, setWelcome] = useState("");
     const inputHandler = (e) => {
         setCredential((prevState) => ({
             ...prevState,
@@ -29,14 +29,27 @@ export const CreateRole = () => {
         createRole(credential, credentialsRdx.credentials.token)
             .then(respuesta => {
                 setCredential(respuesta.data)
+                setWelcome('role created')
                 setTimeout(() => {
                     navigate("/role");
                 }, 500);
-            }).catch(error => { setCredential(error.message) })
+            }).catch(error => { 
+                setCredential(error.message),
+                setWelcome('role already created');
+                setTimeout(()=>{
+                window.location.reload(true)
+                }, 1000)
+     })
     };
     
     return (
         <>
+        {welcome !== "" ? (
+            <Card>
+                <Card.Header>{welcome}</Card.Header>
+            </Card>
+        ) : (
+            <>
             <h5>Create Role!</h5>
             <div className='create-background main-background'>
                 <Form>
@@ -61,6 +74,8 @@ export const CreateRole = () => {
                     </div>
                 </Form>
             </div>
+            </>
+        )}
         </>
     );
 }

@@ -27,7 +27,7 @@ export const SeeAllEventsByProfessional = () => {
     const selected = (event) => {
         deleteEventByProfessional(event.id, credentialRdx.credentials.token);
         setTimeout(() => {
-            navigate("/");
+            window.location.reload();
         }, 500);
     };
 

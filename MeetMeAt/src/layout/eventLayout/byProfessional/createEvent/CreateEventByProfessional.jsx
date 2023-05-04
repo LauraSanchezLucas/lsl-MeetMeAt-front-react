@@ -65,6 +65,7 @@ export const CreateEventByProfessional = () => {
                 <InputComponent
                   className={"input-style"}
                   required={true}
+                  maxLength={30}
                   type={"text"}
                   name={"name"}
                   placeholder={"Enter event name..."}
@@ -77,6 +78,7 @@ export const CreateEventByProfessional = () => {
                 <InputComponent
                   className={"input-style"}
                   type={"text"}
+                  maxLength={200}
                   name={"description"}
                   placeholder={"Enter event description..."}
                   changeFunction={(e) => inputHandler(e)}
@@ -89,6 +91,7 @@ export const CreateEventByProfessional = () => {
                   className={"input-style"}
                   type={"text"}
                   name={"place"}
+                  maxLength={30}
                   placeholder={"Enter event place..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
@@ -99,6 +102,7 @@ export const CreateEventByProfessional = () => {
                 <InputComponent
                   className={"input-style"}
                   type={"text"}
+                  maxLength={10}
                   name={"date"}
                   placeholder={"Enter event date..."}
                   changeFunction={(e) => inputHandler(e)}
@@ -110,6 +114,7 @@ export const CreateEventByProfessional = () => {
                 <InputComponent
                   className={"input-style"}
                   type={"text"}
+                  maxLength={10}
                   name={"hour"}
                   placeholder={"Enter event hour..."}
                   changeFunction={(e) => inputHandler(e)}

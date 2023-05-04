@@ -120,7 +120,6 @@ export const UpdateUserByAdmin = () => {
             getAllRolesNotAdmin(credentialsRdx.credential.token)
             .then(
                 result => {
-                    console.log('uuuuu')
                     setRoles(result.data.name)
                 }
                 )
