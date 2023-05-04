@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../../userSlice";
@@ -10,7 +9,6 @@ import './SeeAllUserByAdmin.css'
 
 export const SeeAllUserByAdmin = () => {
 
-    const navigate = useNavigate();
     const credentialRdx = useSelector(userData);
 
     const dispatch = useDispatch();

@@ -20,7 +20,7 @@ export const UpdateUserByAdmin = () => {
     const navigate = useNavigate();
 
     let params = credentRdx.choosenObject.id;
-    const [roles, setRoles] = useState([]);
+
     const [credential, setCredential] = useState({
         id: params,
         name: credentRdx?.choosenObject?.name,
@@ -36,7 +36,7 @@ export const UpdateUserByAdmin = () => {
 
         }));
     };
-
+  
     const [validationCredential, setValidationCredential] = useState({
         nameValidation: true,
         surnameValidation: true,
@@ -51,9 +51,7 @@ export const UpdateUserByAdmin = () => {
     });
 
     const [registerAct, setRegisterAct] = useState(false);
-    const [welcome, setWelcome] = useState("");
-
-
+    const [roles, setRoles] = useState([]);
 
     useEffect(() => {
         for (let error in credentialError) {
@@ -104,7 +102,6 @@ export const UpdateUserByAdmin = () => {
         if (credential.name === "") {
             getUserProfile(credentialsRdx.credential.token)
                 .then((result) => {
-                    console.log(result);
                     setCredential({
                         name: result.data.name,
                         surname: result.data.surname,
@@ -117,20 +114,20 @@ export const UpdateUserByAdmin = () => {
     }, []);
     useEffect(() => {
         if (roles.length === 0) {
-            getAllRolesNotAdmin(credentialsRdx.credential.token)
+          getAllRolesNotAdmin(credentialsRdx.credentials.token)
             .then(
-                result => {
-                    setRoles(result.data.name)
-                }
-                )
-                .catch(error => console.log(error));
-            }
-        }, [roles])
+              result => {
+                setRoles(result.data.role)
+              }
+            )
+            .catch(error => console.log(error));
+        };
+      }, [roles])
 
     const updateUSerAdmin = () => {
         updateAllUserByAdmin(params, credential, credentialsRdx.credentials.token)
             .then(() => {
-                setRegisterSuccess(true);
+                setRegisterAct(true);
                 setTimeout(() => {
                     navigate('/allusers');
                     window.location.reload();
@@ -207,15 +204,17 @@ export const UpdateUserByAdmin = () => {
                                 blurFunction={(e) => checkError(e)}
                             />
                         </Form.Group> */}
-                        <Form.Label>Role:</Form.Label>
-                        <Form.Select className='inputevent' name={"role_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
-                            <option>Choose role</option>
-                            {roles.map((role) => {
-                                return (
-                                    <option key={role.name} value={role.id}>{role.name}</option>
-                                )
-                            })}
-                        </Form.Select>
+                        <Form.Group as={Col} controlId="formGripZip">
+                            <Form.Label>Role:</Form.Label>
+                            <Form.Select className='inputrole' name={"role_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+                                <option>Choose role:</option>
+                                {roles.map((role) => {
+                                    return (
+                                        <option key={role.name} value={role.id}>{role.name}</option>
+                                    )
+                                })}
+                            </Form.Select>
+                        </Form.Group>
                     </Row>
                     <div className="button-action">
                         <Button onClick={updateUSerAdmin} variant="primary" className='buttonOk'>Update Now!</Button>
