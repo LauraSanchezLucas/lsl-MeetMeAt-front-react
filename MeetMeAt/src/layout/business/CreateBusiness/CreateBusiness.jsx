@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../components/input/InputComponent';
-import { createBusinesses, findAllSpecialty, getAllUsers } from '../../../service/apiCalls';
+import { createBusinesses, findAllSpecialty, findUsersProfesional, getAllUsers } from '../../../service/apiCalls';
 
 
 export const CreateBusiness = () => {
@@ -30,7 +30,7 @@ export const CreateBusiness = () => {
 
   useEffect(() => {
     if (users.length === 0) {
-      getAllUsers(credentialRdx.credentials.token)
+      findUsersProfesional(credentialRdx.credentials.token)
         .then(
           result => {
             setUsers(result.data.user)
