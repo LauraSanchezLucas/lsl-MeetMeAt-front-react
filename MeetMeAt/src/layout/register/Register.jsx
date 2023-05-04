@@ -10,7 +10,6 @@ import Col from "react-bootstrap/Col";
 import "./Register.css";
 
 
-
 export const Register = () => {
 
   const navigate = useNavigate();
@@ -119,7 +118,8 @@ export const Register = () => {
                 className={'input-style'}
                 type={'text'}
                 name={'name'}
-                maxLength={10}
+                required={true}
+                maxLength={30}
                 placeholder={'Enter your name...'}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -132,7 +132,8 @@ export const Register = () => {
                 className={'input-style'}
                 type={'text'}
                 name={'surname'}
-                maxLength={20}
+                required={true}
+                maxLength={30}
                 placeholder={'Enter your surname...'}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -148,6 +149,7 @@ export const Register = () => {
                 className={'input-style'}
                 type={'email'}
                 name={'email'}
+                required={true}
                 placeholder={'Enter your email...'}
                 maxLength={30}
                 changeFunction={(e) => inputHandler(e)}
@@ -161,8 +163,9 @@ export const Register = () => {
                 className={'input-style'}
                 type={'text'}
                 name={'phone'}
+                required={true}
                 placeholder={'Enter your phone...'}
-                maxLength={10}
+                maxLength={15}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
@@ -174,6 +177,7 @@ export const Register = () => {
                 className={"input-style"}
                 type={"text"}
                 name={"password"}
+                required={true}
                 placeholder={"Enter password..."}
                 maxLength={10}
                 changeFunction={(e) => inputHandler(e)}

@@ -5,3 +5,11 @@
     display: flex;
     justify-content: center;
 }
+.card-modal{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+.input-modal-size{
+    margin-top: 2em;
+}

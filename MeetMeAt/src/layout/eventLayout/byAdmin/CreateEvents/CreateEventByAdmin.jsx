@@ -79,6 +79,7 @@ export const CreateEventByAdmin = () => {
                 <InputComponent
                   className={"input-style"}
                   required={true}
+                  maxLength={30}
                   type={"text"}
                   name={"name"}
                   placeholder={"Enter event name..."}
@@ -91,6 +92,7 @@ export const CreateEventByAdmin = () => {
                 <InputComponent
                   className={"input-style"}
                   type={"text"}
+                  maxLength={500}
                   name={"description"}
                   placeholder={"Enter event description..."}
                   changeFunction={(e) => inputHandler(e)}
@@ -103,6 +105,7 @@ export const CreateEventByAdmin = () => {
                   className={"input-style"}
                   type={"text"}
                   name={"place"}
+                  maxLength={50}
                   placeholder={"Enter event place..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
@@ -114,6 +117,7 @@ export const CreateEventByAdmin = () => {
                   className={"input-style"}
                   type={"text"}
                   name={"date"}
+                  maxLength={10}
                   placeholder={"Enter event date..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}
@@ -125,6 +129,7 @@ export const CreateEventByAdmin = () => {
                   className={"input-style"}
                   type={"text"}
                   name={"hour"}
+                  maxLength={10}
                   placeholder={"Enter event time..."}
                   changeFunction={(e) => inputHandler(e)}
                   blurFunction={(e) => checkError(e)}

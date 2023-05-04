@@ -107,6 +107,7 @@ export const Login = () => {
                             className={"input-style"}
                             type={"email"}
                             name={"email"}
+                            maxLength={30}
                             placeholder={"Enter your email"}
                             changeFunction={(e) => inputHandler(e)}
                             blurFunction={(e) => checkError(e)}
@@ -119,6 +120,7 @@ export const Login = () => {
                             className={"input-style"}
                             type={"password"}
                             name={"password"}
+                            maxLength={10}
                             placeholder={"Enter your password"}
                             changeFunction={(e) => inputHandler(e)}
                             blurFunction={(e) => checkError(e)}

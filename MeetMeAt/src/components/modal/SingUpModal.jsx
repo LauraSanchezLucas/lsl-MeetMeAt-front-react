@@ -5,7 +5,6 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 
-
 export const SingUpModal = () =>{
   const [show, setShow] = useState(false);
   const [ showBusinessModal, setShowBusinessModal] = useState (false);
@@ -40,14 +39,14 @@ export const SingUpModal = () =>{
       <Modal show={showBusinessModal} onHide={handleCloseBusinessModal} size='lg'>
       <Modal.Header closeButton/>
       <Modal.Body>
-      <form ref={form} onSubmit={sendEmail} className='field'>
+      <form ref={form} onSubmit={sendEmail} className='card-modal'>
         <label>Name</label>
-        <input type="text" name="user_name" className='input-style' />
+        <input type="text" name="user_name" className='input-style'/>
         <label>Email</label>
-        <input type="email" name="user_email" className='input-style' />
+        <input type="email" name="user_email" className='input-style'/>
         <label>Enter your business CIF</label>
         <textarea name="message" className='input-style'/>
-        <input type="submit" value="Send" onClick={handleCloseBusinessModal} className='buttonOK'/>
+        <input type="submit" value="Send" onClick={handleCloseBusinessModal} className='buttonOK input-modal-size'/>
       </form>
         </Modal.Body>
       </Modal>

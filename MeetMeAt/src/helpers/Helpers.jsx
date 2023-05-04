@@ -7,8 +7,8 @@ export const Helpers = (name, data, required) => {
                 return { message: "This field is required!", Helpers: false };
             } else if (!/^$|[a-z]/gi.test(data)) {
                 return { message: "Use only characters", Helpers: false };
-            } else if (data.length > 10) {
-                return { message: "Maximum length is 10 characters", Helpers: false };
+            } else if (data.length > 30) {
+                return { message: "Maximum length is 30 characters", Helpers: false };
             }
             return { message: "", Helpers: true };
 
