@@ -27,7 +27,6 @@ export const UpdateUserByAdmin = () => {
         surname: "",
         email: "",
         phone: "",
-        password: "",
         role_id: ""
     });
     const inputHandler = (e) => {
@@ -43,14 +42,12 @@ export const UpdateUserByAdmin = () => {
         surnameValidation: false,
         emailValidation: false,
         phoneValidation: false,
-        passwordValidation: false,
     });
     const [credentialError, setCredentialError] = useState({
         nameError: "",
         surnameError: "",
         emailError: "",
         phoneError: "",
-        passwordError: "",
     });
 
     const [registerAct, setRegisterAct] = useState(false);
@@ -164,18 +161,6 @@ export const UpdateUserByAdmin = () => {
                                 type={"text"}
                                 name={"phone"}
                                 placeholder={credentRdx.choosenObject.phone}
-                                changeFunction={(e) => inputHandler(e)}
-                                blurFunction={(e) => checkError(e)}
-                            />
-                            <div className='error-message'>{credentialError.nameError}</div>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formPasswordZip">
-                            <Form.Label>Password</Form.Label>
-                            <InputComponent
-                                className={"inputlogin"}
-                                type={"text"}
-                                name={"password"}
-                                placeholder={"enter new password"}
                                 changeFunction={(e) => inputHandler(e)}
                                 blurFunction={(e) => checkError(e)}
                             />

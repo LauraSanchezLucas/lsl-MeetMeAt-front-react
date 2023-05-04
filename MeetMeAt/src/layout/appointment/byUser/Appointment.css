@@ -43,4 +43,7 @@
     .loading-message {
         width: 80vh;
     }
+    .card-center-appointUser{
+        width: 50vw;
+    }
 }

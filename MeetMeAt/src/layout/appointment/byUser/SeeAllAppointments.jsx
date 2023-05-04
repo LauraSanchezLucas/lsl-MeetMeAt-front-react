@@ -31,9 +31,9 @@ export const SeeAllAppointment = () => {
 
     return (
         <div className='appointments-background'>
-            <Row>
+            <Row className='card-center-appointUser'>
                 {appointments.length > 0 ?
-                    (<div className='card-center'>
+                    (<div >
                         {
                             appointments.map(appoint => {
                                 return (

@@ -9,8 +9,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
-import { updateProfileUser } from '../../../service/apiCalls';
+import { getUserProfile, updateProfileUser } from '../../../service/apiCalls';
 import './UpdateProfile.css';
+import { Card } from 'react-bootstrap';
 
 export const UpdateProfile = () => {
 
@@ -21,10 +22,9 @@ export const UpdateProfile = () => {
   const [credential, setCredential] = useState({
     id: credentialsRdx?.credentials?.user?.userId,
     name: credentialsRdx?.credentials?.user?.name,
-    surname:credentialsRdx?.credentials?.user?.surname,
-    email:credentialsRdx?.credentials?.user?.email,
+    surname: credentialsRdx?.credentials?.user?.surname,
+    email: credentialsRdx?.credentials?.user?.email,
     phone: credentialsRdx?.credentials?.user?.phone,
-    password: credentialsRdx?.credentials?.user?.password
   });
 
   const inputHandler = (e) => {
@@ -35,22 +35,20 @@ export const UpdateProfile = () => {
   };
 
   const [validationCredential, setValidationCredential] = useState({
-    nameValidation: false,
-    surnameValidation: false,
-    emailValidation: false,
-    phoneValidation: false,
-    passwordValidation: false,
+    nameValidation: true,
+    surnameValidation: true,
+    emailValidation: true,
+    phoneValidation: true,
   });
   const [credentialError, setCredentialError] = useState({
     nameError: "",
     surnameError: "",
     emailError: "",
     phoneError: "",
-    passwordError: "",
   });
 
   const [registerAct, setRegisterAct] = useState(false);
-  const [registerSuccess, setRegisterSuccess] = useState(false);
+  const [welcome, setWelcome] = useState("");
 
   useEffect(() => {
     for (let error in credentialError) {
@@ -94,25 +92,45 @@ export const UpdateProfile = () => {
       [e.target.name + "Error"]: error,
     }));
   };
+  useEffect(() => {
+    if (credential.name === "") {
+      getUserProfile(credentialsRdx.credential.token)
+        .then((result) => {
+          console.log(result);
+          setCredential({
+            name: result.data.name,
+            surname: result.data.surname,
+            email: result.data.email,
+            phone: result.data.phone,
+          });
+        })
+        .catch((error) => console.log(error));
+    }
+  }, []);
 
   const updateUSer = () => {
-    updateProfileUser(credential, credentialsRdx.credentials.token)
-      .then(() => {
-        setRegisterSuccess(true);
+    try{
+    updateProfileUser(credential, credentialsRdx.credentials.token);
+    setWelcome('Profile update Successful!');
         setTimeout(() => {
           navigate('/profile');
-          window.location.reload();
         }, 2000);
-      })
-      .catch(error => console.log(error))
+      }catch(error) {
+        setWelcome('Update Profile Error');
+        setTimeout(()=>{
+          window.location.reload(true);
+        }, 500);
+      }
   };
 
   return (
     <div className='updateProfile-background'>
+      {welcome !=="" ? (
+        <Card>
+          <Card.Header>{welcome}</Card.Header>
+        </Card>
+      ):(
       <Container className='button-action'>
-        {registerSuccess && (
-          <div className="success-message">Update Profile Successful!</div>
-        )}
         <Form className='update-form'>
           <h1>Update Profile</h1>
           <Row className="mb-3">
@@ -120,9 +138,9 @@ export const UpdateProfile = () => {
               <Form.Label variant='white'>Name</Form.Label>
               <InputComponent
                 className={"input-style"}
-                required={true}
                 type={"text"}
                 name={"name"}
+                maxLength={10}
                 placeholder={credentialsRdx.credentials.user.name}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -135,6 +153,7 @@ export const UpdateProfile = () => {
                 className={"input-style"}
                 type={"text"}
                 name={"surname"}
+                maxLength={20}
                 placeholder={credentialsRdx.credentials.user.surname}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -151,6 +170,7 @@ export const UpdateProfile = () => {
                 required={true}
                 type={"email"}
                 name={"email"}
+                maxLength={40}
                 placeholder={credentialsRdx.credentials.user.email}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -164,24 +184,12 @@ export const UpdateProfile = () => {
                 required={true}
                 type={"text"}
                 name={"phone"}
+                maxLength={20}
                 placeholder={credentialsRdx.credentials.user.phone}
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
               <div className='error-message'>{credentialError.phoneError}</div>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formPasswordZip">
-              <Form.Label>Password</Form.Label>
-              <InputComponent
-                className={"input-style"}
-                required={true}
-                type={"text"}
-                name={"password"}
-                placeholder={"enter new password"}
-                changeFunction={(e) => inputHandler(e)}
-                blurFunction={(e) => checkError(e)}
-              />
-              <div className='error-message'>{credentialError.passwordError}</div>
             </Form.Group>
           </Row>
           <div className="button-action">
@@ -189,6 +197,7 @@ export const UpdateProfile = () => {
           </div>
         </Form>
       </Container>
+      )}
     </div>
   );
 }

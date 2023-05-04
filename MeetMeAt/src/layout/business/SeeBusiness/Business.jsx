@@ -43,12 +43,12 @@ export const Business = () => {
                         <Col key={business.id} lg={5} sm={5}>
                             <Card className='card-style'>
                                 <Card.Body>
-                                    <Card.Title>{business.name}</Card.Title>
-                                    <Card.Text>Name: {business.User.name}</Card.Text>
-                                    <Card.Text>Specialty: {business.Specialty.type}</Card.Text>
-                                    <Card.Text>Email: {business.User.email}</Card.Text>
-                                    <Card.Text>Phone: {business.User.phone}</Card.Text>
-                                    <Card.Text>Notes: {business.notes}</Card.Text>
+                                    <Card.Title><strong>{business.name}</strong></Card.Title>
+                                    <Card.Text><strong>Name:</strong> {business.User.name}</Card.Text>
+                                    <Card.Text><strong>Specialty:</strong> {business.Specialty.type}</Card.Text>
+                                    <Card.Text><strong>Email:</strong> {business.User.email}</Card.Text>
+                                    <Card.Text><strong>Phone:</strong> {business.User.phone}</Card.Text>
+                                    <Card.Text><strong>Notes:</strong> {business.notes}</Card.Text>
                                     <Button className='buttonOk' onClick={() => selected(business)}>Delete!</Button>
 
                                 </Card.Body>
