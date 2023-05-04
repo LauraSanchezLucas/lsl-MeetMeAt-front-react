@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../../userSlice";
-import { getAllRoles } from "../../../service/apiCalls";
-import { Card, Col, Row } from "react-bootstrap";
+import { deleteRoleById, getAllRolesNotAdmin } from "../../../service/apiCalls";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import './Role.css'
 
 export const SeeAllRoles = () => {
@@ -14,7 +14,7 @@ export const SeeAllRoles = () => {
 
     useEffect(() => {
         if (roles.length === 0) {
-            getAllRoles(credentialRdx.credentials.token)
+            getAllRolesNotAdmin(credentialRdx.credentials.token)
                 .then(
                     result => {
                         setRoles(result.data.role)
@@ -23,6 +23,14 @@ export const SeeAllRoles = () => {
                 .catch(error => console.log(error));
         };
     }, [roles])
+
+    const selected = (rol) => {
+        deleteRoleById(rol.id, credentialRdx.credentials.token);
+        setTimeout(() => {
+            window.location.reload();
+        }, 500);
+    };
+
 
     return (
         <div className="main-background background-role">
@@ -33,6 +41,11 @@ export const SeeAllRoles = () => {
                             <Card.Body>
                                 <Card.Title>{rol.name}</Card.Title>
                             </Card.Body>
+                            <div className="buttonRegister">
+                                <Button className="buttonOk" onClick={() => selected(rol)}>
+                                    Cancel!
+                                </Button>
+                            </div>
                         </Card>
                     </Col>
                 ))}

@@ -31,6 +31,7 @@ export const Business = () => {
         deleteBusinessById(business.id, credentialRdx.credentials.token)
         setTimeout(() => {
             navigate("/business");
+            window.location.reload();
         }, 500)
     };
     

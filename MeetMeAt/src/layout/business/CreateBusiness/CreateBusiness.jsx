@@ -20,7 +20,6 @@ export const CreateBusiness = () => {
     specialty_id: "",
     notes: ""
   });
-
   const inputHandler = (e) => {
     setCredential((prevState) => ({
       ...prevState,
@@ -51,17 +50,18 @@ export const CreateBusiness = () => {
 
   const checkError = (e) => { };
 
-  const createBusiness = () => {
-
+  const createBusi = () => {
     createBusinesses(credential, credentialRdx.credentials.token)
-      .then(respuesta => {
+    .then(respuesta => {
+   
         setCredential(respuesta.data)
         setTimeout(() => {
-          navigate("/");
+          navigate("/business");
         }, 500);
       }).catch(error => { setCredential(error.message) })
   };
-  
+
+
   return (
     <>
       <h5>Add Notes to Business!</h5>
@@ -101,7 +101,7 @@ export const CreateBusiness = () => {
             </div>
           </Row>
           <div className='button-action'>
-            <Button className='buttonOk' onClick={createBusiness} variant="primary">Submit</Button>
+            <Button className='buttonOk' onClick={createBusi} variant="primary">Submit</Button>
           </div>
         </Form>
       </div>

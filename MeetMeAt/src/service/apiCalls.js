@@ -207,6 +207,7 @@ export const getAllRolesNotAdmin = async (token) => {
   };
   return await axios.get(`${root}/roles`, config);
 };
+
 // UPDATE ROLES ADMIN
 export const updateRoleByAdmin = async (id, token) => {
   const config = {
@@ -215,6 +216,15 @@ export const updateRoleByAdmin = async (id, token) => {
     },
   };
   return await axios.put(`${root}/updateuserrole/${id}`, id, config);
+};
+// DELETE ROLES BY ADMIN EXCEPT ADMIN ROLE
+export const deleteRoleById = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return await axios.delete(`${root}/deleterole/${id}`, config);
 };
 // ---------------------------------BUSINESS-------------------------------------------------
 // SEE ALL BUSINESSES BY ADMIN
