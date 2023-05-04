@@ -36,7 +36,7 @@ export const UpdateUserByAdmin = () => {
 
         }));
     };
-  
+
     const [validationCredential, setValidationCredential] = useState({
         nameValidation: true,
         surnameValidation: true,
@@ -114,15 +114,15 @@ export const UpdateUserByAdmin = () => {
     }, []);
     useEffect(() => {
         if (roles.length === 0) {
-          getAllRolesNotAdmin(credentialsRdx.credentials.token)
-            .then(
-              result => {
-                setRoles(result.data.role)
-              }
-            )
-            .catch(error => console.log(error));
+            getAllRolesNotAdmin(credentialsRdx.credentials.token)
+                .then(
+                    result => {
+                        setRoles(result.data.role)
+                    }
+                )
+                .catch(error => console.log(error));
         };
-      }, [roles])
+    }, [roles])
 
     const updateUSerAdmin = () => {
         updateAllUserByAdmin(params, credential, credentialsRdx.credentials.token)
