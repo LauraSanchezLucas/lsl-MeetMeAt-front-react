@@ -36,7 +36,7 @@ export const NavBarComponent = () => {
             ) :
               dataCredentialRdx?.credentials?.role === 3 ? (
                 <>
-                  <Nav.Link as={Link} to="/" ><img className="d-bloq logoNavbar" alt="" src={logo} /></Nav.Link>
+                  <Nav.Link as={Link} to="/" >Meet Me At...</Nav.Link>
                   <Nav.Link as={Link} to="/">Home</Nav.Link>
                   <Nav.Link as={Link} to="/create/appointment" >Events</Nav.Link>
                   <Nav.Link as={Link} to="/appointment" >My events</Nav.Link>
@@ -50,7 +50,7 @@ export const NavBarComponent = () => {
               ) :
                 dataCredentialRdx?.credentials?.role === 2 ? (
                   <>
-                    <Nav.Link as={Link} to="/" ><img className="d-bloq logoNavbar" alt="" src={logo} /></Nav.Link>
+                    <Nav.Link as={Link} to="/" >Meet Me At...</Nav.Link>
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
                     <NavDropdown title="Menu" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/neweventprofessional">Create Event</NavDropdown.Item>
@@ -63,7 +63,7 @@ export const NavBarComponent = () => {
                 ) :
                   dataCredentialRdx?.credentials?.role === 1 ? (
                     <>
-                      <Nav.Link as={Link} to="/" ><img className="d-bloq logoNavbar" alt="" src={logo} /></Nav.Link>
+                      <Nav.Link as={Link} to="/" >Meet Me At...</Nav.Link>
                       <Nav.Link as={Link} to="/">Home</Nav.Link>
                       <NavDropdown title="Events" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/all/events" >All events</NavDropdown.Item>

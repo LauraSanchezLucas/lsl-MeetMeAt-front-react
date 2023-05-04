@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../components/input/InputComponent';
-import { createBusinesses, findAllSpecialty, findUsersProfesional, getAllUsers } from '../../../service/apiCalls';
+import { createBusinesses, findAllSpecialty, findUsersProfesional } from '../../../service/apiCalls';
 
 
 export const CreateBusiness = () => {
@@ -16,9 +16,9 @@ export const CreateBusiness = () => {
   const [specialties, setSpecialties] = useState([]);
 
   const [credential, setCredential] = useState({
-    notes: "",
     user_id: "",
-    specialty_id: ""
+    specialty_id: "",
+    notes: ""
   });
 
   const inputHandler = (e) => {
