@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../../userSlice";
-import { deleteUserByAdmin, getAllUsers } from "../../../service/apiCalls";
+import { deleteUserByAdmin, getAllUsers, getUser } from "../../../service/apiCalls";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { addChoosen } from "../../detailSlice";
 import { UpdateUserAdminM } from '../../../components/modal/UpdateUserAdminM';
@@ -14,18 +14,44 @@ export const SeeAllUserByAdmin = () => {
     const dispatch = useDispatch();
 
     const [users, setUsers] = useState([]);
+    const [searchUser, setSearchUser] = useState("");
 
     useEffect(() => {
-        if (users.length === 0) {
-            getAllUsers(credentialRdx.credentials.token)
+        if (searchUser.length === 0) {
+            getUser(credentialRdx?.credentials?.token)
+                .then(
+                    result => {
+
+                        setUsers(result.data.user)
+
+                    }
+                )
+                .catch(error => console.log(error));
+        } else {
+            getAllUsers(searchUser, credentialRdx?.credentials?.token)
                 .then(
                     result => {
                         setUsers(result.data.user)
                     }
                 )
                 .catch(error => console.log(error));
+
+
         }
-    }, [users])
+    }, [searchUser, users])
+
+    // useEffect(() => {
+    //         getAllUsers(searchUser, credentialRdx?.credentials?.token)
+    //             .then(
+    //                 result => {
+    //                 setTimeout(() => {
+    //                     setUsers(result.data.user)
+    //                 }, 500);
+    //                     setUsers(result.data.user)
+    //                 }
+    //             )
+    //             .catch(error => console.log(error));
+    // }, [searchUser, users])
 
     const selected = (user) => {
         deleteUserByAdmin(user.id, credentialRdx.credentials.token)
@@ -37,6 +63,7 @@ export const SeeAllUserByAdmin = () => {
 
     return (
         <div className='main-background'>
+            <input className="input-style" type="text" value={searchUser} onChange={(e) => setSearchUser(e.target.value)} placeholder="search" />
             <Row className='card-main'>
                 {users.map((user) => (
                     <Col key={user.id} lg={4} sm={4}>
@@ -46,11 +73,11 @@ export const SeeAllUserByAdmin = () => {
                                     <Card.Title>{user.name}</Card.Title>
                                     <Card.Text><strong>Email:</strong> &nbsp; {user?.email} &nbsp;</Card.Text>
                                     <Card.Text><strong>Phone:</strong> &nbsp; {user?.phone} &nbsp;</Card.Text>
-                                    <Card.Text><strong>Role:</strong> &nbsp; {user?.Role.name} &nbsp;</Card.Text>
+                                    <Card.Text><strong>Role:</strong> &nbsp; {user?.Role?.name} &nbsp;</Card.Text>
                                     <Button className="buttonOk button-active-admin" onClick={() => selected(user)}>Cancel!</Button>
                                     <UpdateUserAdminM />
                                 </Card.Body>
-                                
+
                             </Card>
                         </div>
                     </Col>

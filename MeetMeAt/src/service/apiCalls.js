@@ -21,7 +21,23 @@ export const getUserProfile = async (token) => {
   return await axios.get(`${root}/profile`, config);
 };
 // SEE ALL USERS BY ADMIN
-export const getAllUsers = async (token) => {
+export const getAllUsers = async (searchUser,token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  let gUrl = `${root}/searchuser`;
+
+  if(searchUser){
+    gUrl += `/${searchUser}`;
+  }
+
+  return await axios.get(gUrl, config);
+};
+// SEE ALL USERS BY ADMIN
+export const getUser = async (token) => {
   let config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -29,6 +45,7 @@ export const getAllUsers = async (token) => {
   };
   return await axios.get(`${root}/allusers`, config);
 };
+
 // REGISTER USER BY ADMIN
 export const registerByAdmin = async (body, token) => {
   let config = {

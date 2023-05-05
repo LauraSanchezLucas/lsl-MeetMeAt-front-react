@@ -39,7 +39,7 @@ export const SeeAllAppointmentByProfessional = () => {
                 <div className="card-center-appointProfessional">
                     {appointments.map((appointment) => {
                         return (
-                            <div onClick={() => selected(appointment)}
+                            <div
                                 key={appointment.id}
                                 className="appointment-box">
                                 <ul>
