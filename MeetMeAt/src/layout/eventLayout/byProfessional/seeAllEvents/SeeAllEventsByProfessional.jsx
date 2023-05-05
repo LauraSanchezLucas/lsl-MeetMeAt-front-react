@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { userData } from "../../../userSlice";
 import { deleteEventByProfessional, getAllEventsProfessional } from "../../../../service/apiCalls";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Row } from "react-bootstrap";
 
 
 export const SeeAllEventsByProfessional = () => {
@@ -13,6 +13,9 @@ export const SeeAllEventsByProfessional = () => {
     const navigate = useNavigate();
 
     const [events, setEvents] = useState([]);
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
         if (events.length === 0) {
@@ -24,17 +27,32 @@ export const SeeAllEventsByProfessional = () => {
         }
     }, [events]);
 
+    useEffect(() => {
+        const debouncedSearch = setTimeout(() => {
+            const filteredEvents = events.filter(event => event.date >= searchTerm);
+            setSearchResults(filteredEvents);
+        }, 500);
+        return () => clearTimeout(debouncedSearch);
+    }, [searchTerm, events]);
+
     const selected = (event) => {
         deleteEventByProfessional(event.id, credentialRdx.credentials.token);
         setTimeout(() => {
-            window.location.reload();
+           getAllEventsProfessional(credentialRdx.credentials.token)
+                .then((result) => {
+                    setEvents(result.data.event);
+                })
+                .catch((error) => console.log(error));
         }, 500);
     };
 
     return (
         <div className="main-background">
+             <div className='search-bar'>
+                <Form.Control type='date' placeholder='Search events by date' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+            </div>
             <Row className="card-main">
-                {events.map((event) => (
+                {searchResults.map((event) => (
                     <Col key={event.id} lg={4} sm={4}>
                         <Card className="card-style">
                             <Card.Img className="event-image" variant="top" src={event.image} />
