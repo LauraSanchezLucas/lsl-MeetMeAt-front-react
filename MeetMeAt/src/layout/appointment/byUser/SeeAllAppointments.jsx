@@ -9,7 +9,6 @@ export const SeeAllAppointment = () => {
 
     const credentialRdx = useSelector(userData);
 
-
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
@@ -25,7 +24,11 @@ export const SeeAllAppointment = () => {
     const selected = (appointment) => {
         deleteAppointmentUser(appointment.id, credentialRdx.credentials.token)
         setTimeout(() => {
-            window.location.reload();
+            seeAppointment(credentialRdx.credentials.token)
+                .then(result => {
+                    setAppointments(result.data.userAppointment)
+                })
+                .catch(error => console.log(error));
         }, 500)
     };
 

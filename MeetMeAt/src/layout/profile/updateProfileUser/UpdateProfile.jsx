@@ -118,7 +118,7 @@ export const UpdateProfile = () => {
       }catch(error) {
         setWelcome('Update Profile Error');
         setTimeout(()=>{
-          window.location.reload(true);
+          navigate('/profile');
         }, 500);
       }
   };

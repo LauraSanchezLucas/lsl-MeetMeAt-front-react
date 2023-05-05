@@ -56,7 +56,11 @@ export const CreateEventByAdmin = () => {
         setCredential(error.message),
           setWelcome('event already exist');
         setTimeout(() => {
-          window.location.reload(true)
+          getAllBusinesses()
+          .then((result) => {
+            setBusinesses(result.data.business);
+          })
+          .catch((error) => console.log(error));
         }, 2000)
       })
   };

@@ -9,7 +9,6 @@ import { Button, Card, Col, Form, Row } from "react-bootstrap";
 export const SeeAllEventsByProfessional = () => {
     const credentialRdx = useSelector(userData);
 
-
     const navigate = useNavigate();
 
     const [events, setEvents] = useState([]);

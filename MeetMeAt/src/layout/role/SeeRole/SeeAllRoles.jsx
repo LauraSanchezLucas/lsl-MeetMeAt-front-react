@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { userData } from "../../userSlice";
 import { deleteRoleById, getAllRolesNotAdmin } from "../../../service/apiCalls";
 import { Button, Card, Col, Row } from "react-bootstrap";
@@ -9,8 +9,6 @@ export const SeeAllRoles = () => {
 
     const [roles, setRoles] = useState([]);
     const credentialRdx = useSelector(userData);
-
-    const dispatch = useDispatch();
 
     useEffect(() => {
         if (roles.length === 0) {

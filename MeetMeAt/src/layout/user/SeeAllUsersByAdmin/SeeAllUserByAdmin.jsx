@@ -35,27 +35,30 @@ export const SeeAllUserByAdmin = () => {
                     }
                 )
                 .catch(error => console.log(error));
-
-
         }
     }, [searchUser, users])
 
-    // useEffect(() => {
-    //         getAllUsers(searchUser, credentialRdx?.credentials?.token)
-    //             .then(
-    //                 result => {
-    //                 setTimeout(() => {
-    //                     setUsers(result.data.user)
-    //                 }, 500);
-    //                     setUsers(result.data.user)
-    //                 }
-    //             )
-    //             .catch(error => console.log(error));
-    // }, [searchUser, users])
-
     const selected = (user) => {
         deleteUserByAdmin(user.id, credentialRdx.credentials.token)
-        window.location.reload(true);
+        if (searchUser.length === 0) {
+            getUser(credentialRdx?.credentials?.token)
+                .then(
+                    result => {
+
+                        setUsers(result.data.user)
+
+                    }
+                )
+                .catch(error => console.log(error));
+        } else {
+            getAllUsers(searchUser, credentialRdx?.credentials?.token)
+                .then(
+                    result => {
+                        setUsers(result.data.user)
+                    }
+                )
+                .catch(error => console.log(error));
+        }
     }
     const unSelected = (user) => {
         dispatch(addChoosen({ choosenObject: user }))
@@ -63,7 +66,9 @@ export const SeeAllUserByAdmin = () => {
 
     return (
         <div className='main-background'>
+            <div>
             <input className="input-style" type="text" value={searchUser} onChange={(e) => setSearchUser(e.target.value)} placeholder="search" />
+            </div>
             <Row className='card-main'>
                 {users.map((user) => (
                     <Col key={user.id} lg={4} sm={4}>
@@ -77,7 +82,6 @@ export const SeeAllUserByAdmin = () => {
                                     <Button className="buttonOk button-active-admin" onClick={() => selected(user)}>Cancel!</Button>
                                     <UpdateUserAdminM />
                                 </Card.Body>
-
                             </Card>
                         </div>
                     </Col>

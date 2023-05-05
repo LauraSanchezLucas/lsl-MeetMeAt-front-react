@@ -31,7 +31,11 @@ export const SeeEvents = () => {
         deleteEventByAdmin(event.id, credentialRdx.credentials.token);
         setTimeout(() => {
             navigate("/all/events");
-            window.location.reload();
+            getAllEvents()
+                .then((result) => {
+                    setEvents(result.data.event);
+                })
+                .catch((error) => console.log(error));
         }, 500);
     };
     

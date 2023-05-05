@@ -25,8 +25,6 @@ export const CreateAppointmentByAdmin = () => {
     }));
   };
 
-  // const checkError = (e) => { };
-
   useEffect(() => {
     if (users.length === 0) {
       getAllUsers(credentialsRdx.credentials.token)

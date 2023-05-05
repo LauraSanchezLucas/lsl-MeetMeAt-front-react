@@ -31,7 +31,10 @@ export const Business = () => {
         deleteBusinessById(business.id, credentialRdx.credentials.token)
         setTimeout(() => {
             navigate("/business");
-            window.location.reload();
+            getAllBusinesses()
+                .then((result) => {
+                    setBusinesses(result.data.business)
+                }).catch((error) => console.log(error));
         }, 500)
     };
     

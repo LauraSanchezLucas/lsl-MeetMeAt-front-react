@@ -37,9 +37,9 @@ export const CreateRole = () => {
                 setCredential(error.message),
                 setWelcome('role already exist');
                 setTimeout(()=>{
-                window.location.reload(true)
+                    navigate("/role");
                 }, 1000)
-     })
+    })
     };
     
     return (
