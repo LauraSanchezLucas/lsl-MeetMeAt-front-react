@@ -4,10 +4,11 @@
 <details>
   <summary>Index</summary>
   <ol>
-    <li><a href="#about-this-project">About this project</a></li>
+    <li><a href="#meet-me-at-app">About Meet Me At app</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#local-instalation">Local installation</a></li>
-    <li><a href="#how-do-we-do-it">How do we do it</a></li>
+    <li><a href="#how-i-have-done-it">How I done it</a></li>
+    <li><a href="#project-structure">Project structure</a></li>
     <li><a href="#known-bugs">Known bugs</a></li>
     <li><a href="#future-functionalities">Future funtionalities</a></li>
     <li><a href="#licence">Licence</a></li>
@@ -16,12 +17,15 @@
   </ol>
 </details>
 
-## About this project 🎯
+## Meet Me At App
 
-<p align="center">The product department GeeksHubs request to create the frontend corresponding to the appointment management system for a Dental Clinic to be connected with a backend created in the last proyect. 
-The patient must be able to register in the application, login and access to their client area. In your patient area you should be able to see a list of appointments that has to, in the future and past, create appointments and view the own profile.
-There will also be a doctor area with your personal data, which can only be seen by himself and view all patients.
-Admin is the las user area w can have acces to all personal data in the app.</p>
+<p align="center">"Meet Me At" was created to meet the demand for several needs. Our world has changed as a result of the pandemic, we have dismissed relationships, and many work environments are remote. With all this, I have wanted to help people reconnect, to promote communication and interaction between people (which could help improve relationships and reduce the feeling of isolation that many have experienced).
+
+I believe that it is a platform that can improve mental health and emotional well-being, by offering a variety of events and activities that promote well-being and social connection, it can help people deal with the stress and anxiety caused by the current pace of life.
+
+"Meet Me At" establishes connections between businesses and users, making it possible for the businesses to present their events and users to sign up for those that they find attractive. In this way, the application promotes the formation of a community made up of people with similar interests. Likewise, thanks to the event management tools it provides, the platform helps companies and organizers coordinate and keep participants up-to-date on event details. 
+
+"Meet Me At" is presented as a valuable and useful tool for those seeking to connect with others and participate in exciting events.</p>
 <p aling="center"><img src="GIF"></p>
 
 ## Stack
@@ -65,47 +69,57 @@ Admin is the las user area w can have acces to all personal data in the app.</p>
 
 ## Local installation
 ######This is for backend project:
- Clone the project on your computer
+
+  And follow the next steps:
+
+ 1.Clone the project on your computer
     ` $ git clone 'url-repository' `
- Install all dependencies
+ 2.Install all dependencies
     ` $ npm install `
- Create a .env with the credentials on the .env.example
- Start server with:
+ 3.Create a .env with the credentials on the .env.example
+ 4.Start server with:
    ``` $ npm run dev ```
- Connect with the database following:
+ 5.Connect with the database following:
     ``` $ npx sequelize-cli db:create ```
     ``` $ npx sequelize-cli db:migrate ```
     ``` $ npx sequelize-cli db:seed:all ```
-Now is time for frontend project:
- Clone the project on your computer
+######Now is time for frontend project:
+ 1.Clone the project on your computer
     ` $ git clone 'url-repository' `
- Install all dependencies
+ 2.Install all dependencies
     ` $ npm i `
- Start server with:
+ 3.Start server with:
    ``` $ npm run dev ```
+
 Last step download the dataBase:
-[Data base git hub](https://github.com/LauraSanchezLucas/lsl-fsd-val-dentalclinic)
 
-## How do we do it
-For the app of the dental clinic we have implemented different technologies already mentioned above in "Stack" such as JavaScript, NodeJS, React, etc. Firstable I created a plan to face my project in terms of requirements that I wanted to have in our app and marked all the final points of the project, as you can see in the following picture:
-<p aling="center"><img src="./dentalclinic/src/assets/readme.jpg"/></p>
-Once I created the project I started connecting to the backend and then started manipulating the data to render it into my frontend project.
-Finally I shaped the visual part of the project through Bootstrap React.
+ [DataBase GitHub](https://github.com/LauraSanchezLucas/lsl-MeetMeAt-Final-Project-GeeksHubs)
 
-During the process I had few issues, the two most important with the navbar 
+## How I have done it
 
-During the process I had some issues, the two most important was the dynamic rendering of the Navbar because I was not formulate the ternary functions correctly with the information that the token brought me was not correct, another of the difficulties that I had was the selector of doctors and treatments in book appointment without showing an ID number and with the name of services.
+## Project structure
+
+The structure of this project starts with an index.html file, which is the first file that the program uses, and it connects to other files. First, there's the main.jsx file, which connects to the rest of the files using react-dom and react-router-dom and this file defines the basic structure that each design will have, while the MainApp.jsx file declares and connects the routes of the project. The routes are grouped into designs, which are in a folder called "layouts" in the “src” repository. 
+In the "application" folder, there's the store.js file, which is essential for the operation of Redux, and it connects to fragment files. 
+In the "components" folder, reusable elements are stored that can be used in several designs, such as the "input-component". 
+Finally, in the "services" folder, there's the file responsible for communicating with the backend using axios, while the validations file can be found in the "helpers" folder.
 
 ## Known bugs
-✅ Pictures into carrusel are not correct adjust.  
-⬜ The password in the register area is not encrypted
-⬜ Missing the correct instractions for the credentials  
+ The knowns bugs in my platform are the folllowing:
+    -   It does not display messages indicating that a user or event is already registered, or if a business already exists.
+    -   Block or hide the button if you have already signed up for an event or remove the event from your list.
+    -   The photos are too heavy and slow down the website's performance, so it would be advisable to have different types of formats available.
+    -   The logo does not hide in the companies and services section in the home view.
 
 ## Future funtionalities
-✅ Create the functionality to delete a user by the admin
-⬜ Be able to delete appointments by a user and by an admin
-⬜ Be able to see the detail of a user and an      appointment by the admin and the doctor  
-⬜ Modify both a citation and the profile by the user
+The following features will be implemented in the future:
+        -   Update event by business or admin.
+        -   Update role by admin.
+        -   Update notes from business by admin.
+        -   Cancel a specific user from an event by a business or by the administrator.
+        -   Limit the number of users for an event.
+        -   Notify registered users of an event via email in case of any updates or modifications.
+        -   Allow a user to view past and future events in their appointments side.
 
 ## Licencia
 This project is belonging to license Creative Commons Legal Code.
@@ -114,7 +128,10 @@ This project is belonging to license Creative Commons Legal Code.
 To achieve the goal we have collected information from:
   [React documentation](https://www.reactjs.com/)
   [React-bootstrap GeeksHubs](https://react-bootstrap.github.io/)
-  [dental clinic website-vitaldent](https://www.vitaldent.com/es/?gclid=c304c159cd09182a4974a55d1f0295ef&gclsrc=3p.ds&)
+ [eventbrite-website](https://www.eventbrite.es/d/spain--valencia/events/)
+[website-meetup](https://www.meetup.com/es-ES/)
+[website-freepik](https://www.freepik.es/)
+[website-emailJS](https://www.emailjs.com/)
 
 
 ## Contacto
