@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { InputComponent } from "../../../../components/input/InputComponent";
 import { createEvents, getAllBusinesses } from "../../../../service/apiCalls";
 import "./CreateEventByAdmin.css";
+import dayjs from 'dayjs';
 
 export const CreateEventByAdmin = () => {
 
@@ -60,6 +61,7 @@ export const CreateEventByAdmin = () => {
       })
   };
 
+  const today = dayjs().format('YYYY-MM-DD');
   return (
     <>
     {welcome !== "" ? (
@@ -124,21 +126,19 @@ export const CreateEventByAdmin = () => {
               </Form.Group>
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Date</Form.Label>
-                <InputComponent
-                  className={"input-style"}
-                  type={"text"}
-                  name={"date"}
-                  maxLength={10}
-                  placeholder={"Enter event date..."}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
+                <input
+                  className='input-style dayjs'
+                  type='date'
+                  name='date'
+                  min={today}
+                  onChange={inputHandler}
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="formPasswordZip">
                 <Form.Label>Hour</Form.Label>
                 <InputComponent
                   className={"input-style"}
-                  type={"text"}
+                  type={"time"}
                   name={"hour"}
                   maxLength={10}
                   placeholder={"Enter event time..."}

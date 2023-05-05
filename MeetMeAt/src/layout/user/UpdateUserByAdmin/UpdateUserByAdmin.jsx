@@ -129,8 +129,7 @@ export const UpdateUserByAdmin = () => {
             .then(() => {
                 setRegisterAct(true);
                 setTimeout(() => {
-                    navigate('/allusers');
-                    window.location.reload();
+                    navigate('/');
                 }, 2000);
             })
             .catch(error => console.log(error))
@@ -193,17 +192,6 @@ export const UpdateUserByAdmin = () => {
                             />
                             <div className='error-message'>{credentialError.nameError}</div>
                         </Form.Group>
-                        {/* <Form.Group as={Col} controlId="formPasswordZip">
-                            <Form.Label>Role_id:</Form.Label>
-                            <InputComponent
-                                className={"inputlogin"}
-                                type={"text"}
-                                name={"role_id"}
-                                placeholder={credentRdx.choosenObject.Role.name}
-                                changeFunction={(e) => inputHandler(e)}
-                                blurFunction={(e) => checkError(e)}
-                            />
-                        </Form.Group> */}
                         <Form.Group as={Col} controlId="formGripZip">
                             <Form.Label>Role:</Form.Label>
                             <Form.Select className='inputrole' name={"role_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">

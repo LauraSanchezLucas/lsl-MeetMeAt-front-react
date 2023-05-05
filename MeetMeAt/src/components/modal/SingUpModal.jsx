@@ -53,7 +53,7 @@ export const SingUpModal = () => {
         <Modal show={showBusinessModal} onHide={handleCloseBusinessModal} size='lg'>
           <Modal.Header closeButton />
           <Modal.Body>
-                <form ref={form} onSubmit={sendEmail} className='card-modal'>
+            <form ref={form} onSubmit={sendEmail} className='card-modal'>
             <label>Name</label>
             <input type="text" name="user_name" className='input-style'/>
             <label>Email</label>

@@ -27,7 +27,13 @@ export const SeeAllRoles = () => {
     const selected = (rol) => {
         deleteRoleById(rol.id, credentialRdx.credentials.token);
         setTimeout(() => {
-            window.location.reload();
+            getAllRolesNotAdmin(credentialRdx.credentials.token)
+                .then(
+                    result => {
+                        setRoles(result.data.role)
+                    }
+                )
+                .catch(error => console.log(error));
         }, 500);
     };
 

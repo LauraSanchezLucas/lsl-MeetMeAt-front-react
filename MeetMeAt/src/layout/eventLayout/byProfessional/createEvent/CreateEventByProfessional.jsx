@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { InputComponent } from '../../../../components/input/InputComponent';
 import { createEventsByProfessional } from '../../../../service/apiCalls';
 import './CreateEventByProfessional.css'
+import dayjs from 'dayjs';
+
 
 export const CreateEventByProfessional = () => {
 
@@ -30,10 +32,10 @@ export const CreateEventByProfessional = () => {
 
   const checkError = (e) => { };
 
+
   const createEvent = () => {
 
     createEventsByProfessional(credential, credentialsRdx.credentials.token)
-
       .then(respuesta => {
         setCredential(respuesta.data)
         setTimeout(() => {
@@ -41,6 +43,8 @@ export const CreateEventByProfessional = () => {
         }, 500);
       }).catch(error => { setCredential(error.message) })
   };
+
+  const today = dayjs().format('YYYY-MM-DD');
 
   return (
     <>
@@ -99,21 +103,19 @@ export const CreateEventByProfessional = () => {
               </Form.Group>
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Date</Form.Label>
-                <InputComponent
-                  className={"input-style"}
-                  type={"text"}
-                  maxLength={10}
-                  name={"date"}
-                  placeholder={"Enter event date..."}
-                  changeFunction={(e) => inputHandler(e)}
-                  blurFunction={(e) => checkError(e)}
+                <input
+                  className='input-style dayjs'
+                  type='date'
+                  name='date'
+                  min={today}
+                  onChange={inputHandler}
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="formPasswordZip">
                 <Form.Label>Hour</Form.Label>
                 <InputComponent
                   className={"input-style"}
-                  type={"text"}
+                  type={"time"}
                   maxLength={10}
                   name={"hour"}
                   placeholder={"Enter event hour..."}
