@@ -175,7 +175,7 @@ export const Register = () => {
               <Form.Label>Password</Form.Label>
               <InputComponent
                 className={"input-style"}
-                type={"text"}
+                type={"password"}
                 name={"password"}
                 required={true}
                 placeholder={"Enter password..."}
