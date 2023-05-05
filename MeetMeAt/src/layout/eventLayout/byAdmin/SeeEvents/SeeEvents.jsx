@@ -3,7 +3,7 @@ import Row from "react-bootstrap/esm/Row";
 import { useEffect, useState } from 'react';
 import { deleteEventByAdmin, getAllEvents } from '../../../../service/apiCalls';
 import Card from 'react-bootstrap/Card';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { userData } from '../../../userSlice';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +17,9 @@ export const SeeEvents = () => {
 
     const [events, setEvents] = useState([]);
 
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+
     useEffect(() => {
         if (events.length === 0) {
             getAllEvents()
@@ -26,6 +29,15 @@ export const SeeEvents = () => {
                 .catch((error) => console.log(error));
         }
     }, [events]);
+
+    useEffect(() => {
+        const debouncedSearch = setTimeout(() => {
+            const filteredEvents = events.filter(event => event.date >= searchTerm);
+            setSearchResults(filteredEvents);
+        }, 500);
+        return () => clearTimeout(debouncedSearch);
+    }, [searchTerm, events]);
+
 
     const selected = (event) => {
         deleteEventByAdmin(event.id, credentialRdx.credentials.token);
@@ -38,11 +50,14 @@ export const SeeEvents = () => {
                 .catch((error) => console.log(error));
         }, 500);
     };
-    
+
     return (
         <div className="main-background">
+            <div className='search-bar'>
+                <Form.Control type='date' placeholder='Search events by date' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+            </div>
             <Row className="card-main">
-                {events.map((event) => (
+                {searchResults.map((event) => (
                     <Col key={event.id} lg={4} sm={4}>
                         <Card className="card-style">
                             <Card.Img variant="top" src={event.image} />
