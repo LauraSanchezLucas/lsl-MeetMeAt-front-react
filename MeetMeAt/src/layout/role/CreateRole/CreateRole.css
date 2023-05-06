@@ -1,0 +1,11 @@
+.create-background{
+    height: auto;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.card-role-shadow{
+    border-radius: 3vh;
+    padding: 2em;
+}

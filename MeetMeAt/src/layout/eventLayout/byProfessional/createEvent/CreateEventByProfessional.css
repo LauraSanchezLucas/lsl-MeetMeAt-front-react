@@ -1,0 +1,19 @@
+.create-event-background {
+    background-image: url('../../../../assets/A5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.create-event-card {
+    width: 50vw;
+}
+.button-action-eventPro{
+    margin-top: 1em;
+}
+.dayjs{
+    display: flex;
+}

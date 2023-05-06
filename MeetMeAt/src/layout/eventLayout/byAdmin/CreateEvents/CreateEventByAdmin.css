@@ -1,0 +1,10 @@
+.card-shadow {
+    padding: 2vw;
+    border-radius: 5%;
+    box-shadow: inset 5px 5px 5px;
+}
+h5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}

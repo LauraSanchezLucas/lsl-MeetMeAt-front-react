@@ -1,0 +1,185 @@
+.all-code {
+    margin: 0;
+    padding: 0;
+}
+.main-home {
+    background-image: url("../../assets/principal.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    margin-top: -2vw;
+    position: relative;
+    z-index: 0;
+}
+.main-home::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    right: 60%;
+    bottom: 0;
+}
+.logo {
+    position:fixed;
+    z-index: 2;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 25%;
+}
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.slogan {
+    font-family: 'BioRhyme', serif;
+    position: absolute;
+    z-index: 0;
+    width: 28vw;
+    margin: 5%;
+    top: 50%;
+}
+.business-side {
+    background-color: rgb(50, 50, 50);
+    z-index: 5;
+}
+.business-container {
+    max-width: 60%;
+    max-height: 60%;
+    margin: 5vw;
+    z-index: 5;
+}
+
+.about-side {
+    background-image: url("../../assets/noria.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70vw;
+    color: rgb(38, 38, 37);
+}
+
+.paragraph1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vw;
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+.paragraph2 {
+    font-size: 2.5vw;
+    width: 40vw;
+    margin-left: 33vw;
+}
+
+.paragraph3 {
+    font-size: 2.5vw;
+    width: 23vw;
+    margin-left: 33vw;
+}
+
+.service-side {
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+}
+
+.card-service {
+    width: 40vw;
+    height: fit-content;
+    background-color: rgb(50, 50, 50);
+    border: none;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 2vw;
+}
+
+.collage-side {
+    display: flex;
+    justify-content: end;
+    margin-top: 25%;
+    margin-bottom: 15%;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 90px 90px 90px;
+    grid-gap: 0.5%;
+    z-index: 30;
+}
+
+.image-collage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 30;
+}
+
+.item-1 {
+    grid-row: 1/3;
+}
+
+.item-3 {
+    grid-column: 3/5;
+}
+
+.item-5 {
+    grid-row: 2/4;
+}
+
+.item-7 {
+    grid-column: 1/1;
+}
+
+.item-8 {
+    grid-column: 3/5;
+}
+
+@media (min-width: 575px) {
+    .main-home {
+        height: 90vh;
+        margin-top: -5vw;
+    }
+
+    .collage-side {
+        margin: 5%;
+        grid-template-columns: 170px 170px 170px 170px;
+        grid-template-rows: 150px 150px 150px;
+        grid-gap: 0.5%;
+    }
+    .logo{
+        margin-top: -2em;
+    }
+    .slogan{
+        font-size: 5vh;
+    }
+
+    .about-side {
+        height: 30vw;
+    }
+
+    .paragraph1 {
+        margin-top: 0.2vw;
+    }
+
+    .paragraph2 {
+        font-size: 1.5vw;
+        margin-left: 31.5vw;
+        margin-top: -1em;
+    }
+
+    .paragraph3 {
+        font-size: 1.5vw;
+        margin-left: 31.5vw;
+        width: 35vw;
+        margin-top: 0.5em;
+    }
+}
