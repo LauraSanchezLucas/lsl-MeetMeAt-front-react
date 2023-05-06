@@ -54,7 +54,6 @@ export const Business = () => {
                                     <Card.Text><strong>Phone:</strong> {business.User.phone}</Card.Text>
                                     <Card.Text><strong>Notes:</strong> {business.notes}</Card.Text>
                                     <Button className='buttonOk' onClick={() => selected(business)}>Delete!</Button>
-
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -11,9 +11,6 @@ export const SeeAllAppointmentByAdmin = () => {
 
     const credentialRdx = useSelector(userData);
 
-
-    const navigate = useNavigate();
-
     useEffect(() => {
         if (appointments.length === 0) {
             getAllAppointmentsAdmin(credentialRdx.credentials.token)
@@ -39,7 +36,7 @@ export const SeeAllAppointmentByAdmin = () => {
                 .catch(error => console.log(error));
         }, 500)
     };
-    
+
     return (
         <div className='main-background'>
             {appointments.length > 0 ?
@@ -62,9 +59,9 @@ export const SeeAllAppointmentByAdmin = () => {
                                                                 <strong>Surname:</strong> {user.User.surname}&nbsp;
                                                                 <strong>Email:</strong> {user.User.email}&nbsp;
                                                                 <strong>Phone:</strong> {user.User.phone}&nbsp;
-                                                                <Button className="buttonOk" onClick={() => selected(user)}>
-                                    Cancel!
-                                </Button>
+                                                                <Button className="buttonOk button-size" onClick={() => selected(user)}>
+                                                                    Cancel!
+                                                                </Button>
                                                             </div>
                                                         </ul>
                                                     </div>
