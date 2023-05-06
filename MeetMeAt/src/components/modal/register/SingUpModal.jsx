@@ -1,16 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { registerMe } from "../../service/apiCalls";
-import { Helpers } from "../../helpers/Helpers";
-import Button from "react-bootstrap/Button";
-import { InputComponent } from "../../components/input/InputComponent";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./Register.css";
+import Modal from 'react-bootstrap/Modal';
+import Nav from 'react-bootstrap/Nav';
+import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import { InputComponent } from '../../input/InputComponent';
+import { useNavigate } from 'react-router-dom';
+import { registerMe } from '../../../service/apiCalls';
+import { Helpers } from "../../../helpers/Helpers";
+import './Register.css'
 
+export const SingUpModal = () => {
+  const [show, setShow] = useState(false);
+  const [showBusinessModal, setShowBusinessModal] = useState(false);
+  const [showFirstModal, setShowFirstModal] = useState(true);
 
-export const Register = () => {
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleShowBusinessModal = () => {
+    setShowFirstModal(false);
+    setShowBusinessModal(true);
+    setShow(true);
+  }
+
+  const handleCloseBusinessModal = () => {
+    setShowFirstModal(true);
+    setShowBusinessModal(false);
+  };
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_uim9yke', 'template_i0091de', form.current, '84Qi_F-DIWGdD82Dt')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
 
   const navigate = useNavigate();
 
@@ -97,14 +125,20 @@ export const Register = () => {
       .then(() => {
         setRegisterSuccess(true);
         setTimeout(() => {
-          navigate('/');
-        }, 2000);
+          handleClose();
+          navigate("/");
+        }, 1000);
       })
       .catch(error => console.log(error))
   };
-  
   return (
-    <div>
+    <>
+    <Nav.Link onClick={handleShow}>Sing Up!</Nav.Link>
+      {showFirstModal && (
+        <Modal show={show} onHide={handleClose} size='lg'>
+          <Modal.Header closeButton />
+          <Modal.Body>
+          <div>
         <h1>Sing Up!</h1>
         {registerSuccess && (
           <div className="success-message">Registration Successful!</div>
@@ -190,5 +224,26 @@ export const Register = () => {
           </div>
         </Form>
     </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Nav.Link onClick={handleShowBusinessModal}>Please press here if you are business!!!</Nav.Link>
+          </Modal.Footer>
+        </Modal>
+      )}
+        <Modal show={showBusinessModal} onHide={handleCloseBusinessModal} size='lg'>
+          <Modal.Header closeButton />
+          <Modal.Body>
+            <form ref={form} onSubmit={sendEmail} className='card-modal'>
+            <label>Name</label>
+            <input type="text" name="user_name" className='input-style'/>
+            <label>Email</label>
+            <input type="email" name="user_email" className='input-style'/>
+          <label>Enter your business CIF</label>
+          <textarea name="message" className='input-style'/>
+    <input type="submit" value="Send" onClick={handleCloseBusinessModal} className='buttonOK input-modal-size'/>
+        </form>
+          </Modal.Body>
+        </Modal>
+    </>
   );
-}
+  };

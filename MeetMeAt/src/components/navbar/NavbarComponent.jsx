@@ -8,7 +8,7 @@ import { userout } from '../../layout/userSlice';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
 import { LoginModal } from '../modal/LoginModal';
-import { SingUpModal } from '../modal/SingUpModal';
+import { SingUpModal } from '../modal/register/SingUpModal';
 import logo from '../../assets/logo.png';
 
 export const NavBarComponent = () => {

@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { NavBarComponent } from './components/navbar/NavbarComponent';
 import { FooterComponent } from './components/footer/FooterComponent';
 import { Home } from './layout/home/Home';
-import { Register } from './layout/register/Register';
 import { Login } from './layout/login/Login';
 import { ProfileUser } from './layout/profile/ProfileUser';
 import { UpdateProfile } from './layout/profile/UpdateProfileUser/UpdateProfile';
@@ -31,7 +30,6 @@ export const MainApp = () => {
       <NavBarComponent />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<ProfileUser />} />
         <Route path='/update/profile' element={<UpdateProfile/>} />
