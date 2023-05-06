@@ -1,8 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { userData } from "../../userSlice";
-import { addChoosen } from "../../detailSlice";
 import { getAllAppointmentsProfessional } from "../../../service/apiCalls";
 import "./SeeAllAppointmentByProfessional.css";
 
@@ -13,8 +11,6 @@ export const SeeAllAppointmentByProfessional = () => {
 
     const credentialRdx = useSelector(userData);
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (appointments.length === 0) {
@@ -26,12 +22,6 @@ export const SeeAllAppointmentByProfessional = () => {
         }
     }, [appointments]);
 
-    const selected = (appointment) => {
-        dispatch(addChoosen({ choosenObject: appointment }));
-        setTimeout(() => {
-            navigate("/");
-        }, 500);
-    };
 
     return (
         <div className="appointments-background">
