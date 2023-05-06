@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { userData } from "../../userSlice";
 import { deleteAppointmentById, getAllAppointmentsAdmin } from "../../../service/apiCalls";
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 
 export const SeeAllAppointmentByAdmin = () => {
 
@@ -11,7 +11,7 @@ export const SeeAllAppointmentByAdmin = () => {
 
     const credentialRdx = useSelector(userData);
 
-    const dispatch = useDispatch();
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,13 +26,20 @@ export const SeeAllAppointmentByAdmin = () => {
         }
     }, [appointments])
 
-    const selected = (appointment) => {
-        deleteAppointmentById(appointment.id, credentialRdx.credentials.token)
+
+    const selected = (user) => {
+        deleteAppointmentById(user.id, credentialRdx.credentials.token)
         setTimeout(() => {
-            navigate("/");
+            getAllAppointmentsAdmin(credentialRdx.credentials.token)
+                .then(
+                    result => {
+                        setAppointments(result.data.userAppointment)
+                    }
+                )
+                .catch(error => console.log(error));
         }, 500)
     };
-
+    
     return (
         <div className='main-background'>
             {appointments.length > 0 ?
@@ -55,6 +62,9 @@ export const SeeAllAppointmentByAdmin = () => {
                                                                 <strong>Surname:</strong> {user.User.surname}&nbsp;
                                                                 <strong>Email:</strong> {user.User.email}&nbsp;
                                                                 <strong>Phone:</strong> {user.User.phone}&nbsp;
+                                                                <Button className="buttonOk" onClick={() => selected(user)}>
+                                    Cancel!
+                                </Button>
                                                             </div>
                                                         </ul>
                                                     </div>

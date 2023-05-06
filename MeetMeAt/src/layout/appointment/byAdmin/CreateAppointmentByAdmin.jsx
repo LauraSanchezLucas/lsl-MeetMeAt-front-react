@@ -3,7 +3,7 @@ import { Button, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../../userSlice';
 import { useNavigate } from 'react-router-dom';
-import { createAppointmentAdmin, getAllEvents, getAllUsers } from '../../../service/apiCalls';
+import { createAppointmentAdmin, getAllEvents, getUser } from '../../../service/apiCalls';
 
 export const CreateAppointmentByAdmin = () => {
 
@@ -27,7 +27,7 @@ export const CreateAppointmentByAdmin = () => {
 
   useEffect(() => {
     if (users.length === 0) {
-      getAllUsers(credentialsRdx.credentials.token)
+      getUser(credentialsRdx.credentials.token)
         .then(
           result => {
             setUsers(result.data.user)

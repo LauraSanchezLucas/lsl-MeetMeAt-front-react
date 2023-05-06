@@ -177,7 +177,7 @@ export const CreateUserByAdmin = () => {
                 <Form.Label>Password</Form.Label>
                 <InputComponent
                   className={"input-style"}
-                  type={"text"}
+                  type={"password"}
                   name={"password"}
                   placeholder={"Enter password..."}
                   changeFunction={(e) => inputHandler(e)}
