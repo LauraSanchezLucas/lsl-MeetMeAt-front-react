@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../../userSlice";
-import { deleteUserByAdmin, getAllUsers, getUser } from "../../../service/apiCalls";
+import { deleteUserByAdmin, getUser } from "../../../service/apiCalls";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { addChoosen } from "../../detailSlice";
 import { UpdateUserAdminM } from '../../../components/modal/UpdateUserAdminM';
@@ -14,66 +14,50 @@ export const SeeAllUserByAdmin = () => {
     const dispatch = useDispatch();
 
     const [users, setUsers] = useState([]);
-    const [searchUser, setSearchUser] = useState("");
+
+    const [searchName, setSearchName] = useState('');
 
     useEffect(() => {
-        if (searchUser.length === 0) {
+        if (users.length === 0) {
             getUser(credentialRdx?.credentials?.token)
-                .then(
-                    result => {
-                        setTimeout(() => {
-                        setUsers(result.data.user)
-                        
-                    }, 1000)
+                .then((result) => {
+                    setUsers(result.data.user);
                 })
-                .catch(error => console.log(error));
-        } else {
-            getAllUsers(searchUser, credentialRdx?.credentials?.token)
-                .then(
-                    result => {
-                        setTimeout(() => {
-                            setUsers(result.data.user) 
-                        }, 1000)
-                        
-                    }
-                )
-                .catch(error => console.log(error));
+                .catch((error) => console.log(error));
         }
-    }, [searchUser, users])
+    }, [users]);
+
+    const findUsers = users.filter((usuario) => {
+        return usuario.name.toLowerCase().includes(searchName.toLowerCase())
+    });
 
     const selected = (user) => {
         deleteUserByAdmin(user.id, credentialRdx.credentials.token)
-        if (searchUser.length === 0) {
+        setTimeout(() => {
+            navigate("/");
             getUser(credentialRdx?.credentials?.token)
-                .then(
-                    result => {
-
-                        setUsers(result.data.user)
-
-                    }
-                )
-                .catch(error => console.log(error));
-        } else {
-            getAllUsers(searchUser, credentialRdx?.credentials?.token)
-                .then(
-                    result => {
-                        setUsers(result.data.user)
-                    }
-                )
-                .catch(error => console.log(error));
-        }
-    }
-    const unSelected = (user) => {
-        dispatch(addChoosen({ choosenObject: user }))
+                        .then(
+                            result => {
+                                setTimeout(() => {
+                                    setUsers(result.data.user) 
+                                }, 5000)
+                            }
+                        )
+                        .catch(error => console.log(error));
+        }, 500);
     };
+
+    const unSelected = (user) => {
+            dispatch(addChoosen({ choosenObject: user }))
+    }
 
     return (
         <div className='main-background'>
-            <div>
-            <input className="input-style" type="text" value={searchUser} onChange={(e) => setSearchUser(e.target.value)} placeholder="search" />
-            </div>
+            <div className="search-bar">
+        <input type="text" placeholder="Search By Name" onChange={(e) => setSearchName(e.target.value)} />
+        </div>
             <Row className='card-main'>
-                {users.map((user) => (
+                {findUsers.map((user) => (
                     <Col key={user.id} lg={4} sm={4}>
                         <div onClick={() => unSelected(user)} key={user.id}>
                             <Card className='card-style'>
