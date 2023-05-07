@@ -77,6 +77,8 @@ I believe that it is a platform that can improve mental health and emotional wel
     ` $ git clone 'url-repository' `
  2.Install all dependencies
     ` $ npm install `
+    ` $ npm i dayjs `
+    ` $ npm i emailjs-com `
  3.Create a .env with the credentials on the .env.example
  4.Start server with:
    ``` $ npm run dev ```
@@ -119,6 +121,7 @@ Finally, in the "services" folder, there's the file responsible for communicatin
     -   Block or hide the button if you have already signed up for an event or remove the event from your list.
     -   The photos are too heavy and slow down the website's performance, so it would be advisable to have different types of formats available.
     -   The logo does not hide in the companies and services section in the home view.
+    -   When a user is updated, the component does not reload correctly.
 
 ## Future funtionalities
 The following features will be implemented in the future:

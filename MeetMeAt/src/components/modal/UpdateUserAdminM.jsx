@@ -11,113 +11,36 @@ import { detailData } from '../../layout/detailSlice';
 
 
 
+export const UpdateUserAdminM = ({ onUsersUpdate }) => {
 
-export const UpdateUserAdminM = () => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const credentialsRdx = useSelector(userData);
     const credentRdx = useSelector(detailData);
     const navigate = useNavigate();
-console.log(credentRdx, 'ttttt')
-    let params = credentRdx.choosenObject.id;
 
+    console.log(credentRdx, 'ttttt')
+    let params = credentRdx.choosenObject.id;
     const [credential, setCredential] = useState({
         id: params,
         name: credentRdx?.choosenObject?.name,
         surname: credentRdx?.choosenObject?.surname,
         email: credentRdx?.choosenObject?.email,
         phone: credentRdx?.choosenObject?.phone,
-        role_id: "",
+        role_id: credentRdx?.choosenObject?.role_id,
     });
     const inputHandler = (e) => {
         setCredential((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value,
-
         }));
     };
-
-    const [validationCredential, setValidationCredential] = useState({
-        nameValidation: true,
-        surnameValidation: true,
-        emailValidation: true,
-        phoneValidation: true,
-    });
-    const [credentialError, setCredentialError] = useState({
-        nameError: "",
-        surnameError: "",
-        emailError: "",
-        phoneError: "",
-    });
-
     const [registerAct, setRegisterAct] = useState(false);
     const [roles, setRoles] = useState([]);
-
-    useEffect(() => {
-        for (let error in credentialError) {
-            if (credentialError[error] !== '') {
-                setRegisterAct(false);
-                return;
-            }
-        };
-        for (let empty in credential) {
-            if (credential[empty] === '') {
-                setRegisterAct(false);
-                return;
-            }
-        };
-        for (let Helpers in validationCredential) {
-            if (validationCredential[Helpers] === false) {
-                setRegisterAct(false);
-                return;
-            }
-        };
-
-        setRegisterAct(true);
-    }, [credentialError, credential, validationCredential]);
-
     const checkError = (e) => {
-
-        let error = '';
-
-        let checked = Helpers(
-            e.target.name,
-            e.target.value,
-            e.target.required
-        );
-
-        error = checked.message;
-
-        setValidationCredential((prevState) => ({
-            ...prevState,
-            [e.target.name + "Validation"]: checked.Helpers,
-        }));
-
-        setCredentialError((prevState) => ({
-            ...prevState,
-            [e.target.name + 'Error']: error,
-        }));
     };
-    useEffect(() => {
-        if (credential.name === "") {
-            getUserProfile(credentialsRdx.credential.token)
-                .then((result) => {
-                    setTimeout(() => {
-                        setCredential({
-                            name: result.data.name,
-                            surname: result.data.surname,
-                            email: result.data.email,
-                            phone: result.data.phone,
-                        }); 
-                    }, 1000)
-                })
-                .catch((error) => console.log(error));
-        }
-    }, []);
-
     useEffect(() => {
         if (roles.length === 0) {
             getAllRolesNotAdmin(credentialsRdx.credentials.token)
@@ -131,17 +54,19 @@ console.log(credentRdx, 'ttttt')
                 .catch(error => console.log(error));
         };
     }, [roles])
-
     const updateUSerAdmin = () => {
         updateAllUserByAdmin(params, credential, credentialsRdx.credentials.token)
             .then(() => {
                 setRegisterAct(true);
                 setTimeout(() => {
-                    handleClose();
-                    navigate('/allusers');
+                window.location.reload();
                 }, 1000);
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            });
     };
     return (
         <>
@@ -168,7 +93,6 @@ console.log(credentRdx, 'ttttt')
                                             changeFunction={(e) => inputHandler(e)}
                                             blurFunction={(e) => checkError(e)}
                                         />
-                                        <div className='error-message'>{credentialError.nameError}</div>
                                     </Form.Group>
                                     <Form.Group as={Col} controlId="formGridSurname">
                                         <Form.Label>Surname</Form.Label>
@@ -195,7 +119,6 @@ console.log(credentRdx, 'ttttt')
                                             changeFunction={(e) => inputHandler(e)}
                                             blurFunction={(e) => checkError(e)}
                                         />
-                                        <div className='error-message'>{credentialError.nameError}</div>
                                     </Form.Group>
                                     <Form.Group as={Col} controlId="formGridZip">
                                         <Form.Label>Phone</Form.Label>
@@ -208,7 +131,6 @@ console.log(credentRdx, 'ttttt')
                                             changeFunction={(e) => inputHandler(e)}
                                             blurFunction={(e) => checkError(e)}
                                         />
-                                        <div className='error-message'>{credentialError.nameError}</div>
                                     </Form.Group>
                                     <Form.Group as={Col} controlId="formGripZip">
                                         <Form.Label>Role:</Form.Label>
@@ -233,5 +155,3 @@ console.log(credentRdx, 'ttttt')
         </>
     );
 }
-
-

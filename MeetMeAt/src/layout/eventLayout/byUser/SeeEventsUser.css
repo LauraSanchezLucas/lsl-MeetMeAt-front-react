@@ -21,9 +21,9 @@
     text-align: center;
     transition: all 0.25s;
 }
-.card:hover {
+/* .card:hover {
     transform: scale(1.1);
-}
+} */
 .event-image {
     height: auto;
     object-fit: cover;
