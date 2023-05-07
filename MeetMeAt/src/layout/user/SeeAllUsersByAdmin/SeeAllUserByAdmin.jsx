@@ -21,17 +21,20 @@ export const SeeAllUserByAdmin = () => {
             getUser(credentialRdx?.credentials?.token)
                 .then(
                     result => {
-
+                        setTimeout(() => {
                         setUsers(result.data.user)
-
-                    }
-                )
+                        
+                    }, 1000)
+                })
                 .catch(error => console.log(error));
         } else {
             getAllUsers(searchUser, credentialRdx?.credentials?.token)
                 .then(
                     result => {
-                        setUsers(result.data.user)
+                        setTimeout(() => {
+                            setUsers(result.data.user) 
+                        }, 1000)
+                        
                     }
                 )
                 .catch(error => console.log(error));

@@ -26,7 +26,8 @@ I believe that it is a platform that can improve mental health and emotional wel
 "Meet Me At" establishes connections between businesses and users, making it possible for the businesses to present their events and users to sign up for those that they find attractive. In this way, the application promotes the formation of a community made up of people with similar interests. Likewise, thanks to the event management tools it provides, the platform helps companies and organizers coordinate and keep participants up-to-date on event details. 
 
 "Meet Me At" is presented as a valuable and useful tool for those seeking to connect with others and participate in exciting events.</p>
-<p aling="center"><img src="GIF"></p>
+
+
 
 ## Stack
 <div align="center">
@@ -96,6 +97,15 @@ Last step download the dataBase:
  [DataBase GitHub](https://github.com/LauraSanchezLucas/lsl-MeetMeAt-Final-Project-GeeksHubs)
 
 ## How I have done it
+For the Meet Me At app, I have implemented various technologies mentioned in my "Stack", such as JavaScript, NodeJS, React, etc. First, I created a plan to approach my project in terms of the requirements I wanted to have it and marked all the endpoints of the project, as can be seen in the following image:
+
+![image](./assets/../MeetMeAt/src/assets/readmepicture1.jpg)|
+|-|-|-|
+
+Once I created the project, I started by connecting the frontend with the backend and then began manipulating the data to render it in my project. Next, I designed the visual part through Bootstrap React. 
+During the process, I had some complications, such as manipulating modal windows that did not close automatically or not being able to open a second modal from the first modal. I solved this by putting the entire view inside the modal. Additionally, when implementing the search filter, I encountered an infinite loop issue, so I had to restructure the code by introducing a new condition in the part of fetching all the users.
+
+Finally, I worked on the user interface attractive and easy to use, so that any user, whether an administrator, a public user, or a company, could access all the proposed functionalities for the project. Lastly, I added some additional features, such as the ability to send a message to the admin when registering as a business through emailJS.
 
 ## Project structure
 
@@ -116,7 +126,7 @@ The following features will be implemented in the future:
         -   Update event by business or admin.
         -   Update role by admin.
         -   Update notes from business by admin.
-        -   Cancel a specific user from an event by a business or by the administrator.
+        -   Cancel a specific user from an event by a business.
         -   Limit the number of users for an event.
         -   Notify registered users of an event via email in case of any updates or modifications.
         -   Allow a user to view past and future events in their appointments side.
@@ -126,9 +136,10 @@ This project is belonging to license Creative Commons Legal Code.
 
 ## Webgrafia:
 To achieve the goal we have collected information from:
-  [React documentation](https://www.reactjs.com/)
-  [React-bootstrap GeeksHubs](https://react-bootstrap.github.io/)
- [eventbrite-website](https://www.eventbrite.es/d/spain--valencia/events/)
+
+[React documentation](https://www.reactjs.com/)
+[React-bootstrap GeeksHubs](https://react-bootstrap.github.io/)
+[eventbrite-website](https://www.eventbrite.es/d/spain--valencia/events/)
 [website-meetup](https://www.meetup.com/es-ES/)
 [website-freepik](https://www.freepik.es/)
 [website-emailJS](https://www.emailjs.com/)
@@ -138,5 +149,4 @@ To achieve the goal we have collected information from:
 
 <a href = "laura:lausnclu@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/laura-sanchez-lucas-5b2222251" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-<a href="https://github.com/LauraSanchezLucas" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>  
-</p>
+<a href="https://github.com/LauraSanchezLucas" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=red" target="_blank"></a>
