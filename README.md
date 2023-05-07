@@ -69,7 +69,7 @@ I believe that it is a platform that can improve mental health and emotional wel
 </a>
 
 ## Local installation
-######This is for backend project:
+####This is for backend project:
 
   And follow the next steps:
 
@@ -99,8 +99,7 @@ Last step download the dataBase:
 ## How I have done it
 For the Meet Me At app, I have implemented various technologies mentioned in my "Stack", such as JavaScript, NodeJS, React, etc. First, I created a plan to approach my project in terms of the requirements I wanted to have it and marked all the endpoints of the project, as can be seen in the following image:
 
-![image](./assets/../MeetMeAt/src/assets/readmepicture1.jpg)|
-|-|-|-|
+![image](./assets/../MeetMeAt/src/assets/readmepicture1.jpg)
 
 Once I created the project, I started by connecting the frontend with the backend and then began manipulating the data to render it in my project. Next, I designed the visual part through Bootstrap React. 
 During the process, I had some complications, such as manipulating modal windows that did not close automatically or not being able to open a second modal from the first modal. I solved this by putting the entire view inside the modal. Additionally, when implementing the search filter, I encountered an infinite loop issue, so I had to restructure the code by introducing a new condition in the part of fetching all the users.
